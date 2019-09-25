@@ -1,0 +1,307 @@
+toc:
+- title: recsim
+  section:
+  - title: Overview
+    path: /recsim/api_docs/python/recsim
+- title: recsim.agent
+  section:
+  - title: Overview
+    path: /recsim/api_docs/python/recsim/agent
+  - title: AbstractEpisodicRecommenderAgent
+    path: /recsim/api_docs/python/recsim/agent/AbstractEpisodicRecommenderAgent
+  - title: AbstractHierarchicalAgentLayer
+    path: /recsim/api_docs/python/recsim/agent/AbstractHierarchicalAgentLayer
+  - title: AbstractRecommenderAgent
+    path: /recsim/api_docs/python/recsim/agent/AbstractRecommenderAgent
+- title: recsim.agents
+  section:
+  - title: Overview
+    path: /recsim/api_docs/python/recsim/agents
+  - title: agent_utils
+    section:
+    - title: Overview
+      path: /recsim/api_docs/python/recsim/agents/agent_utils
+    - title: epsilon_greedy_exploration
+      path: /recsim/api_docs/python/recsim/agents/agent_utils/epsilon_greedy_exploration
+    - title: GymSpaceWalker
+      path: /recsim/api_docs/python/recsim/agents/agent_utils/GymSpaceWalker
+    - title: min_count_exploration
+      path: /recsim/api_docs/python/recsim/agents/agent_utils/min_count_exploration
+  - title: bandits
+    section:
+    - title: Overview
+      path: /recsim/api_docs/python/recsim/agents/bandits
+    - title: algorithms
+      section:
+      - title: Overview
+        path: /recsim/api_docs/python/recsim/agents/bandits/algorithms
+      - title: KLUCB
+        path: /recsim/api_docs/python/recsim/agents/bandits/algorithms/KLUCB
+      - title: MABAlgorithm
+        path: /recsim/api_docs/python/recsim/agents/bandits/algorithms/MABAlgorithm
+      - title: ThompsonSampling
+        path: /recsim/api_docs/python/recsim/agents/bandits/algorithms/ThompsonSampling
+      - title: UCB1
+        path: /recsim/api_docs/python/recsim/agents/bandits/algorithms/UCB1
+  - title: cluster_bandit_agent
+    section:
+    - title: Overview
+      path: /recsim/api_docs/python/recsim/agents/cluster_bandit_agent
+    - title: ClusterBanditAgent
+      path: /recsim/api_docs/python/recsim/agents/cluster_bandit_agent/ClusterBanditAgent
+    - title: GreedyClusterAgent
+      path: /recsim/api_docs/python/recsim/agents/cluster_bandit_agent/GreedyClusterAgent
+  - title: dopamine
+    section:
+    - title: Overview
+      path: /recsim/api_docs/python/recsim/agents/dopamine
+    - title: dqn_agent
+      section:
+      - title: Overview
+        path: /recsim/api_docs/python/recsim/agents/dopamine/dqn_agent
+      - title: DQNAgentRecSim
+        path: /recsim/api_docs/python/recsim/agents/dopamine/dqn_agent/DQNAgentRecSim
+      - title: DQNNetworkType
+        path: /recsim/api_docs/python/recsim/agents/dopamine/dqn_agent/DQNNetworkType
+      - title: ObservationAdapter
+        path: /recsim/api_docs/python/recsim/agents/dopamine/dqn_agent/ObservationAdapter
+      - title: recsim_dqn_network
+        path: /recsim/api_docs/python/recsim/agents/dopamine/dqn_agent/recsim_dqn_network
+      - title: ResponseAdapter
+        path: /recsim/api_docs/python/recsim/agents/dopamine/dqn_agent/ResponseAdapter
+      - title: wrapped_replay_buffer
+        path: /recsim/api_docs/python/recsim/agents/dopamine/dqn_agent/wrapped_replay_buffer
+  - title: full_slate_q_agent
+    section:
+    - title: Overview
+      path: /recsim/api_docs/python/recsim/agents/full_slate_q_agent
+    - title: FullSlateQAgent
+      path: /recsim/api_docs/python/recsim/agents/full_slate_q_agent/FullSlateQAgent
+  - title: greedy_pctr_agent
+    section:
+    - title: Overview
+      path: /recsim/api_docs/python/recsim/agents/greedy_pctr_agent
+    - title: GreedyPCTRAgent
+      path: /recsim/api_docs/python/recsim/agents/greedy_pctr_agent/GreedyPCTRAgent
+  - title: layers
+    section:
+    - title: Overview
+      path: /recsim/api_docs/python/recsim/agents/layers
+    - title: abstract_click_bandit
+      section:
+      - title: Overview
+        path: /recsim/api_docs/python/recsim/agents/layers/abstract_click_bandit
+      - title: AbstractClickBanditLayer
+        path: /recsim/api_docs/python/recsim/agents/layers/abstract_click_bandit/AbstractClickBanditLayer
+    - title: cluster_click_statistics
+      section:
+      - title: Overview
+        path: /recsim/api_docs/python/recsim/agents/layers/cluster_click_statistics
+      - title: ClusterClickStatsLayer
+        path: /recsim/api_docs/python/recsim/agents/layers/cluster_click_statistics/ClusterClickStatsLayer
+    - title: fixed_length_history
+      section:
+      - title: Overview
+        path: /recsim/api_docs/python/recsim/agents/layers/fixed_length_history
+      - title: FixedLengthHistoryLayer
+        path: /recsim/api_docs/python/recsim/agents/layers/fixed_length_history/FixedLengthHistoryLayer
+    - title: sufficient_statistics
+      section:
+      - title: Overview
+        path: /recsim/api_docs/python/recsim/agents/layers/sufficient_statistics
+      - title: SufficientStatisticsLayer
+        path: /recsim/api_docs/python/recsim/agents/layers/sufficient_statistics/SufficientStatisticsLayer
+    - title: temporal_aggregation
+      section:
+      - title: Overview
+        path: /recsim/api_docs/python/recsim/agents/layers/temporal_aggregation
+      - title: TemporalAggregationLayer
+        path: /recsim/api_docs/python/recsim/agents/layers/temporal_aggregation/TemporalAggregationLayer
+  - title: random_agent
+    section:
+    - title: Overview
+      path: /recsim/api_docs/python/recsim/agents/random_agent
+    - title: RandomAgent
+      path: /recsim/api_docs/python/recsim/agents/random_agent/RandomAgent
+  - title: slate_decomp_q_agent
+    section:
+    - title: Overview
+      path: /recsim/api_docs/python/recsim/agents/slate_decomp_q_agent
+    - title: compute_probs_tf
+      path: /recsim/api_docs/python/recsim/agents/slate_decomp_q_agent/compute_probs_tf
+    - title: compute_target_greedy_q
+      path: /recsim/api_docs/python/recsim/agents/slate_decomp_q_agent/compute_target_greedy_q
+    - title: compute_target_optimal_q
+      path: /recsim/api_docs/python/recsim/agents/slate_decomp_q_agent/compute_target_optimal_q
+    - title: compute_target_sarsa
+      path: /recsim/api_docs/python/recsim/agents/slate_decomp_q_agent/compute_target_sarsa
+    - title: compute_target_topk_q
+      path: /recsim/api_docs/python/recsim/agents/slate_decomp_q_agent/compute_target_topk_q
+    - title: create_agent
+      path: /recsim/api_docs/python/recsim/agents/slate_decomp_q_agent/create_agent
+    - title: score_documents
+      path: /recsim/api_docs/python/recsim/agents/slate_decomp_q_agent/score_documents
+    - title: score_documents_tf
+      path: /recsim/api_docs/python/recsim/agents/slate_decomp_q_agent/score_documents_tf
+    - title: select_slate_greedy
+      path: /recsim/api_docs/python/recsim/agents/slate_decomp_q_agent/select_slate_greedy
+    - title: select_slate_optimal
+      path: /recsim/api_docs/python/recsim/agents/slate_decomp_q_agent/select_slate_optimal
+    - title: select_slate_topk
+      path: /recsim/api_docs/python/recsim/agents/slate_decomp_q_agent/select_slate_topk
+    - title: SlateDecompQAgent
+      path: /recsim/api_docs/python/recsim/agents/slate_decomp_q_agent/SlateDecompQAgent
+  - title: tabular_q_agent
+    section:
+    - title: Overview
+      path: /recsim/api_docs/python/recsim/agents/tabular_q_agent
+    - title: TabularQAgent
+      path: /recsim/api_docs/python/recsim/agents/tabular_q_agent/TabularQAgent
+- title: recsim.choice_model
+  section:
+  - title: Overview
+    path: /recsim/api_docs/python/recsim/choice_model
+  - title: AbstractChoiceModel
+    path: /recsim/api_docs/python/recsim/choice_model/AbstractChoiceModel
+  - title: CascadeChoiceModel
+    path: /recsim/api_docs/python/recsim/choice_model/CascadeChoiceModel
+  - title: ExponentialCascadeChoiceModel
+    path: /recsim/api_docs/python/recsim/choice_model/ExponentialCascadeChoiceModel
+  - title: MultinomialLogitChoiceModel
+    path: /recsim/api_docs/python/recsim/choice_model/MultinomialLogitChoiceModel
+  - title: MultinomialProportionalChoiceModel
+    path: /recsim/api_docs/python/recsim/choice_model/MultinomialProportionalChoiceModel
+  - title: NormalizableChoiceModel
+    path: /recsim/api_docs/python/recsim/choice_model/NormalizableChoiceModel
+  - title: ProportionalCascadeChoiceModel
+    path: /recsim/api_docs/python/recsim/choice_model/ProportionalCascadeChoiceModel
+  - title: softmax
+    path: /recsim/api_docs/python/recsim/choice_model/softmax
+- title: recsim.document
+  section:
+  - title: Overview
+    path: /recsim/api_docs/python/recsim/document
+  - title: AbstractDocument
+    path: /recsim/api_docs/python/recsim/document/AbstractDocument
+  - title: AbstractDocumentSampler
+    path: /recsim/api_docs/python/recsim/document/AbstractDocumentSampler
+  - title: CandidateSet
+    path: /recsim/api_docs/python/recsim/document/CandidateSet
+- title: recsim.environments
+  section:
+  - title: Overview
+    path: /recsim/api_docs/python/recsim/environments
+  - title: interest_evolution
+    section:
+    - title: Overview
+      path: /recsim/api_docs/python/recsim/environments/interest_evolution
+    - title: clicked_watchtime_reward
+      path: /recsim/api_docs/python/recsim/environments/interest_evolution/clicked_watchtime_reward
+    - title: create_environment
+      path: /recsim/api_docs/python/recsim/environments/interest_evolution/create_environment
+    - title: IEvResponse
+      path: /recsim/api_docs/python/recsim/environments/interest_evolution/IEvResponse
+    - title: IEvUserDistributionSampler
+      path: /recsim/api_docs/python/recsim/environments/interest_evolution/IEvUserDistributionSampler
+    - title: IEvUserModel
+      path: /recsim/api_docs/python/recsim/environments/interest_evolution/IEvUserModel
+    - title: IEvUserState
+      path: /recsim/api_docs/python/recsim/environments/interest_evolution/IEvUserState
+    - title: IEvVideo
+      path: /recsim/api_docs/python/recsim/environments/interest_evolution/IEvVideo
+    - title: IEvVideoSampler
+      path: /recsim/api_docs/python/recsim/environments/interest_evolution/IEvVideoSampler
+    - title: total_clicks_reward
+      path: /recsim/api_docs/python/recsim/environments/interest_evolution/total_clicks_reward
+    - title: UtilityModelUserSampler
+      path: /recsim/api_docs/python/recsim/environments/interest_evolution/UtilityModelUserSampler
+    - title: UtilityModelVideoSampler
+      path: /recsim/api_docs/python/recsim/environments/interest_evolution/UtilityModelVideoSampler
+  - title: interest_exploration
+    section:
+    - title: Overview
+      path: /recsim/api_docs/python/recsim/environments/interest_exploration
+    - title: create_environment
+      path: /recsim/api_docs/python/recsim/environments/interest_exploration/create_environment
+    - title: IEClusterUserSampler
+      path: /recsim/api_docs/python/recsim/environments/interest_exploration/IEClusterUserSampler
+    - title: IEDocument
+      path: /recsim/api_docs/python/recsim/environments/interest_exploration/IEDocument
+    - title: IEResponse
+      path: /recsim/api_docs/python/recsim/environments/interest_exploration/IEResponse
+    - title: IETopicDocumentSampler
+      path: /recsim/api_docs/python/recsim/environments/interest_exploration/IETopicDocumentSampler
+    - title: IEUserModel
+      path: /recsim/api_docs/python/recsim/environments/interest_exploration/IEUserModel
+    - title: IEUserState
+      path: /recsim/api_docs/python/recsim/environments/interest_exploration/IEUserState
+    - title: total_clicks_reward
+      path: /recsim/api_docs/python/recsim/environments/interest_exploration/total_clicks_reward
+  - title: long_term_satisfaction
+    section:
+    - title: Overview
+      path: /recsim/api_docs/python/recsim/environments/long_term_satisfaction
+    - title: clicked_engagement_reward
+      path: /recsim/api_docs/python/recsim/environments/long_term_satisfaction/clicked_engagement_reward
+    - title: create_environment
+      path: /recsim/api_docs/python/recsim/environments/long_term_satisfaction/create_environment
+    - title: LTSDocument
+      path: /recsim/api_docs/python/recsim/environments/long_term_satisfaction/LTSDocument
+    - title: LTSDocumentSampler
+      path: /recsim/api_docs/python/recsim/environments/long_term_satisfaction/LTSDocumentSampler
+    - title: LTSResponse
+      path: /recsim/api_docs/python/recsim/environments/long_term_satisfaction/LTSResponse
+    - title: LTSStaticUserSampler
+      path: /recsim/api_docs/python/recsim/environments/long_term_satisfaction/LTSStaticUserSampler
+    - title: LTSUserModel
+      path: /recsim/api_docs/python/recsim/environments/long_term_satisfaction/LTSUserModel
+    - title: LTSUserState
+      path: /recsim/api_docs/python/recsim/environments/long_term_satisfaction/LTSUserState
+- title: recsim.simulator
+  section:
+  - title: Overview
+    path: /recsim/api_docs/python/recsim/simulator
+  - title: environment
+    section:
+    - title: Overview
+      path: /recsim/api_docs/python/recsim/simulator/environment
+    - title: Environment
+      path: /recsim/api_docs/python/recsim/simulator/environment/Environment
+  - title: recsim_gym
+    section:
+    - title: Overview
+      path: /recsim/api_docs/python/recsim/simulator/recsim_gym
+    - title: RecSimGymEnv
+      path: /recsim/api_docs/python/recsim/simulator/recsim_gym/RecSimGymEnv
+  - title: runner_lib
+    section:
+    - title: Overview
+      path: /recsim/api_docs/python/recsim/simulator/runner_lib
+    - title: EvalRunner
+      path: /recsim/api_docs/python/recsim/simulator/runner_lib/EvalRunner
+    - title: load_gin_configs
+      path: /recsim/api_docs/python/recsim/simulator/runner_lib/load_gin_configs
+    - title: Runner
+      path: /recsim/api_docs/python/recsim/simulator/runner_lib/Runner
+    - title: TrainRunner
+      path: /recsim/api_docs/python/recsim/simulator/runner_lib/TrainRunner
+- title: recsim.user
+  section:
+  - title: Overview
+    path: /recsim/api_docs/python/recsim/user
+  - title: AbstractResponse
+    path: /recsim/api_docs/python/recsim/user/AbstractResponse
+  - title: AbstractUserModel
+    path: /recsim/api_docs/python/recsim/user/AbstractUserModel
+  - title: AbstractUserSampler
+    path: /recsim/api_docs/python/recsim/user/AbstractUserSampler
+  - title: AbstractUserState
+    path: /recsim/api_docs/python/recsim/user/AbstractUserState
+- title: recsim.utils
+  section:
+  - title: Overview
+    path: /recsim/api_docs/python/recsim/utils
+  - title: aggregate_video_cluster_metrics
+    path: /recsim/api_docs/python/recsim/utils/aggregate_video_cluster_metrics
+  - title: write_video_cluster_metrics
+    path: /recsim/api_docs/python/recsim/utils/write_video_cluster_metrics
