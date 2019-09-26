@@ -59,7 +59,6 @@ RecSim. We then talk about each configurable component:
 
 ## Documentation
 
-API documentation can be found in [SITEMAP](docs/SITEMAP.md).
 
 Please refer to the [white paper](http://arxiv.org/abs/1909.04847) for the
 high-level design.
