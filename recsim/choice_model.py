@@ -30,7 +30,7 @@ def softmax(vector):
   return np.exp(normalized_vector) / np.sum(np.exp(normalized_vector))
 
 
-class AbstractChoiceModel(object):
+class AbstractChoiceModel(object):  # pytype: disable=ignored-metaclass
   """Abstract class to represent the user choice model.
 
   Each user has a choice model.

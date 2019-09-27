@@ -81,7 +81,7 @@ class CandidateSet(object):
     })
 
 
-class AbstractDocumentSampler(object):
+class AbstractDocumentSampler(object):  # pytype: disable=ignored-metaclass
   """Abstract class to sample documents."""
 
   __metaclass__ = abc.ABCMeta
@@ -108,7 +108,7 @@ class AbstractDocumentSampler(object):
     return 0
 
 
-class AbstractDocument(object):
+class AbstractDocument(object):  # pytype: disable=ignored-metaclass
   """Abstract class to represent a document and its properties."""
 
   __metaclass__ = abc.ABCMeta

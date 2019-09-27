@@ -23,7 +23,7 @@ import abc
 from absl import logging
 
 
-class AbstractRecommenderAgent(object):
+class AbstractRecommenderAgent(object):  # pytype: disable=ignored-metaclass
   """Abstract class to model a recommender system agent."""
 
   __metaclass__ = abc.ABCMeta

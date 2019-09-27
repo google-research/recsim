@@ -24,7 +24,7 @@ from gym import spaces
 import numpy as np
 
 
-class AbstractResponse(object):
+class AbstractResponse(object):  # pytype: disable=ignored-metaclass
   """Abstract class to model a user response."""
 
   __metaclass__ = abc.ABCMeta
@@ -39,7 +39,7 @@ class AbstractResponse(object):
     """Creates a tensor observation of this response."""
 
 
-class AbstractUserState(object):
+class AbstractUserState(object):  # pytype: disable=ignored-metaclass
   """Abstract class to represent a user's state."""
   __metaclass__ = abc.ABCMeta
 
@@ -60,7 +60,7 @@ class AbstractUserState(object):
     """Gym.spaces object that defines how user states are represented."""
 
 
-class AbstractUserSampler(object):
+class AbstractUserSampler(object):  # pytype: disable=ignored-metaclass
   """Abstract class to sample users."""
 
   __metaclass__ = abc.ABCMeta
@@ -91,7 +91,7 @@ class AbstractUserSampler(object):
     return self._user_ctor
 
 
-class AbstractUserModel(object):
+class AbstractUserModel(object):  # pytype: disable=ignored-metaclass
   """Abstract class to represent an encoding of a user's dynamics."""
 
   __metaclass__ = abc.ABCMeta
