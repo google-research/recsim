@@ -8,7 +8,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/environments/interest_evolution.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/environments/interest_evolution.py">View
 source</a>
 
 Calculates the total clicked watchtime from a list of responses.

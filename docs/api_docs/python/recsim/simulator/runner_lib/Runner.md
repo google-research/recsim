@@ -9,7 +9,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/simulator/runner_lib.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/simulator/runner_lib.py">View
 source</a>
 
 ## Class `Runner`

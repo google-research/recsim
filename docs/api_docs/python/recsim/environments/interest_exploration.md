@@ -9,7 +9,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/environments/interest_exploration.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/environments/interest_exploration.py">View
 source</a>
 
 Correlated interest exploration environment.

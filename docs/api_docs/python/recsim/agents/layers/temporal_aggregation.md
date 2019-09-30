@@ -8,7 +8,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/agents/layers/temporal_aggregation.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/agents/layers/temporal_aggregation.py">View
 source</a>
 
 Temporally aggregated reinforcement learning agent.

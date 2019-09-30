@@ -12,7 +12,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/agent.py">View
 source</a>
 
 ## Class `AbstractRecommenderAgent`
@@ -23,7 +23,7 @@ Abstract class to model a recommender system agent.
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/agent.py">View
 source</a>
 
 ```python
@@ -41,7 +41,7 @@ Initializes AbstractRecommenderAgent.
 
 <h3 id="bundle_and_checkpoint"><code>bundle_and_checkpoint</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/agent.py">View
 source</a>
 
 ```python
@@ -72,7 +72,7 @@ object. If the checkpoint directory does not exist, returns empty dictionary.
 
 <h3 id="step"><code>step</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/agent.py">View
 source</a>
 
 ```python
@@ -101,7 +101,7 @@ the reward.
 
 <h3 id="unbundle"><code>unbundle</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/agent.py">View
 source</a>
 
 ```python

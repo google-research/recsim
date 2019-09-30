@@ -12,7 +12,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/environments/interest_exploration.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/environments/interest_exploration.py">View
 source</a>
 
 ## Class `IEResponse`
@@ -31,7 +31,7 @@ Inherits From: [`AbstractResponse`](../../../recsim/user/AbstractResponse.md)
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/environments/interest_exploration.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/environments/interest_exploration.py">View
 source</a>
 
 ```python
@@ -48,7 +48,7 @@ Initialize self. See help(type(self)) for accurate signature.
 
 <h3 id="create_observation"><code>create_observation</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/environments/interest_exploration.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/environments/interest_exploration.py">View
 source</a>
 
 ```python
@@ -59,7 +59,7 @@ Creates a tensor observation of this response.
 
 <h3 id="response_space"><code>response_space</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/environments/interest_exploration.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/environments/interest_exploration.py">View
 source</a>
 
 ```python

@@ -14,7 +14,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/agents/random_agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/agents/random_agent.py">View
 source</a>
 
 ## Class `RandomAgent`
@@ -28,7 +28,7 @@ Inherits From:
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/agents/random_agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/agents/random_agent.py">View
 source</a>
 
 ```python
@@ -51,7 +51,7 @@ Initializes AbstractEpisodicRecommenderAgent.
 
 <h3 id="begin_episode"><code>begin_episode</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/agent.py">View
 source</a>
 
 ```python
@@ -71,7 +71,7 @@ Returns the agent's first action for this episode.
 
 <h3 id="bundle_and_checkpoint"><code>bundle_and_checkpoint</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/agent.py">View
 source</a>
 
 ```python
@@ -98,7 +98,7 @@ object. If the checkpoint directory does not exist, returns empty dictionary.
 
 <h3 id="end_episode"><code>end_episode</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/agent.py">View
 source</a>
 
 ```python
@@ -118,7 +118,7 @@ Signals the end of the episode to the agent.
 
 <h3 id="step"><code>step</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/agents/random_agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/agents/random_agent.py">View
 source</a>
 
 ```python
@@ -147,7 +147,7 @@ the reward.
 
 <h3 id="unbundle"><code>unbundle</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/agent.py">View
 source</a>
 
 ```python

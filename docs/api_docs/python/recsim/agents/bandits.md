@@ -8,7 +8,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/agents/bandits/__init__.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/agents/bandits/__init__.py">View
 source</a>
 
 <!-- Placeholder for "Used in" -->

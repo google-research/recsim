@@ -16,7 +16,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/simulator/environment.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/simulator/environment.py">View
 source</a>
 
 ## Class `Environment`
@@ -39,7 +39,7 @@ Class to represent the environment in the recommender system simulator.
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/simulator/environment.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/simulator/environment.py">View
 source</a>
 
 ```python
@@ -78,7 +78,7 @@ Initializes a new simulation environment.
 
 <h3 id="reset"><code>reset</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/simulator/environment.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/simulator/environment.py">View
 source</a>
 
 ```python
@@ -96,7 +96,7 @@ Resets the environment and return the first observation.
 
 <h3 id="reset_sampler"><code>reset_sampler</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/simulator/environment.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/simulator/environment.py">View
 source</a>
 
 ```python
@@ -105,7 +105,7 @@ reset_sampler()
 
 <h3 id="step"><code>step</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/simulator/environment.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/simulator/environment.py">View
 source</a>
 
 ```python

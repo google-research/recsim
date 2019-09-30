@@ -8,7 +8,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/agents/cluster_bandit_agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/agents/cluster_bandit_agent.py">View
 source</a>
 
 Agent that picks topics based on the UCB1 algorithm given past responses.

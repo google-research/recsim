@@ -12,7 +12,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/environments/interest_exploration.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/environments/interest_exploration.py">View
 source</a>
 
 ## Class `IEUserState`
@@ -30,7 +30,7 @@ Inherits From: [`AbstractUserState`](../../../recsim/user/AbstractUserState.md)
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/environments/interest_exploration.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/environments/interest_exploration.py">View
 source</a>
 
 ```python
@@ -43,7 +43,7 @@ Initializes a new user.
 
 <h3 id="create_observation"><code>create_observation</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/environments/interest_exploration.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/environments/interest_exploration.py">View
 source</a>
 
 ```python
@@ -54,7 +54,7 @@ User's topic_affinity is not observable.
 
 <h3 id="observation_space"><code>observation_space</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/environments/interest_exploration.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/environments/interest_exploration.py">View
 source</a>
 
 ```python
@@ -66,7 +66,7 @@ Gym.spaces object that defines how user states are represented.
 
 <h3 id="score_document"><code>score_document</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/environments/interest_exploration.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/environments/interest_exploration.py">View
 source</a>
 
 ```python

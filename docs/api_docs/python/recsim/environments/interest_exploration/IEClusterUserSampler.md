@@ -13,7 +13,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/environments/interest_exploration.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/environments/interest_exploration.py">View
 source</a>
 
 ## Class `IEClusterUserSampler`
@@ -68,7 +68,7 @@ User states of the type user_ctor are sampled.
 
 <h3 id="avg_affinity_given_topic"><code>avg_affinity_given_topic</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/environments/interest_exploration.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/environments/interest_exploration.py">View
 source</a>
 
 ```python
@@ -77,7 +77,7 @@ avg_affinity_given_topic()
 
 <h3 id="get_user_ctor"><code>get_user_ctor</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/user.py">View
 source</a>
 
 ```python
@@ -88,7 +88,7 @@ Returns the constructor/class of the user states that will be sampled.
 
 <h3 id="reset_sampler"><code>reset_sampler</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/user.py">View
 source</a>
 
 ```python
@@ -97,7 +97,7 @@ reset_sampler()
 
 <h3 id="sample_user"><code>sample_user</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/environments/interest_exploration.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/environments/interest_exploration.py">View
 source</a>
 
 ```python

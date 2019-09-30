@@ -9,7 +9,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/environments/long_term_satisfaction.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/recsim/environments/long_term_satisfaction.py">View
 source</a>
 
 Long term satisfaction (Choc/Kale) environment.
