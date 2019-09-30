@@ -10,7 +10,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/simulator/runner_lib.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/runner_lib.py">View
 source</a>
 
 ## Class `TrainRunner`
@@ -52,7 +52,7 @@ Initializes the Runner object in charge of running a full experiment.
 
 <h3 id="run_experiment"><code>run_experiment</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/simulator/runner_lib.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/runner_lib.py">View
 source</a>
 
 ```python

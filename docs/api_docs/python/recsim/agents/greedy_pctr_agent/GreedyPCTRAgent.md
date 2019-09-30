@@ -15,7 +15,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/agents/greedy_pctr_agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/greedy_pctr_agent.py">View
 source</a>
 
 ## Class `GreedyPCTRAgent`
@@ -34,7 +34,7 @@ probability of being clicked under the given choice model.
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/agents/greedy_pctr_agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/greedy_pctr_agent.py">View
 source</a>
 
 ```python
@@ -61,7 +61,7 @@ Initializes a new greedy pCTR agent.
 
 <h3 id="begin_episode"><code>begin_episode</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agent.py">View
 source</a>
 
 ```python
@@ -81,7 +81,7 @@ Returns the agent's first action for this episode.
 
 <h3 id="bundle_and_checkpoint"><code>bundle_and_checkpoint</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agent.py">View
 source</a>
 
 ```python
@@ -108,7 +108,7 @@ object. If the checkpoint directory does not exist, returns empty dictionary.
 
 <h3 id="end_episode"><code>end_episode</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agent.py">View
 source</a>
 
 ```python
@@ -128,7 +128,7 @@ Signals the end of the episode to the agent.
 
 <h3 id="findBestDocuments"><code>findBestDocuments</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/agents/greedy_pctr_agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/greedy_pctr_agent.py">View
 source</a>
 
 ```python
@@ -148,7 +148,7 @@ Returns the indices of the highest scores in sorted order.
 
 <h3 id="step"><code>step</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/agents/greedy_pctr_agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/greedy_pctr_agent.py">View
 source</a>
 
 ```python
@@ -178,7 +178,7 @@ the reward.
 
 <h3 id="unbundle"><code>unbundle</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agent.py">View
 source</a>
 
 ```python

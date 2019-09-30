@@ -15,7 +15,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/agents/layers/abstract_click_bandit.py">View source</a>
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/layers/abstract_click_bandit.py">View source</a>
 
 
 
@@ -68,7 +68,7 @@ Initializes a new bandit agent for clustered arm exploration.
 
 <h3 id="begin_episode"><code>begin_episode</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/agent.py">View source</a>
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agent.py">View source</a>
 
 ``` python
 begin_episode(observation=None)
@@ -79,7 +79,7 @@ begin_episode(observation=None)
 
 <h3 id="bundle_and_checkpoint"><code>bundle_and_checkpoint</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/agent.py">View source</a>
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agent.py">View source</a>
 
 ``` python
 bundle_and_checkpoint(
@@ -109,7 +109,7 @@ A dictionary containing additional Python objects to be checkpointed by
 
 <h3 id="end_episode"><code>end_episode</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/agent.py">View source</a>
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agent.py">View source</a>
 
 ``` python
 end_episode(
@@ -123,7 +123,7 @@ end_episode(
 
 <h3 id="step"><code>step</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/agents/layers/abstract_click_bandit.py">View source</a>
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/layers/abstract_click_bandit.py">View source</a>
 
 ``` python
 step(
@@ -156,7 +156,7 @@ with the reward.
 
 <h3 id="unbundle"><code>unbundle</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/agent.py">View source</a>
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agent.py">View source</a>
 
 ``` python
 unbundle(

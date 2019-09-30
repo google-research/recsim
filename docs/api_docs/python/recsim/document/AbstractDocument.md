@@ -12,7 +12,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/document.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
 ## Class `AbstractDocument`
@@ -23,7 +23,7 @@ Abstract class to represent a document and its properties.
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/document.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
 ```python
@@ -36,7 +36,7 @@ Initialize self. See help(type(self)) for accurate signature.
 
 <h3 id="create_observation"><code>create_observation</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/document.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
 ```python
@@ -47,7 +47,7 @@ Returns observable properties of this document as a float array.
 
 <h3 id="doc_id"><code>doc_id</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/document.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
 ```python
@@ -58,7 +58,7 @@ Returns the document ID.
 
 <h3 id="observation_space"><code>observation_space</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/document.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
 ```python

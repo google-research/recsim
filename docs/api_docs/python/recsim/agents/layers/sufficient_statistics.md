@@ -8,7 +8,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/recsim/agents/layers/sufficient_statistics.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/layers/sufficient_statistics.py">View
 source</a>
 
 Helper classes to record user response history on recommendations.
