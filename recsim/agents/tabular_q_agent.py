@@ -131,7 +131,8 @@ class TabularQAgent(agent.AbstractEpisodicRecommenderAgent):
                 _q_value_table, self._exploration_temperature),
         'min_count':
             lambda observation: agent_utils.min_count_exploration(  # pylint: disable=g-long-lambda
-                observation, self._state_action_counts)
+                self._enumerate_state_action_indices(observation),
+                self._state_action_counts)
     }
 
   def _discretize_gym_leaf(self, gym_space, gym_observations):
@@ -209,7 +210,7 @@ class TabularQAgent(agent.AbstractEpisodicRecommenderAgent):
           self._previous_state_action_index] = self._state_action_counts.get(
               self._previous_state_action_index, 0) + 1
     # Pick next action.
-    if not self._kwargs.get('eval_mode', False):
+    if not self._eval_mode:
       slate, state_action_index = self._exploration_functions[
           self._exploration_policy](
               observation)
@@ -227,7 +228,8 @@ class TabularQAgent(agent.AbstractEpisodicRecommenderAgent):
                 _q_value_table, self._exploration_temperature),
         'min_count':
             lambda observation: agent_utils.min_count_exploration(  # pylint: disable=g-long-lambda
-                observation, self._state_action_counts)
+                self._enumerate_state_action_indices(observation),
+                self._state_action_counts)
     }
     self._previous_state_action_index = None
 

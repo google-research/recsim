@@ -12,7 +12,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/choice_model.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//choice_model.py">View
 source</a>
 
 ## Class `NormalizableChoiceModel`
@@ -34,7 +34,7 @@ Inherits From:
 
 <h3 id="choose_item"><code>choose_item</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/choice_model.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//choice_model.py">View
 source</a>
 
 ```python
@@ -50,7 +50,7 @@ Returns selected index of document in the slate.
 
 <h3 id="score_documents"><code>score_documents</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/choice_model.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//choice_model.py">View
 source</a>
 
 ```python

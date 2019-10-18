@@ -8,7 +8,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/agent_utils.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/agent_utils.py">View
 source</a>
 
 Minimum count exploration.

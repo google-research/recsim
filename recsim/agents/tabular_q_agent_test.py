@@ -29,6 +29,7 @@ class TabularQAgentTest(tf.test.TestCase):
                          num_candidates=10,
                          learning_rate=0.8,
                          gamma=0.0,
+                         policy='epsilon_greedy',
                          starting_probs=(1.0, 0.0, 0.0, 0.0, 0.0, 0.0)):
     env_config = {
         'num_candidates': num_candidates,
@@ -42,6 +43,7 @@ class TabularQAgentTest(tf.test.TestCase):
         te_sim.observation_space,
         te_sim.action_space,
         gamma=gamma,
+        exploration_policy=policy,
         learning_rate=learning_rate)
     return te_sim, agent
 
@@ -155,7 +157,8 @@ class TabularQAgentTest(tf.test.TestCase):
     self.assertCountEqual(slates, enumerated_slates)
 
   def test_bundle_and_unbundle(self):
-    te_sim, agent = self.init_agent_and_env(slate_size=1, num_candidates=4)
+    te_sim, agent = self.init_agent_and_env(
+        slate_size=1, num_candidates=4, policy='min_count')
     # Make a few steps to populate counts and Q-table.
     observation0 = te_sim.reset()
     slate1 = agent.step(0, observation0)

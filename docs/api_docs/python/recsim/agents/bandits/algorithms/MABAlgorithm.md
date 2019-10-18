@@ -11,7 +11,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/bandits/algorithms.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/bandits/algorithms.py">View
 source</a>
 
 ## Class `MABAlgorithm`
@@ -35,7 +35,7 @@ in Hsu et al. https://arxiv.org/abs/1904.02664.
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/bandits/algorithms.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/bandits/algorithms.py">View
 source</a>
 
 ```python
@@ -59,7 +59,7 @@ Initializes MABAlgorithm.
 
 <h3 id="set_state"><code>set_state</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/bandits/algorithms.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/bandits/algorithms.py">View
 source</a>
 
 ```python
@@ -71,7 +71,7 @@ set_state(
 
 <h3 id="update"><code>update</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/bandits/algorithms.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/bandits/algorithms.py">View
 source</a>
 
 ```python

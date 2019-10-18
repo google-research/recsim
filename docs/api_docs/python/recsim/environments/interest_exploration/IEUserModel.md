@@ -19,7 +19,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//environments/interest_exploration.py">View
 source</a>
 
 ## Class `IEUserModel`
@@ -51,7 +51,7 @@ an integer used as the seed in random sampling.
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//environments/interest_exploration.py">View
 source</a>
 
 ```python
@@ -86,7 +86,7 @@ Returns the prior of user state.
 
 <h3 id="create_observation"><code>create_observation</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
 source</a>
 
 ```python
@@ -97,7 +97,7 @@ Emits obesrvation about user's state.
 
 <h3 id="get_response_model_ctor"><code>get_response_model_ctor</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
 source</a>
 
 ```python
@@ -108,7 +108,7 @@ Returns a constructor for the type of response this model will create.
 
 <h3 id="is_terminal"><code>is_terminal</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//environments/interest_exploration.py">View
 source</a>
 
 ```python
@@ -119,7 +119,7 @@ Returns a boolean indicating if the session is over.
 
 <h3 id="observation_space"><code>observation_space</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
 source</a>
 
 ```python
@@ -130,7 +130,7 @@ A Gym.spaces object that describes possible user observations.
 
 <h3 id="reset"><code>reset</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
 source</a>
 
 ```python
@@ -141,7 +141,7 @@ Resets the user.
 
 <h3 id="reset_sampler"><code>reset_sampler</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
 source</a>
 
 ```python
@@ -152,7 +152,7 @@ Resets the sampler.
 
 <h3 id="response_space"><code>response_space</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
 source</a>
 
 ```python
@@ -161,7 +161,7 @@ response_space()
 
 <h3 id="simulate_response"><code>simulate_response</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//environments/interest_exploration.py">View
 source</a>
 
 ```python
@@ -180,7 +180,7 @@ Simulates the user's response to a slate of documents with choice model.
 
 <h3 id="update_state"><code>update_state</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//environments/interest_exploration.py">View
 source</a>
 
 ```python

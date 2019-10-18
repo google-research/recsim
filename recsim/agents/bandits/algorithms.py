@@ -85,7 +85,8 @@ class UCB1(MABAlgorithm):
   def get_arm(self, t):
     return np.argmax(self.get_score(t))
 
-  def print(self):
+  @staticmethod
+  def print():
     return 'UCB1'
 
 
@@ -121,7 +122,8 @@ class KLUCB(MABAlgorithm):
   def get_arm(self, t):
     return np.argmax(self.get_score(t))
 
-  def print(self):
+  @staticmethod
+  def print():
     return 'KL-UCB'
 
 
@@ -148,5 +150,6 @@ class ThompsonSampling(MABAlgorithm):
   def get_arm(self, t):
     return np.argmax(self.get_score(t))
 
-  def print(self):
+  @staticmethod
+  def print():
     return 'ThompsonSampling'

@@ -13,7 +13,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/long_term_satisfaction.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//environments/long_term_satisfaction.py">View
 source</a>
 
 ## Class `LTSDocumentSampler`
@@ -32,7 +32,7 @@ this sampler.
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/long_term_satisfaction.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//environments/long_term_satisfaction.py">View
 source</a>
 
 ```python
@@ -54,7 +54,7 @@ Returns the number of document clusters. Returns 0 if not applicable.
 
 <h3 id="get_doc_ctor"><code>get_doc_ctor</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//document.py">View
 source</a>
 
 ```python
@@ -65,7 +65,7 @@ Returns the constructor/class of the documents that will be sampled.
 
 <h3 id="reset_sampler"><code>reset_sampler</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//document.py">View
 source</a>
 
 ```python
@@ -74,7 +74,7 @@ reset_sampler()
 
 <h3 id="sample_document"><code>sample_document</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/long_term_satisfaction.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//environments/long_term_satisfaction.py">View
 source</a>
 
 ```python

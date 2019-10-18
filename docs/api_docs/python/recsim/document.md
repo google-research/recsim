@@ -8,7 +8,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//document.py">View
 source</a>
 
 Classes to represent and interface with documents.

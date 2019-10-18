@@ -12,7 +12,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
 source</a>
 
 ## Class `AbstractUserSampler`
@@ -23,7 +23,7 @@ Abstract class to sample users.
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
 source</a>
 
 ```python
@@ -47,7 +47,7 @@ User states of the type user_ctor are sampled.
 
 <h3 id="get_user_ctor"><code>get_user_ctor</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
 source</a>
 
 ```python
@@ -58,7 +58,7 @@ Returns the constructor/class of the user states that will be sampled.
 
 <h3 id="reset_sampler"><code>reset_sampler</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
 source</a>
 
 ```python
@@ -67,7 +67,7 @@ reset_sampler()
 
 <h3 id="sample_user"><code>sample_user</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
 source</a>
 
 ```python

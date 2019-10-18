@@ -14,7 +14,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/dopamine/dqn_agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/dopamine/dqn_agent.py">View
 source</a>
 
 ## Class `DQNAgentRecSim`
@@ -25,7 +25,7 @@ RecSim-specific Dopamine DQN agent that converts the observation space.
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/dopamine/dqn_agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/dopamine/dqn_agent.py">View
 source</a>
 
 ```python

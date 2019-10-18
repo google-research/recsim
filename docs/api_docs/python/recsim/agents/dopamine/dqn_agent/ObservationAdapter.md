@@ -11,7 +11,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/dopamine/dqn_agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/dopamine/dqn_agent.py">View
 source</a>
 
 ## Class `ObservationAdapter`
@@ -41,7 +41,7 @@ The output observation space of the adapter.
 
 <h3 id="encode"><code>encode</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/dopamine/dqn_agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/dopamine/dqn_agent.py">View
 source</a>
 
 ```python

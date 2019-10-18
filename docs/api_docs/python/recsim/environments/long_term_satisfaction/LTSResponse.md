@@ -12,7 +12,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/long_term_satisfaction.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//environments/long_term_satisfaction.py">View
 source</a>
 
 ## Class `LTSResponse`
@@ -31,7 +31,7 @@ Inherits From: [`AbstractResponse`](../../../recsim/user/AbstractResponse.md)
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/long_term_satisfaction.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//environments/long_term_satisfaction.py">View
 source</a>
 
 ```python
@@ -53,7 +53,7 @@ Creates a new user response for a document.
 
 <h3 id="create_observation"><code>create_observation</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/long_term_satisfaction.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//environments/long_term_satisfaction.py">View
 source</a>
 
 ```python
@@ -64,7 +64,7 @@ Creates a tensor observation of this response.
 
 <h3 id="response_space"><code>response_space</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/long_term_satisfaction.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//environments/long_term_satisfaction.py">View
 source</a>
 
 ```python
