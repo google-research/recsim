@@ -52,10 +52,10 @@ You could also find the simulated logs in /tmp/recsim/episode_logs.tfrecord
 ## Tutorials
 
 To get started, please check out our Colab tutorials. In [**RecSim:
-Overview**](recsim/recsim/colab/RecSim_Overview.ipynb), we give a brief overview about
+Overview**](recsim/colab/RecSim_Overview.ipynb), we give a brief overview about
 RecSim. We then talk about each configurable component:
-[**environment**](recsim/recsim/colab/RecSim_Developing_an_Environment.ipynb) and
-[**recommender agent**](recsim/recsim/colab/RecSim_Developing_an_Agent.ipynb).
+[**environment**](recsim/colab/RecSim_Developing_an_Environment.ipynb) and
+[**recommender agent**](recsim/colab/RecSim_Developing_an_Agent.ipynb).
 
 ## Documentation
 
