@@ -46,6 +46,10 @@ class CandidateSet(object):
     """Returns an integer, the number of documents in this candidate set."""
     return len(self._documents)
 
+  def get_all_documents(self):
+    """Returns all documents."""
+    return self.get_documents(self._documents.keys())
+
   def get_documents(self, document_ids):
     """Gets the documents associated with the specified document IDs.
 

@@ -13,7 +13,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//environments/interest_evolution.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
 ## Class `IEvUserState`
@@ -26,7 +26,7 @@ Inherits From: [`AbstractUserState`](../../../recsim/user/AbstractUserState.md)
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//environments/interest_evolution.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
 ```python
@@ -55,7 +55,7 @@ Initializes a new user.
 
 <h3 id="create_observation"><code>create_observation</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//environments/interest_evolution.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
 ```python
@@ -66,7 +66,7 @@ Return an observation of this user's observable state.
 
 <h3 id="observation_space"><code>observation_space</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//environments/interest_evolution.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
 ```python
@@ -78,7 +78,7 @@ Gym.spaces object that defines how user states are represented.
 
 <h3 id="score_document"><code>score_document</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//environments/interest_evolution.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
 ```python

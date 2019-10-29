@@ -10,7 +10,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/agent_utils.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/agent_utils.py">View
 source</a>
 
 ## Class `GymSpaceWalker`
@@ -35,7 +35,7 @@ are no requirements on its output.
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/agent_utils.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/agent_utils.py">View
 source</a>
 
 ```python
@@ -51,7 +51,7 @@ Initialize self. See help(type(self)) for accurate signature.
 
 <h3 id="apply_and_flatten"><code>apply_and_flatten</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/agent_utils.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/agent_utils.py">View
 source</a>
 
 ```python

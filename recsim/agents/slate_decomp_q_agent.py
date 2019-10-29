@@ -41,7 +41,7 @@ def compute_probs_tf(slate, scores_tf, score_no_click_tf):
       tf.gather(scores_tf, slate),
       tf.reshape(score_no_click_tf, (1, 1))
   ], axis=0)  # pyformat: disable
-  all_probs = all_scores / tf.reduce_sum(all_scores)
+  all_probs = all_scores / tf.reduce_sum(input_tensor=all_scores)
   return all_probs[:-1]
 
 
@@ -71,7 +71,7 @@ def score_documents_tf(user_obs,
       tensor that represents the score for the action of picking no document.
   """
   user_obs = tf.reshape(user_obs, [1, -1])
-  scores = tf.reduce_sum(tf.multiply(user_obs, doc_obs), axis=1)
+  scores = tf.reduce_sum(input_tensor=tf.multiply(user_obs, doc_obs), axis=1)
   all_scores = tf.concat([scores, tf.constant([no_click_mass])], axis=0)
   if is_mnl:
     all_scores = tf.nn.softmax(all_scores)
@@ -154,16 +154,17 @@ def select_slate_greedy(slate_size, s_no_click, s, q):
   """
 
   def argmax(v, mask):
-    return tf.argmax((v - tf.reduce_min(v) + 1) * mask, axis=0)
+    return tf.argmax(
+        input=(v - tf.reduce_min(input_tensor=v) + 1) * mask, axis=0)
 
   numerator = tf.constant(0.)
   denominator = tf.constant(0.) + s_no_click
-  mask = tf.ones(tf.shape(q)[0])
+  mask = tf.ones(tf.shape(input=q)[0])
 
   def set_element(v, i, x):
-    mask = tf.one_hot(i, tf.shape(v)[0])
+    mask = tf.one_hot(i, tf.shape(input=v)[0])
     v_new = tf.ones_like(v) * x
-    return tf.where(tf.equal(mask, 1), v_new, v)
+    return tf.compat.v1.where(tf.equal(mask, 1), v_new, v)
 
   for _ in range(slate_size):
     k = argmax((numerator + s * q) / (denominator + s), mask)
@@ -171,7 +172,7 @@ def select_slate_greedy(slate_size, s_no_click, s, q):
     numerator = numerator + tf.gather(s * q, k)
     denominator = denominator + tf.gather(s, k)
 
-  output_slate = tf.where(tf.equal(mask, 0))
+  output_slate = tf.compat.v1.where(tf.equal(mask, 0))
   return output_slate
 
 
@@ -201,18 +202,19 @@ def select_slate_optimal(slate_size, s_no_click, s, q):
   # Filter slates that include duplicates to ensure each document is picked
   # at most once.
   unique_mask = tf.map_fn(
-      lambda x: tf.equal(tf.size(x), tf.size(tf.unique(x)[0])),
+      lambda x: tf.equal(tf.size(input=x), tf.size(input=tf.unique(x)[0])),
       slates,
       dtype=tf.bool)
-  slates = tf.boolean_mask(slates, unique_mask)
+  slates = tf.boolean_mask(tensor=slates, mask=unique_mask)
 
   slate_q_values = tf.gather(s * q, slates)
   slate_scores = tf.gather(s, slates)
-  slate_normalizer = tf.reduce_sum(slate_scores, axis=1) + s_no_click
+  slate_normalizer = tf.reduce_sum(
+      input_tensor=slate_scores, axis=1) + s_no_click
 
   slate_q_values = slate_q_values / tf.expand_dims(slate_normalizer, 1)
-  slate_sum_q_values = tf.reduce_sum(slate_q_values, axis=1)
-  max_q_slate_index = tf.argmax(slate_sum_q_values)
+  slate_sum_q_values = tf.reduce_sum(input_tensor=slate_q_values, axis=1)
+  max_q_slate_index = tf.argmax(input=slate_sum_q_values)
   return tf.gather(slates, max_q_slate_index, axis=0)
 
 
@@ -246,7 +248,8 @@ def compute_target_sarsa(reward, gamma, next_actions, next_q_values,
     slate = tf.expand_dims(next_actions[i], 1)
     p_selected = compute_probs_tf(slate, s, s_no_click)
     q_selected = tf.gather(q, slate)
-    next_sarsa_q_list.append(tf.reduce_sum(p_selected * q_selected))
+    next_sarsa_q_list.append(
+        tf.reduce_sum(input_tensor=p_selected * q_selected))
 
   next_sarsa_q_values = tf.stack(next_sarsa_q_list)
 
@@ -290,7 +293,8 @@ def compute_target_greedy_q(reward, gamma, next_actions, next_q_values,
     slate = select_slate_greedy(slate_size, s_no_click, s, q)
     p_selected = compute_probs_tf(slate, s, s_no_click)
     q_selected = tf.gather(q, slate)
-    next_greedy_q_list.append(tf.reduce_sum(p_selected * q_selected))
+    next_greedy_q_list.append(
+        tf.reduce_sum(input_tensor=p_selected * q_selected))
 
   next_greedy_q_values = tf.stack(next_greedy_q_list)
 
@@ -348,16 +352,17 @@ def compute_target_topk_q(reward, gamma, next_actions, next_q_values,
 
   # Get the expected Q-value of the slate containing top-K items.
   # [batch_size, slate_size]
-  next_q_values_selected = tf.batch_gather(next_q_values,
-                                           tf.to_int32(topk_optimal_slate))
+  next_q_values_selected = tf.compat.v1.batch_gather(
+      next_q_values, tf.cast(topk_optimal_slate, dtype=tf.int32))
 
   # Get normalized affinity scores on the slate.
   # [batch_size, slate_size]
-  scores_selected = tf.batch_gather(scores, tf.to_int32(topk_optimal_slate))
+  scores_selected = tf.compat.v1.batch_gather(
+      scores, tf.cast(topk_optimal_slate, dtype=tf.int32))
 
   next_q_target_topk = tf.reduce_sum(
-      next_q_values_selected * scores_selected, axis=1) / (
-          tf.reduce_sum(scores_selected, axis=1) + score_no_click)
+      input_tensor=next_q_values_selected * scores_selected, axis=1) / (
+          tf.reduce_sum(input_tensor=scores_selected, axis=1) + score_no_click)
 
   return reward + gamma * next_q_target_topk * (
       1. - tf.cast(terminals, tf.float32))
@@ -394,11 +399,11 @@ def compute_target_optimal_q(reward, gamma, next_actions, next_q_values,
   # Filter slates that include duplicates to ensure each document is picked
   # at most once.
   unique_mask = tf.map_fn(
-      lambda x: tf.equal(tf.size(x), tf.size(tf.unique(x)[0])),
+      lambda x: tf.equal(tf.size(input=x), tf.size(input=tf.unique(x)[0])),
       slates,
       dtype=tf.bool)
   # [num_of_slates, slate_size]
-  slates = tf.boolean_mask(slates, unique_mask)
+  slates = tf.boolean_mask(tensor=slates, mask=unique_mask)
 
   # [batch_size, num_of_slates, slate_size]
   next_q_values_slate = tf.gather(next_q_values, slates, axis=1)
@@ -408,14 +413,15 @@ def compute_target_optimal_q(reward, gamma, next_actions, next_q_values,
   batch_size = next_states.get_shape().as_list()[0]
   score_no_click_slate = tf.reshape(
       tf.tile(score_no_click,
-              tf.shape(slates)[:1]), [batch_size, -1])
+              tf.shape(input=slates)[:1]), [batch_size, -1])
 
   # [batch_size, num_of_slates]
   next_q_target_slate = tf.reduce_sum(
-      next_q_values_slate * scores_slate, axis=2) / (
-          tf.reduce_sum(scores_slate, axis=2) + score_no_click_slate)
+      input_tensor=next_q_values_slate * scores_slate, axis=2) / (
+          tf.reduce_sum(input_tensor=scores_slate, axis=2) +
+          score_no_click_slate)
 
-  next_q_target_max = tf.reduce_max(next_q_target_slate, axis=1)
+  next_q_target_max = tf.reduce_max(input_tensor=next_q_target_slate, axis=1)
 
   return reward + gamma * next_q_target_max * (1. -
                                                tf.cast(terminals, tf.float32))
@@ -469,9 +475,9 @@ class SlateDecompQAgent(dqn_agent.DQNAgentRecSim,
     abstract_agent.AbstractEpisodicRecommenderAgent.__init__(self, action_space)
 
     # The doc score is a [num_candidates] vector.
-    self._doc_affinity_scores_ph = tf.placeholder(
+    self._doc_affinity_scores_ph = tf.compat.v1.placeholder(
         tf.float32, (self._num_candidates,), name='doc_affinity_scores_ph')
-    self._prob_no_click_ph = tf.placeholder(
+    self._prob_no_click_ph = tf.compat.v1.placeholder(
         tf.float32, (), name='prob_no_click_ph')
 
     self._select_slate_fn = select_slate_fn
@@ -490,7 +496,7 @@ class SlateDecompQAgent(dqn_agent.DQNAgentRecSim,
   def _network_adapter(self, states, scope):
     self._validate_states(states)
 
-    with tf.name_scope('network'):
+    with tf.compat.v1.name_scope('network'):
       # Since we decompose the slate optimization into an item-level
       # optimization problem, the observation space is the user state
       # observation plus all documents' observations. In the Dopamine DQN agent
@@ -507,7 +513,7 @@ class SlateDecompQAgent(dqn_agent.DQNAgentRecSim,
     return dqn_agent.DQNNetworkType(q_values)
 
   def _build_networks(self):
-    with tf.name_scope('networks'):
+    with tf.compat.v1.name_scope('networks'):
       self._replay_net_outputs = self._network_adapter(self._replay.states,
                                                        'Online')
       self._replay_next_target_net_outputs = self._network_adapter(
@@ -527,34 +533,36 @@ class SlateDecompQAgent(dqn_agent.DQNAgentRecSim,
     # slate_q_values: [B, S]
     # replay_click_q: [B]
     click_indicator = self._replay.rewards[:, :, self._click_response_index]
-    slate_q_values = tf.batch_gather(self._replay_net_outputs.q_values,
-                                     tf.to_int32(self._replay.actions))
+    slate_q_values = tf.compat.v1.batch_gather(
+        self._replay_net_outputs.q_values,
+        tf.cast(self._replay.actions, dtype=tf.int32))
     # Only get the Q from the clicked document.
     replay_click_q = tf.reduce_sum(
-        slate_q_values * click_indicator,
-        reduction_indices=1,
+        input_tensor=slate_q_values * click_indicator,
+        axis=1,
         name='replay_click_q')
 
     target = tf.stop_gradient(self._build_target_q_op())
 
-    clicked = tf.reduce_sum(click_indicator, axis=1)
-    clicked_indices = tf.squeeze(tf.where(tf.equal(clicked, 1)), axis=1)
+    clicked = tf.reduce_sum(input_tensor=click_indicator, axis=1)
+    clicked_indices = tf.squeeze(
+        tf.compat.v1.where(tf.equal(clicked, 1)), axis=1)
     # clicked_indices is a vector and tf.gather selects the batch dimension.
     q_clicked = tf.gather(replay_click_q, clicked_indices)
     target_clicked = tf.gather(target, clicked_indices)
 
     def get_train_op():
-      loss = tf.reduce_mean(tf.square(q_clicked - target_clicked))
+      loss = tf.reduce_mean(input_tensor=tf.square(q_clicked - target_clicked))
       if self.summary_writer is not None:
-        with tf.variable_scope('Losses'):
-          tf.summary.scalar('Loss', loss)
+        with tf.compat.v1.variable_scope('Losses'):
+          tf.compat.v1.summary.scalar('Loss', loss)
 
       return loss
 
     loss = tf.cond(
-        tf.greater(tf.reduce_sum(clicked), 0),
-        get_train_op,
-        lambda: tf.constant(0.),
+        pred=tf.greater(tf.reduce_sum(input_tensor=clicked), 0),
+        true_fn=get_train_op,
+        false_fn=lambda: tf.constant(0.),
         name='')
 
     return self.optimizer.minimize(loss)
@@ -568,7 +576,7 @@ class SlateDecompQAgent(dqn_agent.DQNAgentRecSim,
     item_reward = self._replay.rewards[:, :, self._reward_response_index]
     click_indicator = self._replay.rewards[:, :, self._click_response_index]
     # Only compute the watch time reward of the clicked item.
-    reward = tf.reduce_sum(item_reward * click_indicator, axis=1)
+    reward = tf.reduce_sum(input_tensor=item_reward * click_indicator, axis=1)
 
     return self._compute_target_fn(
         reward=reward,
@@ -605,24 +613,25 @@ class SlateDecompQAgent(dqn_agent.DQNAgentRecSim,
     p_no_click = self._prob_no_click_ph
     p = self._doc_affinity_scores_ph
     q = self._net_outputs.q_values[0]
-    with tf.name_scope('select_slate'):
+    with tf.compat.v1.name_scope('select_slate'):
       self._output_slate = self._select_slate_fn(self._slate_size, p_no_click,
                                                  p, q)
 
-    self._output_slate = tf.Print(
+    self._output_slate = tf.compat.v1.Print(
         self._output_slate, [tf.constant('cp 1'), self._output_slate, p, q],
         summarize=10000)
     self._output_slate = tf.reshape(self._output_slate, (self._slate_size,))
 
-    self._action_counts = tf.get_variable(
+    self._action_counts = tf.compat.v1.get_variable(
         'action_counts',
         shape=[self._num_candidates],
-        initializer=tf.zeros_initializer())
+        initializer=tf.compat.v1.zeros_initializer())
     output_slate = tf.reshape(self._output_slate, [-1])
     output_one_hot = tf.one_hot(output_slate, self._num_candidates)
     update_ops = []
     for i in range(self._slate_size):
-      update_ops.append(tf.assign_add(self._action_counts, output_one_hot[i]))
+      update_ops.append(
+          tf.compat.v1.assign_add(self._action_counts, output_one_hot[i]))
     self._select_action_update_op = tf.group(*update_ops)
 
   def _select_action(self):
@@ -651,7 +660,7 @@ class SlateDecompQAgent(dqn_agent.DQNAgentRecSim,
       observation = self._raw_observation
       user_obs = observation['user']
       doc_obs = np.array(list(observation['doc'].values()))
-      tf.logging.debug('cp 1: %s, %s', doc_obs, observation)
+      tf.compat.v1.logging.debug('cp 1: %s, %s', doc_obs, observation)
       # TODO(cwhsu): Use score_documents_tf() and remove score_documents().
       scores, score_no_click = score_documents(user_obs, doc_obs)
       output_slate, _ = self._sess.run(
@@ -688,8 +697,8 @@ class SlateDecompQAgent(dqn_agent.DQNAgentRecSim,
 
   def _add_summary(self, tag, value):
     if self.summary_writer:
-      summary = tf.Summary(
-          value=[tf.Summary.Value(tag=tag, simple_value=value)])
+      summary = tf.compat.v1.Summary(
+          value=[tf.compat.v1.Summary.Value(tag=tag, simple_value=value)])
       self.summary_writer.add_summary(summary, self.training_steps)
 
   def begin_episode(self, observation):

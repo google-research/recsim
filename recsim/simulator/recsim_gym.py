@@ -24,9 +24,10 @@ from gym import spaces
 import numpy as np
 
 
-def _dummy_metrics_aggregator(responses, metrics):
+def _dummy_metrics_aggregator(responses, metrics, info):
   del responses  # Unused.
   del metrics  # Unused.
+  del info  # Unused.
   return
 
 
@@ -131,7 +132,7 @@ class RecSimGymEnv(gym.Env):
 
     # extract rewards from responses
     reward = self._reward_aggregator(responses)
-    info = {}
+    info = self.extract_env_info()
     return obs, reward, done, info
 
   def reset(self):
@@ -150,6 +151,10 @@ class RecSimGymEnv(gym.Env):
   def seed(self, seed=None):
     np.random.seed(seed=seed)
 
+  def extract_env_info(self):
+    info = {'env': self._environment}
+    return info
+
   def reset_metrics(self):
     """Resets every metric to zero.
 
@@ -158,10 +163,10 @@ class RecSimGymEnv(gym.Env):
     """
     self._metrics = collections.defaultdict(float)
 
-  def update_metrics(self, responses):
+  def update_metrics(self, responses, info=None):
     """Updates metrics with one step responses."""
     self._metrics = self._metrics_aggregator(
-        responses, self._metrics)
+        responses, self._metrics, info)
 
   def write_metrics(self, add_summary_fn):
     """Writes metrics to TensorBoard by calling add_summary_fn."""

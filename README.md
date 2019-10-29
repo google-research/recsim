@@ -29,7 +29,7 @@ Here are some sample commands you could use for testing the installation:
 
 ```
 git clone https://github.com/google-research/recsim
-cd recsim
+cd recsim/recsim
 python main.py --logtostderr \
   --base_dir="/tmp/recsim/interest_exploration_full_slate_q" \
   --agent_name=full_slate_q \
@@ -38,7 +38,7 @@ python main.py --logtostderr \
   --gin_bindings=simulator.runner_lib.Runner.max_steps_per_episode=100 \
   --gin_bindings=simulator.runner_lib.TrainRunner.num_iterations=10 \
   --gin_bindings=simulator.runner_lib.TrainRunner.max_training_steps=100 \
-  --gin_bindings=simulator.runner_lib.EvalRunner.max_eval_episodes=5 \
+  --gin_bindings=simulator.runner_lib.EvalRunner.max_eval_episodes=5
 ```
 
 You could then start a tensorboard and view the output
@@ -52,10 +52,10 @@ You could also find the simulated logs in /tmp/recsim/episode_logs.tfrecord
 ## Tutorials
 
 To get started, please check out our Colab tutorials. In [**RecSim:
-Overview**](recsim/colab/RecSim_Overview.ipynb), we give a brief overview about
+Overview**](recsim/recsim/colab/RecSim_Overview.ipynb), we give a brief overview about
 RecSim. We then talk about each configurable component:
-[**environment**](recsim/colab/RecSim_Developing_an_Environment.ipynb) and
-[**recommender agent**](recsim/colab/RecSim_Developing_an_Agent.ipynb).
+[**environment**](recsim/recsim/colab/RecSim_Developing_an_Environment.ipynb) and
+[**recommender agent**](recsim/recsim/colab/RecSim_Developing_an_Agent.ipynb).
 
 ## Documentation
 

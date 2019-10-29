@@ -10,7 +10,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
 ## Class `AbstractUserState`
@@ -23,7 +23,7 @@ Abstract class to represent a user's state.
 
 <h3 id="create_observation"><code>create_observation</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
 ```python
@@ -38,7 +38,7 @@ Generates obs of underlying state to simulate partial observability.
 
 <h3 id="observation_space"><code>observation_space</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
 ```python

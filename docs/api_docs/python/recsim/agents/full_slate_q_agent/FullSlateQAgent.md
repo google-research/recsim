@@ -14,7 +14,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/full_slate_q_agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/full_slate_q_agent.py">View
 source</a>
 
 ## Class `FullSlateQAgent`
@@ -57,7 +57,7 @@ Initializes a FullSlateQAgent.
 
 <h3 id="begin_episode"><code>begin_episode</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/full_slate_q_agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/full_slate_q_agent.py">View
 source</a>
 
 ```python
@@ -104,7 +104,7 @@ experiment. If the checkpoint directory does not exist, returns None.
 
 <h3 id="end_episode"><code>end_episode</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/full_slate_q_agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/full_slate_q_agent.py">View
 source</a>
 
 ```python
@@ -126,7 +126,7 @@ of the episode.
 
 <h3 id="step"><code>step</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/full_slate_q_agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/full_slate_q_agent.py">View
 source</a>
 
 ```python

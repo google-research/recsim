@@ -18,7 +18,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
 ## Class `AbstractUserModel`
@@ -29,7 +29,7 @@ Abstract class to represent an encoding of a user's dynamics.
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
 ```python
@@ -55,7 +55,7 @@ Initializes a new user model.
 
 <h3 id="create_observation"><code>create_observation</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
 ```python
@@ -66,7 +66,7 @@ Emits obesrvation about user's state.
 
 <h3 id="get_response_model_ctor"><code>get_response_model_ctor</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
 ```python
@@ -77,7 +77,7 @@ Returns a constructor for the type of response this model will create.
 
 <h3 id="is_terminal"><code>is_terminal</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
 ```python
@@ -88,7 +88,7 @@ Returns a boolean indicating whether this session is over.
 
 <h3 id="observation_space"><code>observation_space</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
 ```python
@@ -99,7 +99,7 @@ A Gym.spaces object that describes possible user observations.
 
 <h3 id="reset"><code>reset</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
 ```python
@@ -110,7 +110,7 @@ Resets the user.
 
 <h3 id="reset_sampler"><code>reset_sampler</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
 ```python
@@ -121,7 +121,7 @@ Resets the sampler.
 
 <h3 id="response_space"><code>response_space</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
 ```python
@@ -130,7 +130,7 @@ response_space()
 
 <h3 id="simulate_response"><code>simulate_response</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
 ```python
@@ -152,7 +152,7 @@ for selection from scored documents.
 
 <h3 id="update_state"><code>update_state</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
 ```python

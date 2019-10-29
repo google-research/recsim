@@ -10,7 +10,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
 ## Class `AbstractResponse`
@@ -23,7 +23,7 @@ Abstract class to model a user response.
 
 <h3 id="create_observation"><code>create_observation</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
 ```python
@@ -34,7 +34,7 @@ Creates a tensor observation of this response.
 
 <h3 id="response_space"><code>response_space</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//user.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
 ```python

@@ -15,7 +15,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//document.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
 ## Class `CandidateSet`
@@ -29,7 +29,7 @@ indexed by their document ID.
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//document.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
 ```python
@@ -42,7 +42,7 @@ Initializes a document candidate set with 0 documents.
 
 <h3 id="add_document"><code>add_document</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//document.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
 ```python
@@ -53,7 +53,7 @@ Adds a document to the candidate set.
 
 <h3 id="create_observation"><code>create_observation</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//document.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
 ```python
@@ -64,7 +64,7 @@ Returns a dictionary of observable features of documents.
 
 <h3 id="get_documents"><code>get_documents</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//document.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
 ```python
@@ -85,7 +85,7 @@ ids.
 
 <h3 id="observation_space"><code>observation_space</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//document.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
 ```python
@@ -94,7 +94,7 @@ observation_space()
 
 <h3 id="remove_document"><code>remove_document</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//document.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
 ```python
@@ -105,7 +105,7 @@ Removes a document from the set (to simulate a changing corpus).
 
 <h3 id="size"><code>size</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//document.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
 ```python

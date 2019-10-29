@@ -27,7 +27,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//simulator/recsim_gym.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
 ## Class `RecSimGymEnv`
@@ -47,7 +47,7 @@ Class to wrap recommender system environment to gym.Env.
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//simulator/recsim_gym.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
 ```python
@@ -117,7 +117,7 @@ __exit__(*args)
 
 <h3 id="close"><code>close</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//simulator/recsim_gym.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
 ```python
@@ -131,7 +131,7 @@ when the program exits.
 
 <h3 id="render"><code>render</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//simulator/recsim_gym.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
 ```python
@@ -175,7 +175,7 @@ class MyEnv(Env): metadata = {'render.modes': ['human', 'rgb_array']}
 
 <h3 id="reset"><code>reset</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//simulator/recsim_gym.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
 ```python
@@ -190,7 +190,7 @@ observation (object): the initial observation.
 
 <h3 id="reset_metrics"><code>reset_metrics</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//simulator/recsim_gym.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
 ```python
@@ -204,7 +204,7 @@ reset() gets called for every episode.
 
 <h3 id="reset_sampler"><code>reset_sampler</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//simulator/recsim_gym.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
 ```python
@@ -213,7 +213,7 @@ reset_sampler()
 
 <h3 id="seed"><code>seed</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//simulator/recsim_gym.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
 ```python
@@ -237,7 +237,7 @@ provided 'seed', but this won't be true if seed=None, for example.
 
 <h3 id="step"><code>step</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//simulator/recsim_gym.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
 ```python
@@ -266,7 +266,7 @@ debugging/learning.
 
 <h3 id="update_metrics"><code>update_metrics</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//simulator/recsim_gym.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
 ```python
@@ -277,7 +277,7 @@ Updates metrics with one step responses.
 
 <h3 id="write_metrics"><code>write_metrics</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//simulator/recsim_gym.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
 ```python

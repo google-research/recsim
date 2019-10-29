@@ -8,7 +8,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//utils.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/utils.py">View
 source</a>
 
 Aggregates the video cluster metrics with one step responses.

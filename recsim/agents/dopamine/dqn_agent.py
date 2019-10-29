@@ -140,10 +140,10 @@ class ObservationAdapter(object):
 # The following functions creates the DQN network for RecSim.
 def recsim_dqn_network(user, doc, scope):
   inputs = tf.concat([user, doc], axis=1)
-  with tf.variable_scope(scope, reuse=tf.AUTO_REUSE):
-    hidden = tf.layers.dense(inputs, 256, activation=tf.nn.relu)
-    hidden = tf.layers.dense(hidden, 32, activation=tf.nn.relu)
-    q_value = tf.layers.dense(hidden, 1, name='output')
+  with tf.compat.v1.variable_scope(scope, reuse=tf.compat.v1.AUTO_REUSE):
+    hidden = tf.compat.v1.layers.dense(inputs, 256, activation=tf.nn.relu)
+    hidden = tf.compat.v1.layers.dense(hidden, 32, activation=tf.nn.relu)
+    q_value = tf.compat.v1.layers.dense(hidden, 1, name='output')
   return q_value
 
 
@@ -164,9 +164,10 @@ class DQNAgentRecSim(dqn_agent.DQNAgent):
     self._obs_adapter = ObservationAdapter(self._env_observation_space)
 
     if optimizer_name == 'adam':
-      optimizer = tf.train.AdamOptimizer()
+      optimizer = tf.compat.v1.train.AdamOptimizer()
     elif optimizer_name == 'sgd':
-      optimizer = tf.train.GradientDescentOptimizer(learning_rate=1e-3)
+      optimizer = tf.compat.v1.train.GradientDescentOptimizer(
+          learning_rate=1e-3)
     else:
       optimizer = tf.compat.v1.train.RMSPropOptimizer(
           learning_rate=0.00025,

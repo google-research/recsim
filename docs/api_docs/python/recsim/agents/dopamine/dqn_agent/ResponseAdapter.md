@@ -13,7 +13,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/dopamine/dqn_agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/dopamine/dqn_agent.py">View
 source</a>
 
 ## Class `ResponseAdapter`
@@ -24,7 +24,7 @@ Custom flattening of responses to accommodate dopamine replay buffer.
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/dopamine/dqn_agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/dopamine/dqn_agent.py">View
 source</a>
 
 ```python
@@ -52,7 +52,7 @@ Init function for ResponseAdapter.
 
 <h3 id="encode"><code>encode</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/dopamine/dqn_agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/dopamine/dqn_agent.py">View
 source</a>
 
 ```python

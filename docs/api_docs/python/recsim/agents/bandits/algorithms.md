@@ -8,7 +8,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/bandits/algorithms.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/bandits/algorithms.py">View
 source</a>
 
 Classes for Bandit Algorithms.

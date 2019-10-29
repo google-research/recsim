@@ -14,7 +14,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/bandits/algorithms.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/bandits/algorithms.py">View
 source</a>
 
 ## Class `KLUCB`
@@ -31,7 +31,7 @@ and Cappe.
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/bandits/algorithms.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/bandits/algorithms.py">View
 source</a>
 
 ```python
@@ -55,7 +55,7 @@ Initializes MABAlgorithm.
 
 <h3 id="get_arm"><code>get_arm</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/bandits/algorithms.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/bandits/algorithms.py">View
 source</a>
 
 ```python
@@ -64,7 +64,7 @@ get_arm(t)
 
 <h3 id="get_score"><code>get_score</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/bandits/algorithms.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/bandits/algorithms.py">View
 source</a>
 
 ```python
@@ -75,7 +75,7 @@ Computes upper confidence bounds of reward / pulls at round t.
 
 <h3 id="print"><code>print</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/bandits/algorithms.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/bandits/algorithms.py">View
 source</a>
 
 ```python
@@ -84,7 +84,7 @@ print()
 
 <h3 id="set_state"><code>set_state</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/bandits/algorithms.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/bandits/algorithms.py">View
 source</a>
 
 ```python
@@ -96,7 +96,7 @@ set_state(
 
 <h3 id="update"><code>update</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/bandits/algorithms.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/bandits/algorithms.py">View
 source</a>
 
 ```python

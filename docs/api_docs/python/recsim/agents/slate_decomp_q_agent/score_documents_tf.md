@@ -8,7 +8,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/slate_decomp_q_agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/slate_decomp_q_agent.py">View
 source</a>
 
 Computes unnormalized scores given both user and document observations.

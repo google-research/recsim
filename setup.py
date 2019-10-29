@@ -28,8 +28,8 @@ here = path.abspath(path.dirname(__file__))
 
 install_requires = [
     'absl-py',
-    'atari-py',  # Used by Dopamine
-    'dopamine-rl',
+    'atari-py >= 0.3.0',  # Used by Dopamine
+    'dopamine-rl >= 3.0.0',
     'gin-config',
     'gym',
     'numpy',
@@ -44,7 +44,7 @@ with open('README.md', 'r') as fh:
 
 setup(
     name='recsim',
-    version='0.1.6',
+    version='0.1.7',
     author='The RecSim Team',
     author_email='no-reply@google.com',
     description=recsim_description,

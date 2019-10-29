@@ -13,7 +13,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//choice_model.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/choice_model.py">View
 source</a>
 
 ## Class `MultinomialLogitChoiceModel`
@@ -35,7 +35,7 @@ Samples item x in scores according to p(x) = exp(x) / Sum_{y in scores} exp(y)
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//choice_model.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/choice_model.py">View
 source</a>
 
 ```python
@@ -54,7 +54,7 @@ Initialize self. See help(type(self)) for accurate signature.
 
 <h3 id="choose_item"><code>choose_item</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//choice_model.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/choice_model.py">View
 source</a>
 
 ```python
@@ -70,7 +70,7 @@ Returns selected index of document in the slate.
 
 <h3 id="score_documents"><code>score_documents</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//choice_model.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/choice_model.py">View
 source</a>
 
 ```python

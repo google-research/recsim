@@ -14,7 +14,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//environments/interest_evolution.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
 ## Class `IEvVideo`
@@ -35,7 +35,7 @@ Inherits From:
 
 <h2 id="__init__"><code>__init__</code></h2>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//environments/interest_evolution.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
 ```python
@@ -54,7 +54,7 @@ Generates a random set of features for this interest evolution Video.
 
 <h3 id="create_observation"><code>create_observation</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//environments/interest_evolution.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
 ```python
@@ -65,7 +65,7 @@ Returns observable properties of this document as a float array.
 
 <h3 id="doc_id"><code>doc_id</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//document.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
 ```python
@@ -76,7 +76,7 @@ Returns the document ID.
 
 <h3 id="observation_space"><code>observation_space</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//environments/interest_evolution.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
 ```python

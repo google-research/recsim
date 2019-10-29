@@ -8,7 +8,7 @@
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim//agents/layers/cluster_click_statistics.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/layers/cluster_click_statistics.py">View
 source</a>
 
 Helper class to collect cluster click and impression counts.
