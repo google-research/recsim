@@ -15,6 +15,8 @@
 
 # recsim.user.AbstractUserModel
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -23,6 +25,7 @@ source</a>
 
 ## Class `AbstractUserModel`
 
+<!-- Start diff -->
 Abstract class to represent an encoding of a user's dynamics.
 
 <!-- Placeholder for "Used in" -->

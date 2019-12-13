@@ -16,6 +16,8 @@
 
 # recsim.environments.interest_exploration.IEUserModel
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -24,6 +26,7 @@ source</a>
 
 ## Class `IEUserModel`
 
+<!-- Start diff -->
 Class to model a user.
 
 Inherits From: [`AbstractUserModel`](../../../recsim/user/AbstractUserModel.md)

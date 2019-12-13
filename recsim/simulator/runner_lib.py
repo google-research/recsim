@@ -27,6 +27,7 @@ from dopamine.discrete_domains import checkpointer
 import gin.tf
 from gym import spaces
 import numpy as np
+from recsim.simulator import environment
 import tensorflow as tf
 
 
@@ -135,6 +136,13 @@ class Runner(object):
         self._env,
         summary_writer=self._summary_writer,
         eval_mode=eval_mode)
+    # type check: env/agent must both be multi- or single-user
+    if self._agent.multi_user and not isinstance(
+        self._env.environment, environment.MultiUserEnvironment):
+      raise ValueError('Multi-user agent requires multi-user environment.')
+    if not self._agent.multi_user and isinstance(
+        self._env.environment, environment.MultiUserEnvironment):
+      raise ValueError('Single-user agent requires single-user environment.')
     self._summary_writer.add_graph(graph=tf.compat.v1.get_default_graph())
     self._sess.run(tf.compat.v1.global_variables_initializer())
     self._sess.run(tf.compat.v1.local_variables_initializer())
@@ -205,20 +213,42 @@ class Runner(object):
     if self._episode_writer is None:
       return
     fl = sequence_example.feature_lists.feature_list
-    _add_float_feature(
-        fl['user'],
-        spaces.flatten(self._env.observation_space.spaces['user'], user_obs))
+
+    if isinstance(self._env.environment, environment.MultiUserEnvironment):
+      for i, (single_user,
+              single_slate,
+              single_user_responses,
+              single_reward) in enumerate(zip(user_obs,
+                                              slate,
+                                              responses,
+                                              reward)):
+        user_space = list(self._env.observation_space.spaces['user'].spaces)[i]
+        _add_float_feature(fl['user_%d' % i], spaces.flatten(
+            user_space, single_user))
+        _add_int64_feature(fl['slate_%d' % i], single_slate)
+        _add_float_feature(fl['reward_%d' % i], [single_reward])
+        for j, response in enumerate(single_user_responses):
+          resp_space = self._env.observation_space.spaces['response'][i][0]
+          for k in response:
+            _add_float_feature(fl['response_%d_%d_%s' % (i, j, k)],
+                               spaces.flatten(resp_space, response))
+    else:  # single-user environment
+      _add_float_feature(
+          fl['user'],
+          spaces.flatten(self._env.observation_space.spaces['user'], user_obs))
+      _add_int64_feature(fl['slate'], slate)
+      for i, response in enumerate(responses):
+        resp_space = self._env.observation_space.spaces['response'][0]
+        for k in response:
+          _add_float_feature(fl['response_%d_%s' % (i, k)],
+                             spaces.flatten(resp_space, response))
+      _add_float_feature(fl['reward'], [reward])
+
     for i, doc in enumerate(list(doc_obs.values())):
       doc_space = list(
           self._env.observation_space.spaces['doc'].spaces.values())[i]
       _add_float_feature(fl['doc_%d' % i], spaces.flatten(doc_space, doc))
-    _add_int64_feature(fl['slate'], slate)
-    for i, response in enumerate(responses):
-      resp_space = self._env.observation_space.spaces['response'][0]
-      for k in response:
-        _add_float_feature(fl['response_%d_%s' % (i, k)],
-                           spaces.flatten(resp_space, response))
-    _add_float_feature(fl['reward'], [reward])
+
     _add_int64_feature(fl['is_terminal'], [is_terminal])
 
   def _run_one_episode(self):

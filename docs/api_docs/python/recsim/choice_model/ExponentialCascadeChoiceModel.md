@@ -10,6 +10,8 @@
 
 # recsim.choice_model.ExponentialCascadeChoiceModel
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -18,6 +20,7 @@ source</a>
 
 ## Class `ExponentialCascadeChoiceModel`
 
+<!-- Start diff -->
 An exponential cascade choice model.
 
 Inherits From:

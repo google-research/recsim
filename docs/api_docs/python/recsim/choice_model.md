@@ -13,8 +13,6 @@ source</a>
 
 Abstract classes that encode a user's state and dynamics.
 
-<!-- Placeholder for "Used in" -->
-
 ## Classes
 
 [`class AbstractChoiceModel`](../recsim/choice_model/AbstractChoiceModel.md):

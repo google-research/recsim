@@ -1,6 +1,7 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
 <meta itemprop="name" content="recsim.agents.cluster_bandit_agent.GreedyClusterAgent" />
 <meta itemprop="path" content="Stable" />
+<meta itemprop="property" content="multi_user"/>
 <meta itemprop="property" content="__init__"/>
 <meta itemprop="property" content="begin_episode"/>
 <meta itemprop="property" content="bundle_and_checkpoint"/>
@@ -11,6 +12,7 @@
 
 # recsim.agents.cluster_bandit_agent.GreedyClusterAgent
 
+<!-- Insert buttons -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
@@ -21,6 +23,7 @@
 
 ## Class `GreedyClusterAgent`
 
+<!-- Start diff -->
 Simple agent sorting all documents of a topic according to quality.
 
 Inherits From: [`AbstractEpisodicRecommenderAgent`](../../../recsim/agent/AbstractEpisodicRecommenderAgent.md)
@@ -51,7 +54,11 @@ Initializes AbstractEpisodicRecommenderAgent.
 * <b>`summary_writer`</b>: A Tensorflow summary writer to pass to the agent
   for in-agent training statistics in Tensorboard.
 
+## Properties
 
+<h3 id="multi_user"><code>multi_user</code></h3>
+
+Returns boolean indicating whether this agent serves multiple users.
 
 ## Methods
 

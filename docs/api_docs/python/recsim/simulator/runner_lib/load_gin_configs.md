@@ -5,12 +5,15 @@
 
 # recsim.simulator.runner_lib.load_gin_configs
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/runner_lib.py">View
 source</a>
 
+<!-- Start diff -->
 Loads gin configuration files.
 
 ```python

@@ -13,8 +13,6 @@ source</a>
 
 Classes to represent and interface with documents.
 
-<!-- Placeholder for "Used in" -->
-
 ## Classes
 
 [`class AbstractDocument`](../recsim/document/AbstractDocument.md): Abstract

@@ -13,8 +13,6 @@ source</a>
 
 A wrapper for using Gym environment.
 
-<!-- Placeholder for "Used in" -->
-
 ## Classes
 
 [`class RecSimGymEnv`](../../recsim/simulator/recsim_gym/RecSimGymEnv.md): Class

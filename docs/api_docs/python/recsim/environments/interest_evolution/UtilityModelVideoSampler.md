@@ -6,9 +6,12 @@
 <meta itemprop="property" content="get_doc_ctor"/>
 <meta itemprop="property" content="reset_sampler"/>
 <meta itemprop="property" content="sample_document"/>
+<meta itemprop="property" content="update_state"/>
 </div>
 
 # recsim.environments.interest_evolution.UtilityModelVideoSampler
+
+<!-- Insert buttons -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
@@ -18,6 +21,7 @@ source</a>
 
 ## Class `UtilityModelVideoSampler`
 
+<!-- Start diff -->
 Class that samples videos for utility model experiment.
 
 Inherits From:
@@ -89,3 +93,17 @@ sample_document()
 ```
 
 Samples and return an instantiation of AbstractDocument.
+
+<h3 id="update_state"><code>update_state</code></h3>
+
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
+source</a>
+
+```python
+update_state(
+    documents,
+    responses
+)
+```
+
+Update document state (if needed) given user's (or users') responses.

@@ -1,5 +1,5 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
-<meta itemprop="name" content="recsim.simulator.environment.Environment" />
+<meta itemprop="name" content="recsim.simulator.environment.AbstractEnvironment" />
 <meta itemprop="path" content="Stable" />
 <meta itemprop="property" content="candidate_set"/>
 <meta itemprop="property" content="num_candidates"/>
@@ -11,7 +11,7 @@
 <meta itemprop="property" content="step"/>
 </div>
 
-# recsim.simulator.environment.Environment
+# recsim.simulator.environment.AbstractEnvironment
 
 <!-- Insert buttons -->
 
@@ -21,24 +21,17 @@
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/environment.py">View
 source</a>
 
-## Class `Environment`
+## Class `AbstractEnvironment`
 
 <!-- Start diff -->
-Class to represent the environment with one user.
-
-Inherits From:
-[`AbstractEnvironment`](../../../recsim/simulator/environment/AbstractEnvironment.md)
-
-### Aliases:
-
-*   Class `recsim.simulator.environment.SingleUserEnvironment`
+Abstract class representing the recommender system environment.
 
 <!-- Placeholder for "Used in" -->
 
 #### Attributes:
 
-*   <b>`user_model`</b>: An instantiation of AbstractUserModel that represents a
-    user.
+*   <b>`user_model`</b>: An list or single instantiation of AbstractUserModel
+    representing the user/users.
 *   <b>`document_sampler`</b>: An instantiation of AbstractDocumentSampler.
 *   <b>`num_candidates`</b>: An integer representing the size of the
     candidate_set.
@@ -129,8 +122,9 @@ Executes the action, returns next state observation and reward.
 
 #### Args:
 
-*   <b>`slate`</b>: An integer array of size slate_size, where each element is
-    an index into the set of current_documents presented
+*   <b>`slate`</b>: An integer array of size slate_size (or list of such
+    arrays), where each element is an index into the set of current_documents
+    presented.
 
 #### Returns:
 

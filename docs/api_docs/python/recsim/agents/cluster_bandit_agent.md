@@ -13,8 +13,6 @@ source</a>
 
 Agent that picks topics based on the UCB1 algorithm given past responses.
 
-<!-- Placeholder for "Used in" -->
-
 ## Classes
 
 [`class ClusterBanditAgent`](../../recsim/agents/cluster_bandit_agent/ClusterBanditAgent.md):

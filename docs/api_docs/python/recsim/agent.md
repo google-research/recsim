@@ -13,8 +13,6 @@ source</a>
 
 Abstract interface for recommender system agents.
 
-<!-- Placeholder for "Used in" -->
-
 ## Classes
 
 [`class AbstractEpisodicRecommenderAgent`](../recsim/agent/AbstractEpisodicRecommenderAgent.md):
@@ -22,6 +20,9 @@ Abstract class for recommender systems that solves episodic tasks.
 
 [`class AbstractHierarchicalAgentLayer`](../recsim/agent/AbstractHierarchicalAgentLayer.md):
 Parent class for stackable agent layers.
+
+[`class AbstractMultiUserEpisodicRecommenderAgent`](../recsim/agent/AbstractMultiUserEpisodicRecommenderAgent.md):
+Abstract class to model a recommender agent handling multiple users.
 
 [`class AbstractRecommenderAgent`](../recsim/agent/AbstractRecommenderAgent.md):
 Abstract class to model a recommender system agent.

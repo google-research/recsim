@@ -13,7 +13,6 @@ source</a>
 
 Class to represent the environment in the recommender system setting.
 
-<!-- Placeholder for "Used in" -->
 
 Thus, it models things such as (1) the user's state, for example his/her
 interests and circumstances, (2) the documents available to suggest from and
@@ -31,5 +30,14 @@ the user a slate (action) based on user and document features (state)
 
 ## Classes
 
+[`class AbstractEnvironment`](../../recsim/simulator/environment/AbstractEnvironment.md):
+Abstract class representing the recommender system environment.
+
 [`class Environment`](../../recsim/simulator/environment/Environment.md): Class
-to represent the environment in the recommender system simulator.
+to represent the environment with one user.
+
+[`class MultiUserEnvironment`](../../recsim/simulator/environment/MultiUserEnvironment.md):
+Class to represent environment with multiple users.
+
+[`class SingleUserEnvironment`](../../recsim/simulator/environment/Environment.md):
+Class to represent the environment with one user.

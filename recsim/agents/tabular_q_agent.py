@@ -63,6 +63,7 @@ class TabularQAgent(agent.AbstractEpisodicRecommenderAgent):
                exploration_temperature=0.99,
                learning_rate=0.1,
                gamma=0.99,
+               ordinal_slates=False,
                **kwargs):
     """TabularQAgent init.
 
@@ -91,6 +92,9 @@ class TabularQAgent(agent.AbstractEpisodicRecommenderAgent):
                                      + learning_rate * (R(s,a) + ...).
       gamma: real value between 0 and 1 indicating the discount factor of the
         MDP.
+      ordinal_slates: boolean indicating whether slate ordering matters, e.g.
+        whether the slates (1, 2) and (2, 1) should be considered different
+        actions. Using ordinal slates increases complexity factorially.
       **kwargs: additional arguments like eval_mode.
     """
     self._kwargs = kwargs
@@ -99,6 +103,7 @@ class TabularQAgent(agent.AbstractEpisodicRecommenderAgent):
     self._gamma = gamma
     self._eval_mode = eval_mode
     self._previous_slate = None
+    self._ordinal_slates = ordinal_slates
     self._learning_rate = learning_rate
     # storage
     self._q_value_table = {}
@@ -155,7 +160,11 @@ class TabularQAgent(agent.AbstractEpisodicRecommenderAgent):
   def _enumerate_slates(self, doc_dict):
     documents = list(doc_dict.values())
     num_documents = len(documents)
-    for slate in itertools.combinations(range(num_documents), self._slate_size):
+    if self._ordinal_slates:
+      generator_fn = itertools.permutations
+    else:
+      generator_fn = itertools.combinations
+    for slate in generator_fn(range(num_documents), self._slate_size):
       yield slate, tuple([documents[i] for i in slate])
 
   def _enumerate_state_action_indices(self, observation):

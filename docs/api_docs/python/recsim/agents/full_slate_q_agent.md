@@ -13,8 +13,6 @@ source</a>
 
 Agent that implements the Slate-Q algorithms.
 
-<!-- Placeholder for "Used in" -->
-
 ## Classes
 
 [`class FullSlateQAgent`](../../recsim/agents/full_slate_q_agent/FullSlateQAgent.md):

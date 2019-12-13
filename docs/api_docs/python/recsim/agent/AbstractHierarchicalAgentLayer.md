@@ -1,6 +1,7 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
 <meta itemprop="name" content="recsim.agent.AbstractHierarchicalAgentLayer" />
 <meta itemprop="path" content="Stable" />
+<meta itemprop="property" content="multi_user"/>
 <meta itemprop="property" content="__init__"/>
 <meta itemprop="property" content="begin_episode"/>
 <meta itemprop="property" content="bundle_and_checkpoint"/>
@@ -11,6 +12,8 @@
 
 # recsim.agent.AbstractHierarchicalAgentLayer
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -19,6 +22,7 @@ source</a>
 
 ## Class `AbstractHierarchicalAgentLayer`
 
+<!-- Start diff -->
 Parent class for stackable agent layers.
 
 Inherits From:
@@ -44,6 +48,12 @@ Initializes AbstractRecommenderAgent.
 
 *   <b>`action_space`</b>: A gym.spaces object that specifies the format of
     actions.
+
+## Properties
+
+<h3 id="multi_user"><code>multi_user</code></h3>
+
+Returns boolean indicating whether this agent serves multiple users.
 
 ## Methods
 

@@ -14,8 +14,6 @@ source</a>
 
 Classes to represent the interest evolution documents and users.
 
-<!-- Placeholder for "Used in" -->
-
 ## Classes
 
 [`class IEvResponse`](../../recsim/environments/interest_evolution/IEvResponse.md):

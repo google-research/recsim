@@ -8,6 +8,8 @@
 
 # recsim.agents.dopamine.dqn_agent.ObservationAdapter
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -16,6 +18,7 @@ source</a>
 
 ## Class `ObservationAdapter`
 
+<!-- Start diff -->
 An adapter to convert between user/doc observation and images.
 
 <!-- Placeholder for "Used in" -->

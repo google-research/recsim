@@ -13,8 +13,6 @@ source</a>
 
 Temporally aggregated reinforcement learning agent.
 
-<!-- Placeholder for "Used in" -->
-
 ## Classes
 
 [`class TemporalAggregationLayer`](../../../recsim/agents/layers/temporal_aggregation/TemporalAggregationLayer.md):

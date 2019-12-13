@@ -7,6 +7,8 @@
 
 # recsim.agents.agent_utils.GymSpaceWalker
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -15,6 +17,7 @@ source</a>
 
 ## Class `GymSpaceWalker`
 
+<!-- Start diff -->
 Class for recursively applying a given function to a gym space.
 
 <!-- Placeholder for "Used in" -->

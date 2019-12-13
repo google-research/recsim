@@ -13,8 +13,6 @@ source</a>
 
 Module importing all environments.
 
-<!-- Placeholder for "Used in" -->
-
 ## Modules
 
 [`interest_evolution`](../recsim/environments/interest_evolution.md) module:

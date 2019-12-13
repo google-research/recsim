@@ -7,6 +7,8 @@
 
 # recsim.simulator.runner_lib.TrainRunner
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -15,6 +17,7 @@ source</a>
 
 ## Class `TrainRunner`
 
+<!-- Start diff -->
 Object that handles running the training.
 
 Inherits From: [`Runner`](../../../recsim/simulator/runner_lib/Runner.md)

@@ -5,12 +5,15 @@
 
 # recsim.environments.long_term_satisfaction.clicked_engagement_reward
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/long_term_satisfaction.py">View
 source</a>
 
+<!-- Start diff -->
 Calculates the total clicked watchtime from a list of responses.
 
 ```python

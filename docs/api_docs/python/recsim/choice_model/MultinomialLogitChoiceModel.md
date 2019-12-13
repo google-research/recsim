@@ -10,6 +10,8 @@
 
 # recsim.choice_model.MultinomialLogitChoiceModel
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -18,6 +20,7 @@ source</a>
 
 ## Class `MultinomialLogitChoiceModel`
 
+<!-- Start diff -->
 A multinomial logit choice model.
 
 Inherits From:

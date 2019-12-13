@@ -13,8 +13,6 @@ source</a>
 
 Agent that implements the Slate-Q algorithms.
 
-<!-- Placeholder for "Used in" -->
-
 ## Classes
 
 [`class SlateDecompQAgent`](../../recsim/agents/slate_decomp_q_agent/SlateDecompQAgent.md):

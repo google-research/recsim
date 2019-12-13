@@ -13,8 +13,6 @@ source</a>
 
 Convenience primitives relating to the implementation of agents.
 
-<!-- Placeholder for "Used in" -->
-
 ## Classes
 
 [`class GymSpaceWalker`](../../recsim/agents/agent_utils/GymSpaceWalker.md):

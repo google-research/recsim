@@ -14,7 +14,6 @@ source</a>
 
 Correlated interest exploration environment.
 
-<!-- Placeholder for "Used in" -->
 
 This environment models the problem of active exploration of user interests. It
 is meant to illustrate popularity bias in recommender systems, where myopic

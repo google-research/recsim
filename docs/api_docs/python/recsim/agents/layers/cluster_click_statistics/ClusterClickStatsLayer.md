@@ -1,6 +1,7 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
 <meta itemprop="name" content="recsim.agents.layers.cluster_click_statistics.ClusterClickStatsLayer" />
 <meta itemprop="path" content="Stable" />
+<meta itemprop="property" content="multi_user"/>
 <meta itemprop="property" content="observation_space"/>
 <meta itemprop="property" content="__init__"/>
 <meta itemprop="property" content="begin_episode"/>
@@ -12,6 +13,8 @@
 
 # recsim.agents.layers.cluster_click_statistics.ClusterClickStatsLayer
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -20,6 +23,7 @@ source</a>
 
 ## Class `ClusterClickStatsLayer`
 
+<!-- Start diff -->
 Track impressions and clicks on a per-cluster basis and pass down to agent.
 
 Inherits From:
@@ -59,6 +63,10 @@ Initializes a ClusterClickStatsLayer object.
     time.
 
 ## Properties
+
+<h3 id="multi_user"><code>multi_user</code></h3>
+
+Returns boolean indicating whether this agent serves multiple users.
 
 <h3 id="observation_space"><code>observation_space</code></h3>
 

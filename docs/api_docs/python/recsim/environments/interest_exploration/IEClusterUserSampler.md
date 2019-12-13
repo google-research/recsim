@@ -10,6 +10,8 @@
 
 # recsim.environments.interest_exploration.IEClusterUserSampler
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -18,6 +20,7 @@ source</a>
 
 ## Class `IEClusterUserSampler`
 
+<!-- Start diff -->
 Samples users from predetermined types with type-specific parameters.
 
 Inherits From:

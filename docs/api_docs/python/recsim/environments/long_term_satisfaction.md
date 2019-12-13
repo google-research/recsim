@@ -14,8 +14,6 @@ source</a>
 
 Long term satisfaction (Choc/Kale) environment.
 
-<!-- Placeholder for "Used in" -->
-
 This environment depicts a situation in which a user of an online service
 interacts with items of content, which are characterized by their level of
 clickbaitiness (on a scale of 0 to 1). In particular, clickbaity items (choc)

@@ -17,6 +17,10 @@ academic-industrial collaboration.
 
 This is not an officially supported Google product.
 
+## What's new
+*  **12/13/2019:** Added (abstract) classes for both multi-user environments and
+  agents. Added bandit algorithms for generalized linear models.
+
 ## Installation and Sample Usage
 
 It is recommended to install RecSim using (https://pypi.org/project/recsim/):
@@ -24,6 +28,18 @@ It is recommended to install RecSim using (https://pypi.org/project/recsim/):
 ```shell
 pip install recsim
 ```
+
+However, the latest version of Dopamine is not in PyPI as of December, 2019. We
+want to install the latest version from Dopamine's repository like the following
+before we install RecSim.
+
+```
+pip install git+https://github.com/google/dopamine.git
+```
+
+Windows users, if you cannot find the module `ale_c.dll`, please just remove
+`import atari_py` in `dopamine/discrete_domains/atari_lib.py` as we do not
+really use atari_py.
 
 Here are some sample commands you could use for testing the installation:
 

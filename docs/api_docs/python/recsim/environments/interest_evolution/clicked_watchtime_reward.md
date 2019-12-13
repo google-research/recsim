@@ -5,12 +5,15 @@
 
 # recsim.environments.interest_evolution.clicked_watchtime_reward
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
+<!-- Start diff -->
 Calculates the total clicked watchtime from a list of responses.
 
 ```python

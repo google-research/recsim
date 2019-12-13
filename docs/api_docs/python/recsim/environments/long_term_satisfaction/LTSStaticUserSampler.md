@@ -9,6 +9,8 @@
 
 # recsim.environments.long_term_satisfaction.LTSStaticUserSampler
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -17,6 +19,7 @@ source</a>
 
 ## Class `LTSStaticUserSampler`
 
+<!-- Start diff -->
 Generates user with identical predetermined parameters.
 
 Inherits From:

@@ -13,8 +13,6 @@ source</a>
 
 Module importing the core library.
 
-<!-- Placeholder for "Used in" -->
-
 ## Modules
 
 [`agent`](./recsim/agent.md) module: Abstract interface for recommender system

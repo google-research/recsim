@@ -13,8 +13,6 @@ source</a>
 
 Utility functions for RecSim environment.
 
-<!-- Placeholder for "Used in" -->
-
 ## Functions
 
 [`aggregate_video_cluster_metrics(...)`](../recsim/utils/aggregate_video_cluster_metrics.md):

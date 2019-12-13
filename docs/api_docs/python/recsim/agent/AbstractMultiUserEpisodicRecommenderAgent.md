@@ -1,5 +1,5 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
-<meta itemprop="name" content="recsim.agents.cluster_bandit_agent.ClusterBanditAgent" />
+<meta itemprop="name" content="recsim.agent.AbstractMultiUserEpisodicRecommenderAgent" />
 <meta itemprop="path" content="Stable" />
 <meta itemprop="property" content="multi_user"/>
 <meta itemprop="property" content="__init__"/>
@@ -10,54 +10,42 @@
 <meta itemprop="property" content="unbundle"/>
 </div>
 
-# recsim.agents.cluster_bandit_agent.ClusterBanditAgent
+# recsim.agent.AbstractMultiUserEpisodicRecommenderAgent
 
 <!-- Insert buttons -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/cluster_bandit_agent.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agent.py">View
 source</a>
 
-## Class `ClusterBanditAgent`
+## Class `AbstractMultiUserEpisodicRecommenderAgent`
 
 <!-- Start diff -->
-An agent that recommends items with the highest UCBs of topic affinities.
+
+Abstract class to model a recommender agent handling multiple users.
 
 Inherits From:
-[`AbstractClickBanditLayer`](../../../recsim/agents/layers/abstract_click_bandit/AbstractClickBanditLayer.md)
+[`AbstractEpisodicRecommenderAgent`](../../recsim/agent/AbstractEpisodicRecommenderAgent.md)
 
 <!-- Placeholder for "Used in" -->
 
-This agent assumes no knowledge of user's affinity for each topic but receives
-observations of user's past responses for each topic. When creating a slate, it
-utilizes a bandit algorithm to pick the best topics. Within the same best topic,
-we pick documents with the best document quality scores.
-
 <h2 id="__init__"><code>__init__</code></h2>
 
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agent.py">View
+source</a>
+
 ```python
-__init__(
-    *args,
-    **kwargs
-)
+__init__(action_space)
 ```
 
-Initializes a new bandit agent for clustered arm exploration.
+Initializes AbstractMultiUserEpisodicRecommenderAgent.
 
 #### Args:
 
-*   <b>`observation_space`</b>: Instance of a gym space corresponding to the
-    observation format.
 *   <b>`action_space`</b>: A gym.spaces object that specifies the format of
     actions.
-*   <b>`alg_ctor`</b>: A class of an MABAlgorithm for exploration, default to
-    UCB1.
-*   <b>`ci_scaling`</b>: A floating number specifying the scaling of confidence
-    bound.
-*   <b>`random_seed`</b>: An integer for random seed.
-*   <b>`**kwargs`</b>: currently unused arguments.
 
 ## Properties
 
@@ -76,6 +64,17 @@ source</a>
 begin_episode(observation=None)
 ```
 
+Returns the agent's first action for this episode.
+
+#### Args:
+
+*   <b>`observation`</b>: numpy array, the environment's initial observation.
+
+#### Returns:
+
+*   <b>`slate`</b>: An integer array of size _slate_size, where each element is
+    an index into the list of doc_obs
+
 <h3 id="bundle_and_checkpoint"><code>bundle_and_checkpoint</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agent.py">View
@@ -92,10 +91,10 @@ Returns a self-contained bundle of the agent's state.
 
 #### Args:
 
-*   <b>`checkpoint_dir`</b>: A string for the directory where objects will be
-    saved.
-*   <b>`iteration_number`</b>: An integer of iteration number to use for naming
-    the checkpoint file.
+*   <b>`checkpoint_dir`</b>: A string that represents the path to the checkpoint
+    and is used when we save TensorFlow objects by tf.Save.
+*   <b>`iteration_number`</b>: An integer that represents the checkpoint version
+    and is used when restoring replay buffer.
 
 #### Returns:
 
@@ -111,13 +110,21 @@ source</a>
 ```python
 end_episode(
     reward,
-    observation
+    observation=None
 )
 ```
 
+Signals the end of the episode to the agent.
+
+#### Args:
+
+*   <b>`reward`</b>: An float that is the last reward from the environment.
+*   <b>`observation`</b>: numpy array that represents the last observation of
+    the episode.
+
 <h3 id="step"><code>step</code></h3>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/layers/abstract_click_bandit.py">View
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agent.py">View
 source</a>
 
 ```python
@@ -134,12 +141,10 @@ the reward.
 
 #### Args:
 
-*   <b>`reward`</b>: Unused.
+*   <b>`reward`</b>: The reward received from the agent's most recent action as
+    a float.
 *   <b>`observation`</b>: A dictionary that includes the most recent
-    observations and should have the following fields:
-    -   user: A dictionary representing user's observed state. Assumes
-        observation['user']['sufficient_statics'] is a dictionary containing
-        base agent impression counts and base agent click counts.
+    observations.
 
 #### Returns:
 
@@ -164,7 +169,7 @@ Restores the agent from a checkpoint.
 #### Args:
 
 *   <b>`checkpoint_dir`</b>: A string that represents the path to the checkpoint
-    saved by tf.Save.
+    and is used when we save TensorFlow objects by tf.Save.
 *   <b>`iteration_number`</b>: An integer that represents the checkpoint version
     and is used when restoring replay buffer.
 *   <b>`bundle_dict`</b>: A dict containing additional Python objects owned by

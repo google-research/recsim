@@ -13,8 +13,6 @@ source</a>
 
 Classes for Bandit Algorithms.
 
-<!-- Placeholder for "Used in" -->
-
 ## Classes
 
 [`class KLUCB`](../../../recsim/agents/bandits/algorithms/KLUCB.md):

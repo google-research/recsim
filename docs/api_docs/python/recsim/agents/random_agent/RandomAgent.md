@@ -1,6 +1,7 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
 <meta itemprop="name" content="recsim.agents.random_agent.RandomAgent" />
 <meta itemprop="path" content="Stable" />
+<meta itemprop="property" content="multi_user"/>
 <meta itemprop="property" content="__init__"/>
 <meta itemprop="property" content="begin_episode"/>
 <meta itemprop="property" content="bundle_and_checkpoint"/>
@@ -11,6 +12,8 @@
 
 # recsim.agents.random_agent.RandomAgent
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -19,6 +22,7 @@ source</a>
 
 ## Class `RandomAgent`
 
+<!-- Start diff -->
 An agent that recommends a random slate of documents.
 
 Inherits From:
@@ -46,6 +50,12 @@ Initializes AbstractEpisodicRecommenderAgent.
     actions.
 *   <b>`summary_writer`</b>: A Tensorflow summary writer to pass to the agent
     for in-agent training statistics in Tensorboard.
+
+## Properties
+
+<h3 id="multi_user"><code>multi_user</code></h3>
+
+Returns boolean indicating whether this agent serves multiple users.
 
 ## Methods
 

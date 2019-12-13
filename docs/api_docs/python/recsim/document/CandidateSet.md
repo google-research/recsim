@@ -4,6 +4,7 @@
 <meta itemprop="property" content="__init__"/>
 <meta itemprop="property" content="add_document"/>
 <meta itemprop="property" content="create_observation"/>
+<meta itemprop="property" content="get_all_documents"/>
 <meta itemprop="property" content="get_documents"/>
 <meta itemprop="property" content="observation_space"/>
 <meta itemprop="property" content="remove_document"/>
@@ -11,6 +12,8 @@
 </div>
 
 # recsim.document.CandidateSet
+
+<!-- Insert buttons -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
@@ -20,6 +23,7 @@ source</a>
 
 ## Class `CandidateSet`
 
+<!-- Start diff -->
 Class to represent a collection of AbstractDocuments.
 
 <!-- Placeholder for "Used in" -->
@@ -61,6 +65,17 @@ create_observation()
 ```
 
 Returns a dictionary of observable features of documents.
+
+<h3 id="get_all_documents"><code>get_all_documents</code></h3>
+
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
+source</a>
+
+```python
+get_all_documents()
+```
+
+Returns all documents.
 
 <h3 id="get_documents"><code>get_documents</code></h3>
 

@@ -1,6 +1,7 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
 <meta itemprop="name" content="recsim.agents.full_slate_q_agent.FullSlateQAgent" />
 <meta itemprop="path" content="Stable" />
+<meta itemprop="property" content="multi_user"/>
 <meta itemprop="property" content="__init__"/>
 <meta itemprop="property" content="begin_episode"/>
 <meta itemprop="property" content="bundle_and_checkpoint"/>
@@ -11,6 +12,8 @@
 
 # recsim.agents.full_slate_q_agent.FullSlateQAgent
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -19,6 +22,7 @@ source</a>
 
 ## Class `FullSlateQAgent`
 
+<!-- Start diff -->
 A recommender agent implements full slate Q-learning based on DQN agent.
 
 Inherits From:
@@ -52,6 +56,12 @@ Initializes a FullSlateQAgent.
 *   <b>`eval_mode`</b>: A bool for whether the agent is in training or
     evaluation mode.
 *   <b>`**kwargs`</b>: Keyword arguments to the DQNAgent.
+
+## Properties
+
+<h3 id="multi_user"><code>multi_user</code></h3>
+
+Returns boolean indicating whether this agent serves multiple users.
 
 ## Methods
 

@@ -5,12 +5,15 @@
 
 # recsim.agents.slate_decomp_q_agent.select_slate_optimal
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/slate_decomp_q_agent.py">View
 source</a>
 
+<!-- Start diff -->
 Selects the slate using exhaustive search.
 
 ```python

@@ -1,6 +1,7 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
 <meta itemprop="name" content="recsim.agents.layers.temporal_aggregation.TemporalAggregationLayer" />
 <meta itemprop="path" content="Stable" />
+<meta itemprop="property" content="multi_user"/>
 <meta itemprop="property" content="__init__"/>
 <meta itemprop="property" content="begin_episode"/>
 <meta itemprop="property" content="bundle_and_checkpoint"/>
@@ -11,6 +12,8 @@
 
 # recsim.agents.layers.temporal_aggregation.TemporalAggregationLayer
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -19,6 +22,7 @@ source</a>
 
 ## Class `TemporalAggregationLayer`
 
+<!-- Start diff -->
 Temporally aggregated reinforcement learning agent.
 
 Inherits From:
@@ -81,6 +85,12 @@ TemporallyAggregatedAgent init.
     abstraction level (e.g. comparing only document topics). If not provided,
     this will default to direct observation equality.
 *   <b>`**kwargs`</b>: base_agent initialization args.
+
+## Properties
+
+<h3 id="multi_user"><code>multi_user</code></h3>
+
+Returns boolean indicating whether this agent serves multiple users.
 
 ## Methods
 

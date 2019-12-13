@@ -1,6 +1,7 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
 <meta itemprop="name" content="recsim.agents.tabular_q_agent.TabularQAgent" />
 <meta itemprop="path" content="Stable" />
+<meta itemprop="property" content="multi_user"/>
 <meta itemprop="property" content="__init__"/>
 <meta itemprop="property" content="begin_episode"/>
 <meta itemprop="property" content="bundle_and_checkpoint"/>
@@ -11,6 +12,8 @@
 
 # recsim.agents.tabular_q_agent.TabularQAgent
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -19,6 +22,7 @@ source</a>
 
 ## Class `TabularQAgent`
 
+<!-- Start diff -->
 Tabular Q-learning agent with universal function approximation.
 
 Inherits From:
@@ -93,6 +97,12 @@ TabularQAgent init.
 *   <b>`gamma`</b>: real value between 0 and 1 indicating the discount factor of
     the MDP.
 *   <b>`**kwargs`</b>: additional arguments like eval_mode.
+
+## Properties
+
+<h3 id="multi_user"><code>multi_user</code></h3>
+
+Returns boolean indicating whether this agent serves multiple users.
 
 ## Methods
 

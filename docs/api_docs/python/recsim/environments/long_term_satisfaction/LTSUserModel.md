@@ -16,6 +16,8 @@
 
 # recsim.environments.long_term_satisfaction.LTSUserModel
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -24,6 +26,7 @@ source</a>
 
 ## Class `LTSUserModel`
 
+<!-- Start diff -->
 Class to model a user with long-term satisfaction dynamics.
 
 Inherits From: [`AbstractUserModel`](../../../recsim/user/AbstractUserModel.md)

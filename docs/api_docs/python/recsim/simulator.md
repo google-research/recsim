@@ -13,8 +13,6 @@ source</a>
 
 Module of the simulator.
 
-<!-- Placeholder for "Used in" -->
-
 ## Modules
 
 [`environment`](../recsim/simulator/environment.md) module: Class to represent

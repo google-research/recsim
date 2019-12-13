@@ -9,6 +9,8 @@
 
 # recsim.choice_model.AbstractChoiceModel
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -17,6 +19,7 @@ source</a>
 
 ## Class `AbstractChoiceModel`
 
+<!-- Start diff -->
 Abstract class to represent the user choice model.
 
 <!-- Placeholder for "Used in" -->

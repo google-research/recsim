@@ -261,9 +261,11 @@ class IEResponse(user.AbstractResponse):
     return self.__str__()
 
   def create_observation(self):
-    return {'click': int(self.clicked),
-            'quality': self.quality,
-            'cluster_id': self.cluster_id}
+    return {
+        'click': int(self.clicked),
+        'quality': np.array(self.quality),
+        'cluster_id': self.cluster_id
+    }
 
   @classmethod
   def response_space(cls):
@@ -295,8 +297,7 @@ class IEDocument(document.AbstractDocument):
     super(IEDocument, self).__init__(doc_id)
 
   def create_observation(self):
-    return {'quality': self.quality,
-            'cluster_id': self.cluster_id}
+    return {'quality': np.array(self.quality), 'cluster_id': self.cluster_id}
 
   @classmethod
   def observation_space(cls):

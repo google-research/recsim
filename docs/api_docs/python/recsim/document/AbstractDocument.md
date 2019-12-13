@@ -9,6 +9,8 @@
 
 # recsim.document.AbstractDocument
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -17,6 +19,7 @@ source</a>
 
 ## Class `AbstractDocument`
 
+<!-- Start diff -->
 Abstract class to represent a document and its properties.
 
 <!-- Placeholder for "Used in" -->

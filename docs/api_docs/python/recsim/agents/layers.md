@@ -13,8 +13,6 @@ source</a>
 
 Module importing all layered agents.
 
-<!-- Placeholder for "Used in" -->
-
 ## Modules
 
 [`abstract_click_bandit`](../../recsim/agents/layers/abstract_click_bandit.md)

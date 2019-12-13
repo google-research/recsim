@@ -13,8 +13,6 @@ source</a>
 
 Helper classe to record fixed length history of observations.
 
-<!-- Placeholder for "Used in" -->
-
 ## Classes
 
 [`class FixedLengthHistoryLayer`](../../../recsim/agents/layers/fixed_length_history/FixedLengthHistoryLayer.md):

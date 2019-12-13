@@ -13,8 +13,6 @@ source</a>
 
 Recsim-specific Dopamine DQN agent and related utilities.
 
-<!-- Placeholder for "Used in" -->
-
 ## Classes
 
 [`class DQNAgentRecSim`](../../../recsim/agents/dopamine/dqn_agent/DQNAgentRecSim.md):

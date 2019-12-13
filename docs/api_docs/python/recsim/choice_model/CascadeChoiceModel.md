@@ -10,6 +10,8 @@
 
 # recsim.choice_model.CascadeChoiceModel
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -18,6 +20,7 @@ source</a>
 
 ## Class `CascadeChoiceModel`
 
+<!-- Start diff -->
 The base class for cascade choice models.
 
 Inherits From:

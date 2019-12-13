@@ -8,6 +8,8 @@
 
 # recsim.agents.bandits.algorithms.MABAlgorithm
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -16,6 +18,7 @@ source</a>
 
 ## Class `MABAlgorithm`
 
+<!-- Start diff -->
 Base class for Multi-armed bandit (MAB) algorithms.
 
 <!-- Placeholder for "Used in" -->

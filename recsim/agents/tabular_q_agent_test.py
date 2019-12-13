@@ -30,6 +30,7 @@ class TabularQAgentTest(tf.test.TestCase):
                          learning_rate=0.8,
                          gamma=0.0,
                          policy='epsilon_greedy',
+                         ordinal_slates=False,
                          starting_probs=(1.0, 0.0, 0.0, 0.0, 0.0, 0.0)):
     env_config = {
         'num_candidates': num_candidates,
@@ -44,7 +45,8 @@ class TabularQAgentTest(tf.test.TestCase):
         te_sim.action_space,
         gamma=gamma,
         exploration_policy=policy,
-        learning_rate=learning_rate)
+        learning_rate=learning_rate,
+        ordinal_slates=ordinal_slates)
     return te_sim, agent
 
   def test_step(self):
@@ -68,7 +70,7 @@ class TabularQAgentTest(tf.test.TestCase):
     te_sim, agent = self.init_agent_and_env()
     observation0 = te_sim.reset()
     slate = agent.step(0, observation0)
-    for _ in range(5000):
+    for _ in range(1000):
       observation, reward, _, _ = te_sim.step(slate)
       slate = agent.step(reward, observation)
     for state in range(6):
@@ -77,11 +79,10 @@ class TabularQAgentTest(tf.test.TestCase):
                                te.QVALUES0[state][action])
 
   def test_gamma05_value_estimation(self):
-    # TODO(mmladenov): tune further to improve speed of this test
     te_sim, agent = self.init_agent_and_env(gamma=0.5)
     observation = te_sim.reset()
     reward = 0
-    for i in range(100, 100100):
+    for i in range(100, 30100):
       slate = agent.step(reward, observation)
       observation, reward, _, _ = te_sim.step(slate)
       agent._learning_rate = 100.0 / float(i)
@@ -90,7 +91,7 @@ class TabularQAgentTest(tf.test.TestCase):
         self.assertAlmostEqual(
             agent._q_value_table[(action, state)],
             te.QVALUES05[state][action],
-            delta=0.2)
+            delta=0.25)
 
   def test_dicretize_gym_leaf(self):
     _, agent = self.init_agent_and_env()
@@ -150,11 +151,20 @@ class TabularQAgentTest(tf.test.TestCase):
   def test_slate_enumeration(self):
     te_sim, agent = self.init_agent_and_env(slate_size=2, num_candidates=4)
     observation0 = te_sim.reset()
-    slates = [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3)]
+    non_ordinal_slates = [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3)]
     enumerated_slates = [
         slate for slate, _ in agent._enumerate_slates(observation0['doc'])
     ]
-    self.assertCountEqual(slates, enumerated_slates)
+    self.assertCountEqual(non_ordinal_slates, enumerated_slates)
+    te_sim, agent = self.init_agent_and_env(slate_size=2, num_candidates=4,
+                                            ordinal_slates=True)
+    ordinal_slates = non_ordinal_slates + [
+        (1, 0), (2, 0), (3, 0), (2, 1), (3, 1), (3, 2)
+    ]
+    enumerated_slates = [
+        slate for slate, _ in agent._enumerate_slates(observation0['doc'])
+    ]
+    self.assertCountEqual(ordinal_slates, enumerated_slates)
 
   def test_bundle_and_unbundle(self):
     te_sim, agent = self.init_agent_and_env(

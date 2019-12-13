@@ -286,7 +286,7 @@ class SimpleSequentialResponse(user.AbstractResponse):
     return self.__str__()
 
   def create_observation(self):
-    return {'reward': self.reward}
+    return {'reward': np.array(self.reward)}
 
   @classmethod
   def response_space(cls):

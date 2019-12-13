@@ -13,8 +13,6 @@ source</a>
 
 A Tabular Q-learning implementation.
 
-<!-- Placeholder for "Used in" -->
-
 ## Classes
 
 [`class TabularQAgent`](../../recsim/agents/tabular_q_agent/TabularQAgent.md):

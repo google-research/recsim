@@ -15,6 +15,8 @@
 
 # recsim.environments.interest_evolution.IEvUserModel
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -23,6 +25,7 @@ source</a>
 
 ## Class `IEvUserModel`
 
+<!-- Start diff -->
 Class to model an interest evolution user.
 
 Inherits From: [`AbstractUserModel`](../../../recsim/user/AbstractUserModel.md)

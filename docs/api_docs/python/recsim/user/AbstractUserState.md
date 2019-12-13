@@ -7,6 +7,8 @@
 
 # recsim.user.AbstractUserState
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -15,6 +17,7 @@ source</a>
 
 ## Class `AbstractUserState`
 
+<!-- Start diff -->
 Abstract class to represent a user's state.
 
 <!-- Placeholder for "Used in" -->

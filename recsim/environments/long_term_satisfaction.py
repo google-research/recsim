@@ -281,7 +281,12 @@ class LTSResponse(user.AbstractResponse):
     return self.__str__()
 
   def create_observation(self):
-    return {'click': int(self.clicked), 'engagement': self.engagement}
+    return {
+        'click':
+            int(self.clicked),
+        'engagement':
+            np.clip(self.engagement, 0, LTSResponse.MAX_ENGAGEMENT_MAGNITUDE)
+    }
 
   @classmethod
   def response_space(cls):

@@ -7,6 +7,7 @@
 
 # recsim.agents.dopamine.dqn_agent.DQNNetworkType
 
+<!-- Insert buttons -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
@@ -17,9 +18,8 @@
 
 ## Class `DQNNetworkType`
 
+<!-- Start diff -->
 dqn_network(q_values,)
-
-
 
 <!-- Placeholder for "Used in" -->
 

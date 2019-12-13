@@ -13,8 +13,6 @@ source</a>
 
 Helper class to collect cluster click and impression counts.
 
-<!-- Placeholder for "Used in" -->
-
 ## Classes
 
 [`class ClusterClickStatsLayer`](../../../recsim/agents/layers/cluster_click_statistics/ClusterClickStatsLayer.md):

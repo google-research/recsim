@@ -10,6 +10,8 @@
 
 # recsim.choice_model.MultinomialProportionalChoiceModel
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -18,6 +20,7 @@ source</a>
 
 ## Class `MultinomialProportionalChoiceModel`
 
+<!-- Start diff -->
 A multinomial proportional choice function.
 
 Inherits From:

@@ -21,6 +21,7 @@ from __future__ import print_function
 
 import abc
 import numpy as np
+import six
 
 
 def softmax(vector):
@@ -30,12 +31,12 @@ def softmax(vector):
   return np.exp(normalized_vector) / np.sum(np.exp(normalized_vector))
 
 
-class AbstractChoiceModel(object):  # pytype: disable=ignored-metaclass
+@six.add_metaclass(abc.ABCMeta)
+class AbstractChoiceModel(object):
   """Abstract class to represent the user choice model.
 
   Each user has a choice model.
   """
-  __metaclass__ = abc.ABCMeta
   _scores = None
   _score_no_click = None
 

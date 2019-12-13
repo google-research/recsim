@@ -74,9 +74,9 @@ class IEvResponse(user.AbstractResponse):
   def create_observation(self):
     return {
         'click': int(self.clicked),
-        'watch_time': self.watch_time,
+        'watch_time': np.array(self.watch_time),
         'liked': int(self.liked),
-        'quality': self.quality,
+        'quality': np.array(self.quality),
         'cluster_id': int(self.cluster_id)
     }
 

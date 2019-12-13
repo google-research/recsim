@@ -10,6 +10,7 @@
 <meta itemprop="property" content="__exit__"/>
 <meta itemprop="property" content="__init__"/>
 <meta itemprop="property" content="close"/>
+<meta itemprop="property" content="extract_env_info"/>
 <meta itemprop="property" content="render"/>
 <meta itemprop="property" content="reset"/>
 <meta itemprop="property" content="reset_metrics"/>
@@ -24,6 +25,8 @@
 
 # recsim.simulator.recsim_gym.RecSimGymEnv
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -32,6 +35,7 @@ source</a>
 
 ## Class `RecSimGymEnv`
 
+<!-- Start diff -->
 Class to wrap recommender system environment to gym.Env.
 
 <!-- Placeholder for "Used in" -->
@@ -128,6 +132,15 @@ Override close in your subclass to perform any necessary cleanup.
 
 Environments will automatically close() themselves when garbage collected or
 when the program exits.
+
+<h3 id="extract_env_info"><code>extract_env_info</code></h3>
+
+<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
+source</a>
+
+```python
+extract_env_info()
+```
 
 <h3 id="render"><code>render</code></h3>
 
@@ -270,7 +283,10 @@ debugging/learning.
 source</a>
 
 ```python
-update_metrics(responses)
+update_metrics(
+    responses,
+    info=None
+)
 ```
 
 Updates metrics with one step responses.

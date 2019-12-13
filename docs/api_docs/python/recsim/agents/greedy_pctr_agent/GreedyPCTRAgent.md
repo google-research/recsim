@@ -1,6 +1,7 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
 <meta itemprop="name" content="recsim.agents.greedy_pctr_agent.GreedyPCTRAgent" />
 <meta itemprop="path" content="Stable" />
+<meta itemprop="property" content="multi_user"/>
 <meta itemprop="property" content="__init__"/>
 <meta itemprop="property" content="begin_episode"/>
 <meta itemprop="property" content="bundle_and_checkpoint"/>
@@ -12,6 +13,8 @@
 
 # recsim.agents.greedy_pctr_agent.GreedyPCTRAgent
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -20,6 +23,7 @@ source</a>
 
 ## Class `GreedyPCTRAgent`
 
+<!-- Start diff -->
 An agent that recommends slates with the highest pCTR items.
 
 Inherits From:
@@ -56,6 +60,12 @@ Initializes a new greedy pCTR agent.
 *   <b>`choice_model`</b>: An instantiation of AbstractChoiceModel assumed by
     the agent Default to a multinomial logit choice model with
     no_click_mass = 5.
+
+## Properties
+
+<h3 id="multi_user"><code>multi_user</code></h3>
+
+Returns boolean indicating whether this agent serves multiple users.
 
 ## Methods
 

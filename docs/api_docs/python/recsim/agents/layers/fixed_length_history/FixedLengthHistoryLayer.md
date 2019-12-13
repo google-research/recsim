@@ -1,6 +1,7 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
 <meta itemprop="name" content="recsim.agents.layers.fixed_length_history.FixedLengthHistoryLayer" />
 <meta itemprop="path" content="Stable" />
+<meta itemprop="property" content="multi_user"/>
 <meta itemprop="property" content="observation_space"/>
 <meta itemprop="property" content="__init__"/>
 <meta itemprop="property" content="begin_episode"/>
@@ -12,6 +13,8 @@
 
 # recsim.agents.layers.fixed_length_history.FixedLengthHistoryLayer
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -20,6 +23,7 @@ source</a>
 
 ## Class `FixedLengthHistoryLayer`
 
+<!-- Start diff -->
 Creates a buffer of the last k rewards and observations.
 
 Inherits From:
@@ -74,6 +78,10 @@ Initializes a FixedLengthHistoryLayer object.
     time.
 
 ## Properties
+
+<h3 id="multi_user"><code>multi_user</code></h3>
+
+Returns boolean indicating whether this agent serves multiple users.
 
 <h3 id="observation_space"><code>observation_space</code></h3>
 

@@ -11,6 +11,8 @@
 
 # recsim.agents.bandits.algorithms.ThompsonSampling
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -19,6 +21,7 @@ source</a>
 
 ## Class `ThompsonSampling`
 
+<!-- Start diff -->
 Thompson Sampling algorithm for the Bernoulli bandit.
 
 Inherits From:
@@ -78,6 +81,7 @@ Samples scores from the posterior distribution.
 source</a>
 
 ```python
+@staticmethod
 print()
 ```
 

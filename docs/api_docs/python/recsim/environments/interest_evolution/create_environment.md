@@ -5,11 +5,15 @@
 
 # recsim.environments.interest_evolution.create_environment
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
+
+<!-- Start diff -->
 
 Creates an interest evolution environment.
 

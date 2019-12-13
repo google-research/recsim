@@ -9,6 +9,8 @@
 
 # recsim.environments.interest_exploration.IEResponse
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -17,6 +19,7 @@ source</a>
 
 ## Class `IEResponse`
 
+<!-- Start diff -->
 Class to represent a user's response to a document.
 
 Inherits From: [`AbstractResponse`](../../../recsim/user/AbstractResponse.md)

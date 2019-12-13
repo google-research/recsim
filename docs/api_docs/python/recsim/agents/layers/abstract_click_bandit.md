@@ -15,7 +15,6 @@
 
 Agent that picks topics based on the UCB1 algorithm given past responses.
 
-<!-- Placeholder for "Used in" -->
 
 
 ## Classes

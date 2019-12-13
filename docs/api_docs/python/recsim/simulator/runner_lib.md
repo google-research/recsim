@@ -14,8 +14,6 @@ source</a>
 
 An executable class to run agents in the simulator.
 
-<!-- Placeholder for "Used in" -->
-
 ## Classes
 
 [`class EvalRunner`](../../recsim/simulator/runner_lib/EvalRunner.md): Object

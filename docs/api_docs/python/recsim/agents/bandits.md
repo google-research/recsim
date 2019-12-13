@@ -11,8 +11,6 @@
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/bandits/__init__.py">View
 source</a>
 
-<!-- Placeholder for "Used in" -->
-
 ## Modules
 
 [`algorithms`](../../recsim/agents/bandits/algorithms.md) module: Classes for

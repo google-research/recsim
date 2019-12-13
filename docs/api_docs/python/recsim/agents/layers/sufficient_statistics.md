@@ -13,8 +13,6 @@ source</a>
 
 Helper classes to record user response history on recommendations.
 
-<!-- Placeholder for "Used in" -->
-
 ## Classes
 
 [`class SufficientStatisticsLayer`](../../../recsim/agents/layers/sufficient_statistics/SufficientStatisticsLayer.md):

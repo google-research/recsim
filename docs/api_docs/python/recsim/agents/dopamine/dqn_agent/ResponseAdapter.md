@@ -10,6 +10,8 @@
 
 # recsim.agents.dopamine.dqn_agent.ResponseAdapter
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -18,6 +20,7 @@ source</a>
 
 ## Class `ResponseAdapter`
 
+<!-- Start diff -->
 Custom flattening of responses to accommodate dopamine replay buffer.
 
 <!-- Placeholder for "Used in" -->

@@ -9,6 +9,8 @@
 
 # recsim.environments.interest_evolution.IEvUserDistributionSampler
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -17,6 +19,7 @@ source</a>
 
 ## Class `IEvUserDistributionSampler`
 
+<!-- Start diff -->
 Class to sample users by a hardcoded distribution.
 
 Inherits From:

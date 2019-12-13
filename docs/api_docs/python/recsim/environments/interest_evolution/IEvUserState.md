@@ -10,6 +10,8 @@
 
 # recsim.environments.interest_evolution.IEvUserState
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -18,6 +20,7 @@ source</a>
 
 ## Class `IEvUserState`
 
+<!-- Start diff -->
 Class to represent interest evolution users.
 
 Inherits From: [`AbstractUserState`](../../../recsim/user/AbstractUserState.md)

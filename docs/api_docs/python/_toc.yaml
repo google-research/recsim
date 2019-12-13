@@ -11,6 +11,8 @@ toc:
     path: /recsim/api_docs/python/recsim/agent/AbstractEpisodicRecommenderAgent
   - title: AbstractHierarchicalAgentLayer
     path: /recsim/api_docs/python/recsim/agent/AbstractHierarchicalAgentLayer
+  - title: AbstractMultiUserEpisodicRecommenderAgent
+    path: /recsim/api_docs/python/recsim/agent/AbstractMultiUserEpisodicRecommenderAgent
   - title: AbstractRecommenderAgent
     path: /recsim/api_docs/python/recsim/agent/AbstractRecommenderAgent
 - title: recsim.agents
@@ -265,8 +267,12 @@ toc:
     section:
     - title: Overview
       path: /recsim/api_docs/python/recsim/simulator/environment
+    - title: AbstractEnvironment
+      path: /recsim/api_docs/python/recsim/simulator/environment/AbstractEnvironment
     - title: Environment
       path: /recsim/api_docs/python/recsim/simulator/environment/Environment
+    - title: MultiUserEnvironment
+      path: /recsim/api_docs/python/recsim/simulator/environment/MultiUserEnvironment
   - title: recsim_gym
     section:
     - title: Overview

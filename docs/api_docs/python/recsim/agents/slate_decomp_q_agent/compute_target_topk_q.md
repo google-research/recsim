@@ -5,12 +5,15 @@
 
 # recsim.agents.slate_decomp_q_agent.compute_target_topk_q
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/slate_decomp_q_agent.py">View
 source</a>
 
+<!-- Start diff -->
 Computes the optimal target Q value with the greedy algorithm.
 
 ```python

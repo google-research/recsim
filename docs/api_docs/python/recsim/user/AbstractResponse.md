@@ -7,6 +7,8 @@
 
 # recsim.user.AbstractResponse
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -15,6 +17,7 @@ source</a>
 
 ## Class `AbstractResponse`
 
+<!-- Start diff -->
 Abstract class to model a user response.
 
 <!-- Placeholder for "Used in" -->

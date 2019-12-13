@@ -6,6 +6,8 @@
 
 # recsim.simulator.runner_lib.Runner
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -14,6 +16,7 @@ source</a>
 
 ## Class `Runner`
 
+<!-- Start diff -->
 Object that handles running experiments.
 
 <!-- Placeholder for "Used in" -->

@@ -13,8 +13,6 @@ source</a>
 
 Agent that picks items with highest pCTR given the true user choice model.
 
-<!-- Placeholder for "Used in" -->
-
 ## Classes
 
 [`class GreedyPCTRAgent`](../../recsim/agents/greedy_pctr_agent/GreedyPCTRAgent.md):

@@ -10,6 +10,8 @@
 
 # recsim.environments.interest_exploration.IEDocument
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -18,6 +20,7 @@ source</a>
 
 ## Class `IEDocument`
 
+<!-- Start diff -->
 Class to represent an IE Document.
 
 Inherits From:

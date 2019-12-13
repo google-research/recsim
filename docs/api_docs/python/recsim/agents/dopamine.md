@@ -11,8 +11,6 @@
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/dopamine/__init__.py">View
 source</a>
 
-<!-- Placeholder for "Used in" -->
-
 ## Modules
 
 [`dqn_agent`](../../recsim/agents/dopamine/dqn_agent.md) module: Recsim-specific

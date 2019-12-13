@@ -7,6 +7,8 @@
 
 # recsim.simulator.runner_lib.EvalRunner
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -15,6 +17,7 @@ source</a>
 
 ## Class `EvalRunner`
 
+<!-- Start diff -->
 Object that handles running the evaluation.
 
 Inherits From: [`Runner`](../../../recsim/simulator/runner_lib/Runner.md)

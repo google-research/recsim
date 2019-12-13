@@ -6,6 +6,7 @@
 *   <a href="./recsim/agent.md"><code>recsim.agent</code></a>
 *   <a href="./recsim/agent/AbstractEpisodicRecommenderAgent.md"><code>recsim.agent.AbstractEpisodicRecommenderAgent</code></a>
 *   <a href="./recsim/agent/AbstractHierarchicalAgentLayer.md"><code>recsim.agent.AbstractHierarchicalAgentLayer</code></a>
+*   <a href="./recsim/agent/AbstractMultiUserEpisodicRecommenderAgent.md"><code>recsim.agent.AbstractMultiUserEpisodicRecommenderAgent</code></a>
 *   <a href="./recsim/agent/AbstractRecommenderAgent.md"><code>recsim.agent.AbstractRecommenderAgent</code></a>
 *   <a href="./recsim/agents.md"><code>recsim.agents</code></a>
 *   <a href="./recsim/agents/agent_utils.md"><code>recsim.agents.agent_utils</code></a>
@@ -107,7 +108,10 @@
 *   <a href="./recsim/environments/long_term_satisfaction/create_environment.md"><code>recsim.environments.long_term_satisfaction.create_environment</code></a>
 *   <a href="./recsim/simulator.md"><code>recsim.simulator</code></a>
 *   <a href="./recsim/simulator/environment.md"><code>recsim.simulator.environment</code></a>
+*   <a href="./recsim/simulator/environment/AbstractEnvironment.md"><code>recsim.simulator.environment.AbstractEnvironment</code></a>
 *   <a href="./recsim/simulator/environment/Environment.md"><code>recsim.simulator.environment.Environment</code></a>
+*   <a href="./recsim/simulator/environment/MultiUserEnvironment.md"><code>recsim.simulator.environment.MultiUserEnvironment</code></a>
+*   <a href="./recsim/simulator/environment/Environment.md"><code>recsim.simulator.environment.SingleUserEnvironment</code></a>
 *   <a href="./recsim/simulator/recsim_gym.md"><code>recsim.simulator.recsim_gym</code></a>
 *   <a href="./recsim/simulator/recsim_gym/RecSimGymEnv.md"><code>recsim.simulator.recsim_gym.RecSimGymEnv</code></a>
 *   <a href="./recsim/simulator/runner_lib.md"><code>recsim.simulator.runner_lib</code></a>

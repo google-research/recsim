@@ -1,6 +1,7 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
 <meta itemprop="name" content="recsim.agents.layers.abstract_click_bandit.AbstractClickBanditLayer" />
 <meta itemprop="path" content="Stable" />
+<meta itemprop="property" content="multi_user"/>
 <meta itemprop="property" content="__init__"/>
 <meta itemprop="property" content="begin_episode"/>
 <meta itemprop="property" content="bundle_and_checkpoint"/>
@@ -11,6 +12,7 @@
 
 # recsim.agents.layers.abstract_click_bandit.AbstractClickBanditLayer
 
+<!-- Insert buttons -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
@@ -21,6 +23,7 @@
 
 ## Class `AbstractClickBanditLayer`
 
+<!-- Start diff -->
 A hierarchical bandit layer which treats a set of base agents as arms.
 
 Inherits From: [`AbstractHierarchicalAgentLayer`](../../../../recsim/agent/AbstractHierarchicalAgentLayer.md)
@@ -62,7 +65,11 @@ Initializes a new bandit agent for clustered arm exploration.
 * <b>`random_seed`</b>: An integer for random seed.
 * <b>`**kwargs`</b>: arguments for base agents.
 
+## Properties
 
+<h3 id="multi_user"><code>multi_user</code></h3>
+
+Returns boolean indicating whether this agent serves multiple users.
 
 ## Methods
 

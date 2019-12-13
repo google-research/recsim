@@ -22,6 +22,7 @@ import collections
 import gym
 from gym import spaces
 import numpy as np
+from recsim.simulator import environment
 
 
 def _dummy_metrics_aggregator(responses, metrics, info):
@@ -84,8 +85,13 @@ class RecSimGymEnv(gym.Env):
     Each action is a vector that specified document slate. Each element in the
     vector corresponds to the index of the document in the candidate set.
     """
-    return spaces.MultiDiscrete(self._environment.num_candidates * np.ones(
-        (self._environment.slate_size,)))
+    action_space = spaces.MultiDiscrete(
+        self._environment.num_candidates * np.ones(
+            (self._environment.slate_size,)
+        ))
+    if isinstance(self._environment, environment.MultiUserEnvironment):
+      action_space = spaces.Tuple([action_space] * self._environment.num_users)
+    return action_space
 
   @property
   def observation_space(self):
@@ -95,10 +101,22 @@ class RecSimGymEnv(gym.Env):
     `response` that includes observation about user state, document and user
     response, respectively.
     """
+    if isinstance(self._environment, environment.MultiUserEnvironment):
+      user_obs_space = self._environment.user_model[0].observation_space()
+      resp_obs_space = self._environment.user_model[0].response_space()
+      user_obs_space = spaces.Tuple(
+          [user_obs_space] * self._environment.num_users)
+      resp_obs_space = spaces.Tuple(
+          [resp_obs_space] * self._environment.num_users)
+
+    if isinstance(self._environment, environment.SingleUserEnvironment):
+      user_obs_space = self._environment.user_model.observation_space()
+      resp_obs_space = self._environment.user_model.response_space()
+
     return spaces.Dict({
-        'user': self._environment.user_model.observation_space(),
+        'user': user_obs_space,
         'doc': self._environment.candidate_set.observation_space(),
-        'response': self._environment.user_model.response_space(),
+        'response': resp_obs_space,
     })
 
   def step(self, action):
@@ -124,11 +142,20 @@ class RecSimGymEnv(gym.Env):
           debugging/learning.
     """
     user_obs, doc_obs, responses, done = self._environment.step(action)
+    if isinstance(self._environment, environment.MultiUserEnvironment):
+      all_responses = tuple(
+          tuple(
+              response.create_observation() for response in single_user_resps
+              ) for single_user_resps in responses
+          )
+    else:  # single user environment
+      all_responses = tuple(
+          response.create_observation() for response in responses
+          )
     obs = dict(
         user=user_obs,
         doc=doc_obs,
-        response=tuple(
-            response.create_observation() for response in responses))
+        response=all_responses)
 
     # extract rewards from responses
     reward = self._reward_aggregator(responses)

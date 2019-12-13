@@ -9,6 +9,8 @@
 
 # recsim.environments.long_term_satisfaction.LTSDocument
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -17,6 +19,7 @@ source</a>
 
 ## Class `LTSDocument`
 
+<!-- Start diff -->
 Class to represent an LTS Document.
 
 Inherits From:

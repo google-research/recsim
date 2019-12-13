@@ -1,6 +1,7 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
 <meta itemprop="name" content="recsim.agent.AbstractRecommenderAgent" />
 <meta itemprop="path" content="Stable" />
+<meta itemprop="property" content="multi_user"/>
 <meta itemprop="property" content="__init__"/>
 <meta itemprop="property" content="bundle_and_checkpoint"/>
 <meta itemprop="property" content="step"/>
@@ -8,6 +9,8 @@
 </div>
 
 # recsim.agent.AbstractRecommenderAgent
+
+<!-- Insert buttons -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
@@ -17,6 +20,7 @@ source</a>
 
 ## Class `AbstractRecommenderAgent`
 
+<!-- Start diff -->
 Abstract class to model a recommender system agent.
 
 <!-- Placeholder for "Used in" -->
@@ -36,6 +40,12 @@ Initializes AbstractRecommenderAgent.
 
 *   <b>`action_space`</b>: A gym.spaces object that specifies the format of
     actions.
+
+## Properties
+
+<h3 id="multi_user"><code>multi_user</code></h3>
+
+Returns boolean indicating whether this agent serves multiple users.
 
 ## Methods
 

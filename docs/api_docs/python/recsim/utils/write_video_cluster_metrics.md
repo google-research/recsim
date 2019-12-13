@@ -5,11 +5,15 @@
 
 # recsim.utils.write_video_cluster_metrics
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/utils.py">View
 source</a>
+
+<!-- Start diff -->
 
 Writes average video cluster metrics using add_summary_fn.
 

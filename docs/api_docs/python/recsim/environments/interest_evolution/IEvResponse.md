@@ -10,6 +10,8 @@
 
 # recsim.environments.interest_evolution.IEvResponse
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -18,6 +20,7 @@ source</a>
 
 ## Class `IEvResponse`
 
+<!-- Start diff -->
 Class to represent a user's response to a video.
 
 Inherits From: [`AbstractResponse`](../../../recsim/user/AbstractResponse.md)

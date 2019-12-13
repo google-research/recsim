@@ -11,6 +11,8 @@
 
 # recsim.agents.bandits.algorithms.UCB1
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -19,6 +21,7 @@ source</a>
 
 ## Class `UCB1`
 
+<!-- Start diff -->
 UCB1 algorithm.
 
 Inherits From:
@@ -79,6 +82,7 @@ Computes upper confidence bounds of reward / pulls at round t.
 source</a>
 
 ```python
+@staticmethod
 print()
 ```
 

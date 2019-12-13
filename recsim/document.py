@@ -22,6 +22,7 @@ from __future__ import print_function
 import abc
 from gym import spaces
 import numpy as np
+import six
 
 # Some notes:
 #
@@ -85,10 +86,9 @@ class CandidateSet(object):
     })
 
 
-class AbstractDocumentSampler(object):  # pytype: disable=ignored-metaclass
+@six.add_metaclass(abc.ABCMeta)
+class AbstractDocumentSampler(object):
   """Abstract class to sample documents."""
-
-  __metaclass__ = abc.ABCMeta
 
   def __init__(self, doc_ctor, seed=0):
     self._doc_ctor = doc_ctor
@@ -111,11 +111,14 @@ class AbstractDocumentSampler(object):  # pytype: disable=ignored-metaclass
     """Returns the number of document clusters. Returns 0 if not applicable."""
     return 0
 
+  def update_state(self, documents, responses):
+    """Update document state (if needed) given user's (or users') responses."""
+    pass
 
-class AbstractDocument(object):  # pytype: disable=ignored-metaclass
+
+@six.add_metaclass(abc.ABCMeta)
+class AbstractDocument(object):
   """Abstract class to represent a document and its properties."""
-
-  __metaclass__ = abc.ABCMeta
 
   # Number of features to represent the document.
   NUM_FEATURES = None

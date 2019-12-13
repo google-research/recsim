@@ -21,12 +21,13 @@ from __future__ import print_function
 
 import abc
 from absl import logging
+import six
 
 
-class AbstractRecommenderAgent(object):  # pytype: disable=ignored-metaclass
+@six.add_metaclass(abc.ABCMeta)
+class AbstractRecommenderAgent(object):
   """Abstract class to model a recommender system agent."""
-
-  __metaclass__ = abc.ABCMeta
+  _multi_user = False
 
   def __init__(self, action_space):
     """Initializes AbstractRecommenderAgent.
@@ -35,6 +36,11 @@ class AbstractRecommenderAgent(object):  # pytype: disable=ignored-metaclass
       action_space: A gym.spaces object that specifies the format of actions.
     """
     self._slate_size = action_space.nvec.shape[0]
+
+  @property
+  def multi_user(self):
+    """Returns boolean indicating whether this agent serves multiple users."""
+    return self._multi_user
 
   @abc.abstractmethod
   def step(self, reward, observation):
@@ -176,6 +182,26 @@ class AbstractEpisodicRecommenderAgent(AbstractRecommenderAgent):
       return False
     self._episode_num = bundle_dict['episode_num']
     return True
+
+
+@six.add_metaclass(abc.ABCMeta)
+class AbstractMultiUserEpisodicRecommenderAgent(
+    AbstractEpisodicRecommenderAgent):
+  """Abstract class to model a recommender agent handling multiple users."""
+  _multi_user = True
+
+  def __init__(self, action_space):
+    """Initializes AbstractMultiUserEpisodicRecommenderAgent.
+
+    Args:
+      action_space: A gym.spaces object that specifies the format of actions.
+    """
+    self._num_users = len(action_space)
+    if not self._num_users > 0:
+      raise ValueError('Multi-user agent must have at least 1 user.')
+    super(AbstractMultiUserEpisodicRecommenderAgent, self).__init__(
+        action_space[0]
+    )
 
 
 class AbstractHierarchicalAgentLayer(AbstractRecommenderAgent):

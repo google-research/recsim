@@ -13,8 +13,6 @@ source</a>
 
 Abstract classes that encode a user's state and dynamics.
 
-<!-- Placeholder for "Used in" -->
-
 ## Classes
 
 [`class AbstractResponse`](../recsim/user/AbstractResponse.md): Abstract class

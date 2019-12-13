@@ -9,6 +9,8 @@
 
 # recsim.environments.interest_evolution.UtilityModelUserSampler
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -17,6 +19,7 @@ source</a>
 
 ## Class `UtilityModelUserSampler`
 
+<!-- Start diff -->
 Class that samples users for utility model experiment.
 
 Inherits From:

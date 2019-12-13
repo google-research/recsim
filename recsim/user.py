@@ -22,12 +22,12 @@ from __future__ import print_function
 import abc
 from gym import spaces
 import numpy as np
+import six
 
 
-class AbstractResponse(object):  # pytype: disable=ignored-metaclass
+@six.add_metaclass(abc.ABCMeta)
+class AbstractResponse(object):
   """Abstract class to model a user response."""
-
-  __metaclass__ = abc.ABCMeta
 
   @staticmethod
   @abc.abstractmethod
@@ -39,9 +39,9 @@ class AbstractResponse(object):  # pytype: disable=ignored-metaclass
     """Creates a tensor observation of this response."""
 
 
-class AbstractUserState(object):  # pytype: disable=ignored-metaclass
+@six.add_metaclass(abc.ABCMeta)
+class AbstractUserState(object):
   """Abstract class to represent a user's state."""
-  __metaclass__ = abc.ABCMeta
 
   # Number of features to represent the user's interests.
   NUM_FEATURES = None
@@ -60,10 +60,9 @@ class AbstractUserState(object):  # pytype: disable=ignored-metaclass
     """Gym.spaces object that defines how user states are represented."""
 
 
-class AbstractUserSampler(object):  # pytype: disable=ignored-metaclass
+@six.add_metaclass(abc.ABCMeta)
+class AbstractUserSampler(object):
   """Abstract class to sample users."""
-
-  __metaclass__ = abc.ABCMeta
 
   def __init__(self, user_ctor, seed=0):
     """Creates a new user state sampler.
@@ -91,10 +90,9 @@ class AbstractUserSampler(object):  # pytype: disable=ignored-metaclass
     return self._user_ctor
 
 
-class AbstractUserModel(object):  # pytype: disable=ignored-metaclass
+@six.add_metaclass(abc.ABCMeta)
+class AbstractUserModel(object):
   """Abstract class to represent an encoding of a user's dynamics."""
-
-  __metaclass__ = abc.ABCMeta
 
   def __init__(self, response_model_ctor, user_sampler, slate_size):
     """Initializes a new user model.

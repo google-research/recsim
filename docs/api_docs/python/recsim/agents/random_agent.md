@@ -13,8 +13,6 @@ source</a>
 
 A simple recommender system agent that recommends random slates.
 
-<!-- Placeholder for "Used in" -->
-
 ## Classes
 
 [`class RandomAgent`](../../recsim/agents/random_agent/RandomAgent.md): An agent

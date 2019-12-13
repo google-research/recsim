@@ -11,6 +11,8 @@
 
 # recsim.agents.dopamine.dqn_agent.DQNAgentRecSim
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -19,6 +21,7 @@ source</a>
 
 ## Class `DQNAgentRecSim`
 
+<!-- Start diff -->
 RecSim-specific Dopamine DQN agent that converts the observation space.
 
 <!-- Placeholder for "Used in" -->

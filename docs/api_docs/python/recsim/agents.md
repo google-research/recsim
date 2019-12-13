@@ -13,8 +13,6 @@ source</a>
 
 Module importing all agents.
 
-<!-- Placeholder for "Used in" -->
-
 ## Modules
 
 [`agent_utils`](../recsim/agents/agent_utils.md) module: Convenience primitives

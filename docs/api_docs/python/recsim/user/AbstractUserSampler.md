@@ -9,6 +9,8 @@
 
 # recsim.user.AbstractUserSampler
 
+<!-- Insert buttons -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
 </table>
 
@@ -17,6 +19,7 @@ source</a>
 
 ## Class `AbstractUserSampler`
 
+<!-- Start diff -->
 Abstract class to sample users.
 
 <!-- Placeholder for "Used in" -->
