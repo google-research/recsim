@@ -18,7 +18,7 @@
 import numpy as np
 from recsim.environments import interest_exploration as ie
 from recsim.simulator import environment
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 class EnvironmentTest(tf.test.TestCase):

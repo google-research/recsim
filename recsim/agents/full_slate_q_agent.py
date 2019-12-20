@@ -20,7 +20,7 @@ import gin.tf
 from gym import spaces
 from recsim import agent as abstract_agent
 from recsim.agents.dopamine import dqn_agent
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 @gin.configurable
@@ -74,7 +74,7 @@ class FullSlateQAgent(dqn_agent.DQNAgentRecSim,
   def _network_adapter(self, states, scope):
     self._validate_states(states)
 
-    with tf.compat.v1.name_scope('network'):
+    with tf.name_scope('network'):
       q_value_list = []
       for slate in self._all_possible_slates:
         user = tf.squeeze(states[:, 0, :, :], axis=2)
@@ -87,7 +87,7 @@ class FullSlateQAgent(dqn_agent.DQNAgentRecSim,
     return dqn_agent.DQNNetworkType(q_values)
 
   def _build_networks(self):
-    with tf.compat.v1.name_scope('networks'):
+    with tf.name_scope('networks'):
       self._replay_net_outputs = self._network_adapter(self._replay.states,
                                                        'Online')
       self._replay_next_target_net_outputs = self._network_adapter(

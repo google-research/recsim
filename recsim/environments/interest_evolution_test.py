@@ -21,7 +21,7 @@ from __future__ import print_function
 import numpy as np
 from recsim import choice_model
 from recsim.environments import interest_evolution
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 class FakeChoiceModel(choice_model.AbstractChoiceModel):

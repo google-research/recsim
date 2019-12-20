@@ -31,15 +31,12 @@ pip install recsim
 
 However, the latest version of Dopamine is not in PyPI as of December, 2019. We
 want to install the latest version from Dopamine's repository like the following
-before we install RecSim.
+before we install RecSim. Note that Dopamine requires Tensorflow 1.15.0 which is
+the final 1.x release including GPU support for Ubuntu and Windows.
 
 ```
 pip install git+https://github.com/google/dopamine.git
 ```
-
-Windows users, if you cannot find the module `ale_c.dll`, please just remove
-`import atari_py` in `dopamine/discrete_domains/atari_lib.py` as we do not
-really use atari_py.
 
 Here are some sample commands you could use for testing the installation:
 

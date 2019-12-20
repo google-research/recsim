@@ -19,7 +19,7 @@ from gym import spaces
 import numpy as np
 from recsim.agents import cluster_bandit_agent
 from recsim.environments import interest_exploration as ie
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 class ClusterBanditAgentTest(tf.test.TestCase):

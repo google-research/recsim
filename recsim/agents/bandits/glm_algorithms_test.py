@@ -18,7 +18,7 @@
 import numpy as np
 from recsim.agents.bandits import glm_algorithms
 from scipy import special
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 class UCB_GLMTest(tf.test.TestCase):  # pylint: disable=invalid-name

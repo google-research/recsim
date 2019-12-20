@@ -19,7 +19,7 @@ from gym import spaces
 import numpy as np
 from recsim.agents import tabular_q_agent
 from recsim.testing import test_environment as te
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 class TabularQAgentTest(tf.test.TestCase):
@@ -82,7 +82,7 @@ class TabularQAgentTest(tf.test.TestCase):
     te_sim, agent = self.init_agent_and_env(gamma=0.5)
     observation = te_sim.reset()
     reward = 0
-    for i in range(100, 30100):
+    for i in range(100, 50100):
       slate = agent.step(reward, observation)
       observation, reward, _, _ = te_sim.step(slate)
       agent._learning_rate = 100.0 / float(i)

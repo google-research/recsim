@@ -17,7 +17,7 @@
 
 import numpy as np
 from recsim.agents.bandits import algorithms
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 class UCB1Test(tf.test.TestCase):

@@ -18,7 +18,7 @@
 import collections
 import numpy as np
 from recsim import utils
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 class UtilsTest(tf.test.TestCase):

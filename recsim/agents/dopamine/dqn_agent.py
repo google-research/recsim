@@ -25,7 +25,7 @@ from dopamine.replay_memory import circular_replay_buffer
 import gin.tf
 from gym import spaces
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 DQNNetworkType = collections.namedtuple('dqn_network', ['q_values'])
 
@@ -140,10 +140,10 @@ class ObservationAdapter(object):
 # The following functions creates the DQN network for RecSim.
 def recsim_dqn_network(user, doc, scope):
   inputs = tf.concat([user, doc], axis=1)
-  with tf.compat.v1.variable_scope(scope, reuse=tf.compat.v1.AUTO_REUSE):
-    hidden = tf.compat.v1.layers.dense(inputs, 256, activation=tf.nn.relu)
-    hidden = tf.compat.v1.layers.dense(hidden, 32, activation=tf.nn.relu)
-    q_value = tf.compat.v1.layers.dense(hidden, 1, name='output')
+  with tf.variable_scope(scope, reuse=tf.AUTO_REUSE):
+    hidden = tf.keras.layers.Dense(256, activation=tf.nn.relu)(inputs)
+    hidden = tf.keras.layers.Dense(32, activation=tf.nn.relu)(hidden)
+    q_value = tf.keras.layers.Dense(1, name='output')(hidden)
   return q_value
 
 
@@ -164,12 +164,11 @@ class DQNAgentRecSim(dqn_agent.DQNAgent):
     self._obs_adapter = ObservationAdapter(self._env_observation_space)
 
     if optimizer_name == 'adam':
-      optimizer = tf.compat.v1.train.AdamOptimizer()
+      optimizer = tf.train.AdamOptimizer()
     elif optimizer_name == 'sgd':
-      optimizer = tf.compat.v1.train.GradientDescentOptimizer(
-          learning_rate=1e-3)
+      optimizer = tf.train.GradientDescentOptimizer(learning_rate=1e-3)
     else:
-      optimizer = tf.compat.v1.train.RMSPropOptimizer(
+      optimizer = tf.train.RMSPropOptimizer(
           learning_rate=0.00025,
           decay=0.95,
           momentum=0.0,

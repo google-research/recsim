@@ -21,7 +21,7 @@ import numpy as np
 from recsim.agents import greedy_pctr_agent
 from recsim.environments import interest_exploration as ie
 from recsim.simulator import environment
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 class GreedyPCTRAgentTest(tf.test.TestCase):
