@@ -30,7 +30,7 @@ from __future__ import print_function
 from absl import app
 from absl import flags
 import numpy as np
-from recsim.agents import full_slate_q_agent
+from recsim.agents.tabular_q_agent import TabularQAgent
 from recsim.environments import interest_evolution
 from recsim.simulator import runner_lib
 
@@ -57,7 +57,7 @@ def create_agent(sess, environment, eval_mode, summary_writer=None):
       'summary_writer': summary_writer,
       'eval_mode': eval_mode,
   }
-  return full_slate_q_agent.FullSlateQAgent(sess, **kwargs)
+  return TabularQAgent(**kwargs)
 
 
 def main(argv):

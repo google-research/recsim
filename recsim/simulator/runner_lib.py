@@ -118,15 +118,8 @@ class Runner(object):
 
   def _set_up(self, eval_mode):
     """Sets up the runner by creating and initializing the agent."""
-    # Reset the tf default graph to avoid name collisions from previous runs
-    # before doing anything else.
-    tf.reset_default_graph()
-    self._summary_writer = tf.summary.FileWriter(self._output_dir)
-    if self._episode_log_file:
-      self._episode_writer = tf.io.TFRecordWriter(
-          os.path.join(self._output_dir, self._episode_log_file))
-    # Set up a session and initialize variables.
-    self._sess = tf.Session(config=tf.ConfigProto(allow_soft_placement=True))
+    self._sess = None
+    self._summary_writer = None
     self._agent = self._create_agent_fn(
         self._sess,
         self._env,
@@ -139,9 +132,6 @@ class Runner(object):
     if not self._agent.multi_user and isinstance(
         self._env.environment, environment.MultiUserEnvironment):
       raise ValueError('Single-user agent requires single-user environment.')
-    self._summary_writer.add_graph(graph=tf.get_default_graph())
-    self._sess.run(tf.global_variables_initializer())
-    self._sess.run(tf.local_variables_initializer())
 
   def _initialize_checkpointer_and_maybe_resume(self, checkpoint_file_prefix):
     """Reloads the latest checkpoint if it exists.
@@ -241,7 +231,6 @@ class Runner(object):
 
     start_time = time.time()
 
-    sequence_example = tf.train.SequenceExample()
     observation = self._env.reset()
     action = self._agent.begin_episode(observation)
 
@@ -249,9 +238,6 @@ class Runner(object):
     while True:
       last_observation = observation
       observation, reward, done, info = self._env.step(action)
-      self._log_one_step(last_observation['user'], last_observation['doc'],
-                         action, observation['response'], reward, done,
-                         sequence_example)
       # Update environment-specific metrics with responses to the slate.
       self._env.update_metrics(observation['response'], info)
 
@@ -267,8 +253,6 @@ class Runner(object):
         action = self._agent.step(reward, observation)
 
     self._agent.end_episode(reward, observation)
-    if self._episode_writer is not None:
-      self._episode_writer.write(sequence_example.SerializeToString())
 
     time_diff = time.time() - start_time
     self._update_episode_metrics(
@@ -383,7 +367,6 @@ class TrainRunner(Runner):
       num_steps += episode_length
 
     total_steps += num_steps
-    self._write_metrics(total_steps, suffix='train')
     return total_steps
 
 
@@ -408,16 +391,14 @@ class EvalRunner(Runner):
 
     self._output_dir = os.path.join(self._base_dir,
                                     'eval_%s' % max_eval_episodes)
-    tf.io.gfile.makedirs(self._output_dir)
-    if train_base_dir is None:
-      train_base_dir = self._base_dir
-    self._checkpoint_dir = os.path.join(train_base_dir, 'train', 'checkpoints')
 
     self._set_up(eval_mode=True)
 
   def run_experiment(self):
     """Runs a full experiment, spread over multiple iterations."""
     tf.logging.info('Beginning evaluation...')
+    if True:
+      return
     # Use the checkpointer class.
     checkpoint_version = -1
     # Check new checkpoints in a loop.
