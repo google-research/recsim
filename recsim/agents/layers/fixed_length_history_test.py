@@ -20,7 +20,7 @@ from __future__ import division
 from __future__ import print_function
 
 from gym import spaces
-import mock
+from unittest import mock
 from recsim.agents import cluster_bandit_agent
 from recsim.agents.layers import fixed_length_history
 import tensorflow.compat.v1 as tf

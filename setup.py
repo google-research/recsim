@@ -28,12 +28,12 @@ here = path.abspath(path.dirname(__file__))
 
 install_requires = [
     'absl-py',
-    'dopamine-rl >= 2.0.5',
+    # 'dopamine-rl >= 2.0.5',
     'gin-config',
     'gym',
     'numpy',
     'scipy',
-    'tensorflow',
+    # 'tensorflow',
 ]
 
 recsim_description = (

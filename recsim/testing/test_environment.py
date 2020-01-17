@@ -106,7 +106,7 @@ from __future__ import division
 from __future__ import print_function
 
 from absl import flags
-import gin.tf
+import gin
 from gym import spaces
 import numpy as np
 

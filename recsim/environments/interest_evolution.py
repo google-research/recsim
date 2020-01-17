@@ -21,7 +21,7 @@ from __future__ import print_function
 
 from absl import flags
 from absl import logging
-import gin.tf
+import gin
 from gym import spaces
 import numpy as np
 from recsim import choice_model

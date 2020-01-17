@@ -23,8 +23,7 @@ import os
 import time
 
 from absl import flags
-from dopamine.discrete_domains import checkpointer
-import gin.tf
+import gin
 from gym import spaces
 import numpy as np
 from recsim.simulator import environment
@@ -83,7 +82,6 @@ class Runner(object):
   _output_dir = None
   _checkpoint_dir = None
   _agent = None
-  _checkpointer = None
 
   def __init__(self,
                base_dir,
@@ -164,28 +162,11 @@ class Runner(object):
         checkpoint.
       start_step: The step number to be continued after the latest checkpoint.
     """
-    self._checkpointer = checkpointer.Checkpointer(self._checkpoint_dir,
-                                                   checkpoint_file_prefix)
     start_iteration = 0
     start_step = 0
     # Check if checkpoint exists.
     # Note that the existence of checkpoint 0 means that we have finished
     # iteration 0 (so we will start from iteration 1).
-    latest_checkpoint_version = checkpointer.get_latest_checkpoint_number(
-        self._checkpoint_dir)
-    if latest_checkpoint_version >= 0:
-      assert not self._episode_writer, 'Can only log episodes from scratch.'
-      experiment_data = self._checkpointer.load_checkpoint(
-          latest_checkpoint_version)
-      start_iteration = experiment_data['current_iteration'] + 1
-      del experiment_data['current_iteration']
-      start_step = experiment_data['total_steps'] + 1
-      del experiment_data['total_steps']
-      if self._agent.unbundle(self._checkpoint_dir, latest_checkpoint_version,
-                              experiment_data):
-        tf.logging.info(
-            'Reloaded checkpoint and will start from '
-            'iteration %d', start_iteration)
     return start_iteration, start_step
 
   def _log_one_step(self, user_obs, doc_obs, slate, responses, reward,
@@ -348,7 +329,6 @@ class Runner(object):
     if experiment_data:
       experiment_data['current_iteration'] = iteration
       experiment_data['total_steps'] = total_steps
-      self._checkpointer.save_checkpoint(iteration, experiment_data)
 
 
 @gin.configurable
@@ -439,8 +419,6 @@ class EvalRunner(Runner):
     """Runs a full experiment, spread over multiple iterations."""
     tf.logging.info('Beginning evaluation...')
     # Use the checkpointer class.
-    self._checkpointer = checkpointer.Checkpointer(
-        self._checkpoint_dir, self._checkpoint_file_prefix)
     checkpoint_version = -1
     # Check new checkpoints in a loop.
     while True:

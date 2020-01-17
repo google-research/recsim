@@ -20,7 +20,7 @@ from __future__ import division
 from __future__ import print_function
 
 from gym import spaces
-import mock
+from unittest import mock
 import numpy as np
 from recsim.agents import cluster_bandit_agent
 from recsim.agents.layers import cluster_click_statistics
