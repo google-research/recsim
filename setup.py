@@ -43,7 +43,7 @@ with open('README.md', 'r') as fh:
   long_description = fh.read()
 
 setup(
-    name='recsim',
+    name='recsim-no-tf',
     version='0.2.3',
     author='The RecSim Team',
     author_email='no-reply@google.com',
