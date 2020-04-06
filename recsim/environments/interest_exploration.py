@@ -150,7 +150,7 @@ class IEUserModel(user.AbstractUserModel):
     """
     response.clicked = True
 
-class MulticlickIEUserModel(interest_exploration.IEUserModel):
+class MulticlickIEUserModel(IEUserModel):
   def __init__(
     self,
     slate_size,
