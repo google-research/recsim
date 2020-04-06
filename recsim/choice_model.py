@@ -23,6 +23,8 @@ import abc
 import numpy as np
 import six
 
+from typing import List, Optional
+
 
 def softmax(vector):
   """Computes the softmax of a vector."""
@@ -70,6 +72,42 @@ class AbstractChoiceModel(object):
       selected_index: a integer indicating which item was chosen, or None if
         none were selected.
     """
+
+@six.add_metaclass(abc.ABCMeta)
+class AbstractMultipleChoiceModel(object):
+  """Abstract class to represent the user choice model.
+  Each user has a choice model.
+  """
+  _scores = None
+  _score_no_click = None
+    
+  def score_documents(self, user_state, doc_obs):
+    self._scores = np.array([user_state.score_document(doc) for doc in doc_obs])
+
+    
+  @property
+  def scores(self):
+    return self._scores
+
+  @property
+  def score_no_click(self):
+    return self._score_no_click
+
+  @abc.abstractmethod
+  def choose_items(self):
+    """Returns selected indices of document in the slate.
+    Returns:
+      selected_index: a  list of integers indicating which items were chosen, or an empty
+        list if none were selected.
+    """
+    
+  @staticmethod
+  def validate_size(array, expected_size):
+    if len(array) != expected_size:
+        return ValueError(
+        'Expected {0} elements, found {1}'.format(
+            array, expected_size
+        ))
 
 
 class NormalizableChoiceModel(AbstractChoiceModel):
@@ -221,3 +259,164 @@ class ProportionalCascadeChoiceModel(CascadeChoiceModel):
     assert not scores[
         scores < 0.0], 'Normalized scores have non-positive elements.'
     self._positional_normalization(scores)
+ 
+
+class PositionBasedModel(AbstractMultipleChoiceModel):
+  """Position based model decomposes the click through rate on a given position
+  to a position-dependent effect that models the examination probability and
+  and item-dependent effect that models the click probability conditioned on
+  examination.
+  
+  The model was introduced in "Predicting clicks: Estimating the click-through
+  rate for new ads, Richardson et al WWW 2007" inspired by eye-tracking studies
+  in "Accurately interpreting clickthrough data as  implicit feedback, Joachims
+  et al, SIGIR 2005".
+  
+  In the model, the click probability is decomposed as
+  P(click | item, pos) = P(click | item, pos, seen) x P(seen | item, pos)
+                       = P(click | item, seen) x P(seen | pos)
+                       
+  The above expression is valid if we assume that the examination probability
+  ("trust bias") only depends on the position and independent of the visual 
+  quality of the item relative to others and the click probability ("quality
+  bias") of the item, once it is seen is independent of the position.
+  
+  :param slate_size: number of items in the slate
+  :param pos_discounts: position dependent examination probabilities
+  :param score_scaling: normalization to convert raw scores into probabilities
+  """
+  def __init__(
+    self,
+    slate_size: int,
+    pos_discounts: List[float],
+    score_scaling: Optional[float] = 1.0
+  ):
+    self._pos_discounts = pos_discounts
+    self._score_scaling = score_scaling
+    if slate_size < 1:
+        return ValueError('invalid slate size')
+    if self._score_scaling < 0.0:
+        raise ValueError('score_scaling must be positive.')
+    self.validate_size(pos_discounts, slate_size)
+  
+  def choose_items(self):
+    clicked_items = []
+    examine = 1
+    for i, score in enumerate(self._scores):
+      s = self._score_scaling * score
+      if score < 0: 
+        raise ValueError(f'Got {score}. Score cannot be negative.')
+      if s > 1.0:
+        raise ValueError(f'Score scaling of {self._score_scaling} ' + 
+                         f'does not turn score {score} into a probability.')
+      rollForClick = np.random.rand()
+      if rollForClick < s * self._pos_discounts[i]:
+        clicked_items.append(i)
+    return clicked_items    
+
+
+class DependentClickModel(AbstractMultipleChoiceModel):
+  """DependentClickModel is an extension of the Cascade Model that handles multiple
+  clicks. In the cascade model, the user examines each result in the order in which
+  they are presented, only to stop and click on the first result they are satisfied
+  by (if any). 
+  
+  The model is described in "Efficient Multiple-Click Models in Web Search, by Guo
+  et al, WSDM 2009".  In this extension, the user *may* continue browsing even after
+  they have clicked on a previous result, if they are unsatisfied. The continuation
+  probabilities depend only on position.
+  
+  If the user has not clicked on a particular position, they will always advance to
+  the next position. The satisfaction of the user is a latent variable that may be
+  inferred by probabilistic inference.
+  
+  :param slate_size: number of items in the slate
+  :param next_probs: position dependent probability of going to next result if unsatisfied
+  :param score_scaling: normalization to convert raw scores into probabilities
+  """
+  def __init__(
+    self,
+    slate_size: int,
+    next_probs: List[float],
+    score_scaling: Optional[float] = 1.0
+  ):
+    self._next_probs = next_probs
+    if slate_size < 1:
+      return ValueError('invalid slate size')
+    self._score_scaling = score_scaling
+    if self._score_scaling < 0.0:
+      raise ValueError('score_scaling must be positive.')
+    self.validate_size(next_probs, slate_size)
+  
+  
+  def choose_items(self):
+    clicked_items = []
+    examine = 1
+    for i, score in enumerate(self._scores):
+      s = self._score_scaling * score
+      if score < 0: 
+        raise ValueError(f'Got {score}. Score cannot be negative.')
+      if s > 1.0:
+        raise ValueError(f'Score scaling of {self._score_scaling} ' + 
+                         f'does not turn score {score} into a probability.')
+      rollForClick = np.random.rand()
+      if rollForClick < s:
+        clicked_items.append(i)
+        rollForNext = np.random.rand()
+        if rollForNext > self._next_probs[i]:
+          break
+    return clicked_items
+
+
+class ClickChainModel(AbstractMultipleChoiceModel):
+  """ClickChainModel is an extension of DependendentClickModel (which is a further
+  extension of Cascade model for multiple clicks) in order to account for the
+  possibility that the user may abandon the search session at any position when
+  not satisfied.
+  
+  The model is described in "Click chain model in web search, Guo et al 2009". In
+  this model, the use continues browsing the items in order (just like the Cascade
+  model), clicks on the items they deem attractive and may continue even after clicking
+  on an item if unsatisfied with the clicked result (just like the DependentClickModel),
+  but may also abandon the session at any position.
+  
+  :param slate_size: number of items in the slate
+  :param next_probs: position dependent probability of going to next result if unsatisfied
+  :param abandon_probs: position dependent probability of abandoning the slate
+  :param score_scaling: normalization to convert raw scores into probabilities
+  """
+  def __init__(self, 
+       slate_size: int,
+       next_probs: List[float],
+       abandon_probs : List[float],
+       score_scaling: Optional[float] = 1.0
+    ):
+    self._next_probs = next_probs
+    self._abandon_probs = abandon_probs
+    self._score_scaling = score_scaling
+    if self._score_scaling < 0.0:
+      raise ValueError('score_scaling must be positive.')
+    self.validate_size(next_probs, slate_size)
+    self.validate_size(abandon_probs, slate_size)
+  
+  def choose_items(self):
+      clicked_items = []
+      examine = 1
+      for i, score in enumerate(self._scores):
+        s = self._score_scaling * score
+        if score < 0: 
+          raise ValueError(f'Got {score}. Score cannot be negative.')
+        if s > 1.0:
+          raise ValueError(f'Score scaling of {self._score_scaling} ' + 
+                           f'does not turn score {score} into a probability.')
+        rollForClick = np.random.rand()
+        if rollForClick < s:
+          clicked_items.append(i)
+          rollForNext = np.random.rand()
+          if rollForNext > self._next_probs[i]:
+            break
+        else:
+          rollForAbandon = np.random.rand()
+          if rollForAbandon < self._abandon_probs[i]:
+            break
+      return clicked_item
