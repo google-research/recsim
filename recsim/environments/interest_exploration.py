@@ -452,6 +452,6 @@ def create_multiclick_environment(env_config, choice_model):
         env_config['slate_size'],
         resample_documents=env_config['resample_documents']
     )
-    return recsim_gym.RecSimGymEnv(ieenv, interest_exploration.total_clicks_reward,
+    return recsim_gym.RecSimGymEnv(ieenv, total_clicks_reward,
                                    utils.aggregate_video_cluster_metrics,
                                    utils.write_video_cluster_metrics))
