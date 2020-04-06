@@ -454,4 +454,4 @@ def create_multiclick_environment(env_config, choice_model):
     )
     return recsim_gym.RecSimGymEnv(ieenv, total_clicks_reward,
                                    utils.aggregate_video_cluster_metrics,
-                                   utils.write_video_cluster_metrics))
+                                   utils.write_video_cluster_metrics)
