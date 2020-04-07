@@ -20,6 +20,10 @@ from __future__ import division
 from __future__ import print_function
 import numpy as np
 from recsim.environments import interest_exploration
+from recsim.choice_model import DependentClickModel
+from recsim.agents.random_agent import RandomAgent
+
+
 import tensorflow.compat.v1 as tf
 
 
@@ -52,5 +56,30 @@ class InterestExplorationTest(tf.test.TestCase):
     self.assertFalse(done)
 
 
+class InterestExplorationDCMTest(tf.test.TestCase):
+  
+  def setUp(self):
+    super(InterestExplorationDCMTest, self).setUp()
+    seed = 100
+    np.random.seed(seed)
+    choice_model = DependentClickModel(
+      slate_size=3, next_probs=[0.8, 0.7, 0.6],score_scaling=0.2)
+    self._env = interest_exploration.create_multiclick_environment(
+      {'slate_size': 3, 'seed': seed, 'num_candidates': 15, 'resample_documents': True},
+      choice_model
+    )
+    self._agent = RandomAgent(self._env.action_space, random_seed=seed)
+   
+  def test_multiple_clicks(self):
+    observation = self._env.reset()
+    action = self._agent.step(0, observation)
+    self.assertAllEqual(action, [9, 1, 12])
+    observation, reward, terminal, info = self._env.step(action)
+    self.assertAlmostEqual(reward, 2.0)
+    click_indices = [
+      doc_resp['click'] for doc_resp in observation['response']]
+    self.assertAllEqual(click_indices, [1, 1, 0])
+
+ 
 if __name__ == '__main__':
   tf.test.main()
