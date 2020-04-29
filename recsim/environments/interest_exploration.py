@@ -150,6 +150,34 @@ class IEUserModel(user.AbstractUserModel):
     """
     response.clicked = True
 
+class MulticlickIEUserModel(IEUserModel):
+  def __init__(
+    self,
+    slate_size,
+    user_state_ctor,
+    response_model_ctor,
+    seed,
+    choice_model
+  ):
+    super(MulticlickIEUserModel, self).__init__(
+      slate_size, user_state_ctor=user_state_ctor,
+      response_model_ctor=response_model_ctor, seed=seed)
+    self.choice_model = choice_model
+  
+  
+  def simulate_response(self, documents):
+    responses = [self._response_model_ctor() for _ in documents]
+    self.choice_model.score_documents(
+      self._user_state, [doc.create_observation() for doc in documents])
+    selected_indices = self.choice_model.choose_items()
+    for i, response in enumerate(responses):
+      response.quality = documents[i].quality
+      response.cluster_id = documents[i].cluster_id
+    for selected_index in selected_indices:
+      self._generate_response(documents[selected_index],
+                              responses[selected_index])
+    return responses
+
 
 class IEUserState(user.AbstractUserState):
   """Class to represent users.
@@ -404,3 +432,26 @@ def create_environment(env_config):
   return recsim_gym.RecSimGymEnv(ieenv, total_clicks_reward,
                                  utils.aggregate_video_cluster_metrics,
                                  utils.write_video_cluster_metrics)
+
+def create_multiclick_environment(env_config, choice_model):
+    document_sampler = IETopicDocumentSampler(seed=env_config['seed'])
+    IEDocument.NUM_CLUSTERS = document_sampler.num_clusters
+    IEResponse.NUM_CLUSTERS = document_sampler.num_clusters
+    
+    user_model = MulticlickIEUserModel(
+        env_config['slate_size'],
+        user_state_ctor=IEUserState,
+        response_model_ctor=IEResponse,
+        seed=env_config['seed'],
+        choice_model=choice_model)
+    
+    ieenv = environment.Environment(
+        user_model,
+        document_sampler,
+        env_config['num_candidates'],
+        env_config['slate_size'],
+        resample_documents=env_config['resample_documents']
+    )
+    return recsim_gym.RecSimGymEnv(ieenv, total_clicks_reward,
+                                   utils.aggregate_video_cluster_metrics,
+                                   utils.write_video_cluster_metrics)
