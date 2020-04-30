@@ -18,10 +18,10 @@
 import numpy as np
 from recsim.agents.bandits import glm_algorithms
 from scipy import special
-import tensorflow.compat.v1 as tf
+import recsim.testing.test_base as test_base
 
 
-class UCB_GLMTest(tf.test.TestCase):  # pylint: disable=invalid-name
+class UCB_GLMTest(test_base.TestCase):  # pylint: disable=invalid-name
 
   def setUp(self):
     super(UCB_GLMTest, self).setUp()
@@ -68,7 +68,7 @@ class UCB_GLMTest(tf.test.TestCase):  # pylint: disable=invalid-name
       self._alg.update(reward, arm)
 
 
-class GLM_TSTest(tf.test.TestCase):  # pylint: disable=invalid-name
+class GLM_TSTest(test_base.TestCase):  # pylint: disable=invalid-name
 
   def setUp(self):
     super(GLM_TSTest, self).setUp()
@@ -91,4 +91,4 @@ class GLM_TSTest(tf.test.TestCase):  # pylint: disable=invalid-name
 
 
 if __name__ == '__main__':
-  tf.test.main()
+  test_base.main()

@@ -19,10 +19,10 @@ import numpy as np
 from recsim.agents import cluster_bandit_agent
 from recsim.agents.layers import cluster_click_statistics
 from recsim.environments import interest_exploration as ie
-import tensorflow.compat.v1 as tf
+import recsim.testing.test_base as test_base
 
 
-class UCB1AgentTest(tf.test.TestCase):
+class UCB1AgentTest(test_base.TestCase):
 
   def test_step(self):
     # Initialize agent.
@@ -99,4 +99,4 @@ class UCB1AgentTest(tf.test.TestCase):
 
 
 if __name__ == '__main__':
-  tf.test.main()
+  test_base.main()

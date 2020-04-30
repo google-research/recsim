@@ -24,10 +24,10 @@ from unittest import mock
 import numpy as np
 from recsim.agents import cluster_bandit_agent
 from recsim.agents.layers import cluster_click_statistics
-import tensorflow.compat.v1 as tf
+import recsim.testing.test_base as test_base
 
 
-class ClusterClickStatisticsTest(tf.test.TestCase):
+class ClusterClickStatisticsTest(test_base.TestCase):
 
   def setUp(self):
     self.slate_size = 2
@@ -128,4 +128,4 @@ class ClusterClickStatisticsTest(tf.test.TestCase):
 
 
 if __name__ == '__main__':
-  tf.test.main()
+  test_base.main()

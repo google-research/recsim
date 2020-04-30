@@ -23,10 +23,10 @@ from gym import spaces
 from unittest import mock
 from recsim.agents import cluster_bandit_agent
 from recsim.agents.layers import fixed_length_history
-import tensorflow.compat.v1 as tf
+import recsim.testing.test_base as test_base
 
 
-class FixedLengthHistoryTest(tf.test.TestCase):
+class FixedLengthHistoryTest(test_base.TestCase):
 
   def setUp(self):
     self.history_length = 3
@@ -92,4 +92,4 @@ class FixedLengthHistoryTest(tf.test.TestCase):
                      (observation, None, None))
 
 if __name__ == '__main__':
-  tf.test.main()
+  test_base.main()

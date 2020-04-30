@@ -18,10 +18,10 @@
 import numpy as np
 from recsim.environments import interest_exploration as ie
 from recsim.simulator import environment
-import tensorflow.compat.v1 as tf
+import recsim.testing.test_base as test_base
 
 
-class EnvironmentTest(tf.test.TestCase):
+class EnvironmentTest(test_base.TestCase):
 
   def setUp(self):
     super(EnvironmentTest, self).setUp()
@@ -60,7 +60,7 @@ class EnvironmentTest(tf.test.TestCase):
     self.assertFalse(done)
 
 
-class MultiUserEnvironmentTest(tf.test.TestCase):
+class MultiUserEnvironmentTest(test_base.TestCase):
 
   def setUp(self):
     super(MultiUserEnvironmentTest, self).setUp()
@@ -104,5 +104,4 @@ class MultiUserEnvironmentTest(tf.test.TestCase):
 
 
 if __name__ == '__main__':
-  tf.test.main()
-
+  test_base.main()

@@ -21,10 +21,10 @@ import numpy as np
 from recsim.agents import greedy_pctr_agent
 from recsim.environments import interest_exploration as ie
 from recsim.simulator import environment
-import tensorflow.compat.v1 as tf
+import recsim.testing.test_base as test_base
 
 
-class GreedyPCTRAgentTest(tf.test.TestCase):
+class GreedyPCTRAgentTest(test_base.TestCase):
 
   def test_find_best_documents(self):
     action_space = spaces.MultiDiscrete(4 * np.ones((4,)))
@@ -104,4 +104,4 @@ class GreedyPCTRAgentTest(tf.test.TestCase):
 
 
 if __name__ == '__main__':
-  tf.test.main()
+  test_base.main()

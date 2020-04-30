@@ -19,10 +19,10 @@ from gym import spaces
 import numpy as np
 from recsim.agents import cluster_bandit_agent
 from recsim.environments import interest_exploration as ie
-import tensorflow.compat.v1 as tf
+import recsim.testing.test_base as test_base
 
 
-class ClusterBanditAgentTest(tf.test.TestCase):
+class ClusterBanditAgentTest(test_base.TestCase):
 
   def dummy_observation_space(self):
     single_response_space = spaces.Dict({
@@ -124,4 +124,4 @@ class ClusterBanditAgentTest(tf.test.TestCase):
 
 
 if __name__ == '__main__':
-  tf.test.main()
+  test_base.main()

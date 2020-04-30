@@ -22,10 +22,10 @@ from recsim.agents import random_agent
 from recsim.environments import interest_evolution as iev
 from recsim.environments import interest_exploration as ie
 from recsim.simulator import environment
-import tensorflow.compat.v1 as tf
+import recsim.testing.test_base as test_base
 
 
-class RandomAgentTest(tf.test.TestCase):
+class RandomAgentTest(test_base.TestCase):
 
   def setUp(self):
     super(RandomAgentTest, self).setUp()
@@ -123,4 +123,4 @@ class RandomAgentTest(tf.test.TestCase):
 
 
 if __name__ == '__main__':
-  tf.test.main()
+  test_base.main()

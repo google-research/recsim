@@ -28,16 +28,14 @@ here = path.abspath(path.dirname(__file__))
 
 install_requires = [
     'absl-py',
-    # 'dopamine-rl >= 2.0.5',
     'gin-config',
-    'gym <= 0.14.0',
+    'gym',
     'numpy',
     'scipy',
-    # 'tensorflow',
 ]
 
 recsim_description = (
-    'RecSim: A Configurable Recommender Systems Simulation Platform')
+    'RecSim: A Configurable Recommender Systems Simulation Platform (w/o Tensorflow deps)')
 
 with open('README.md', 'r') as fh:
   long_description = fh.read()
@@ -45,12 +43,12 @@ with open('README.md', 'r') as fh:
 setup(
     name='recsim-no-tf',
     version='0.2.3',
-    author='The RecSim Team',
-    author_email='no-reply@google.com',
+    author='The RecSim Team, Kittipat Virochsiri',
+    author_email='kittipatv@users.noreply.github.com',
     description=recsim_description,
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/google-research/recsim',
+    url='https://github.com/kittipatv/recsim-no-tf',
     packages=find_packages(exclude=['docs']),
     classifiers=[  # Optional
         'Development Status :: 3 - Alpha',
@@ -78,9 +76,9 @@ setup(
     ],
     install_requires=install_requires,
     project_urls={  # Optional
-        'Documentation': 'https://github.com/google-research/recsim',
-        'Bug Reports': 'https://github.com/google-research/recsim/issues',
-        'Source': 'https://github.com/google-research/recsim',
+        'Documentation': 'https://github.com/kittipatv/recsim-no-tf',
+        'Bug Reports': 'https://github.com/kittipatv/recsim-no-tf/issues',
+        'Source': 'https://github.com/kittipatv/recsim-no-tf',
     },
     license='Apache 2.0',
     keywords='recsim reinforcement-learning recommender-system simulation'

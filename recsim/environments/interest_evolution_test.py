@@ -21,7 +21,7 @@ from __future__ import print_function
 import numpy as np
 from recsim import choice_model
 from recsim.environments import interest_evolution
-import tensorflow.compat.v1 as tf
+import recsim.testing.test_base as test_base
 
 
 class FakeChoiceModel(choice_model.AbstractChoiceModel):
@@ -40,7 +40,7 @@ class FakeChoiceModel(choice_model.AbstractChoiceModel):
     return self._select_index
 
 
-class InterestEvolutionTest(tf.test.TestCase):
+class InterestEvolutionTest(test_base.TestCase):
 
   def setUp(self):
     super(InterestEvolutionTest, self).setUp()
@@ -84,7 +84,7 @@ class InterestEvolutionTest(tf.test.TestCase):
     quality = 3.0
     document = interest_evolution.IEvVideo(
         doc_id=1,
-        features=np.ones((20,)),
+        features=np.ones((10,)),
         cluster_id=cluster_id,
         video_length=1,
         quality=quality)
@@ -109,4 +109,4 @@ class InterestEvolutionTest(tf.test.TestCase):
 
 
 if __name__ == '__main__':
-  tf.test.main()
+  test_base.main()

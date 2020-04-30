@@ -24,10 +24,10 @@ from recsim.choice_model import DependentClickModel
 from recsim.agents.random_agent import RandomAgent
 
 
-import tensorflow.compat.v1 as tf
+import recsim.testing.test_base as test_base
 
 
-class InterestExplorationTest(tf.test.TestCase):
+class InterestExplorationTest(test_base.TestCase):
 
   def setUp(self):
     super(InterestExplorationTest, self).setUp()
@@ -56,8 +56,8 @@ class InterestExplorationTest(tf.test.TestCase):
     self.assertFalse(done)
 
 
-class InterestExplorationDCMTest(tf.test.TestCase):
-  
+class InterestExplorationDCMTest(test_base.TestCase):
+
   def setUp(self):
     super(InterestExplorationDCMTest, self).setUp()
     seed = 100
@@ -69,7 +69,7 @@ class InterestExplorationDCMTest(tf.test.TestCase):
       choice_model
     )
     self._agent = RandomAgent(self._env.action_space, random_seed=seed)
-   
+
   def test_multiple_clicks(self):
     observation = self._env.reset()
     action = self._agent.step(0, observation)
@@ -80,6 +80,6 @@ class InterestExplorationDCMTest(tf.test.TestCase):
       doc_resp['click'] for doc_resp in observation['response']]
     self.assertAllEqual(click_indices, [1, 1, 0])
 
- 
+
 if __name__ == '__main__':
-  tf.test.main()
+  test_base.main()

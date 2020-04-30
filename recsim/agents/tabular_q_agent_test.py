@@ -19,10 +19,10 @@ from gym import spaces
 import numpy as np
 from recsim.agents import tabular_q_agent
 from recsim.testing import test_environment as te
-import tensorflow.compat.v1 as tf
+import recsim.testing.test_base as test_base
 
 
-class TabularQAgentTest(tf.test.TestCase):
+class TabularQAgentTest(test_base.TestCase):
 
   def init_agent_and_env(self,
                          slate_size=1,
@@ -186,4 +186,4 @@ class TabularQAgentTest(tf.test.TestCase):
 
 
 if __name__ == '__main__':
-  tf.test.main()
+  test_base.main()

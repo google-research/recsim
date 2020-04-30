@@ -30,7 +30,7 @@ from recsim import agent
 from recsim.simulator import environment
 from recsim.simulator import recsim_gym
 from recsim.simulator import runner_lib
-import tensorflow.compat.v1 as tf
+import recsim.testing.test_base as test_base
 
 
 class DummySingleUserAgent(agent.AbstractEpisodicRecommenderAgent):
@@ -129,4 +129,4 @@ class AgentTest(parameterized.TestCase):
 
 
 if __name__ == '__main__':
-  tf.test.main()
+  test_base.main()

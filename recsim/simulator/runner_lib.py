@@ -22,12 +22,11 @@ from __future__ import print_function
 import os
 import time
 
-from absl import flags
+from absl import flags, logging
 import gin
 from gym import spaces
 import numpy as np
 from recsim.simulator import environment
-import tensorflow.compat.v1 as tf
 
 
 flags.DEFINE_bool(
@@ -103,7 +102,7 @@ class Runner(object):
       max_steps_per_episode: int, maximum number of steps after which an episode
         terminates.
     """
-    tf.logging.info('max_steps_per_episode = %s', max_steps_per_episode)
+    logging.info('max_steps_per_episode = %s', max_steps_per_episode)
 
     if base_dir is None:
       raise ValueError('Missing base_dir.')
@@ -324,7 +323,7 @@ class TrainRunner(Runner):
 
   def __init__(self, max_training_steps=250000, num_iterations=100,
                checkpoint_frequency=1, **kwargs):
-    tf.logging.info(
+    logging.info(
         'max_training_steps = %s, number_iterations = %s,'
         'checkpoint frequency = %s iterations.', max_training_steps,
         num_iterations, checkpoint_frequency)
@@ -341,16 +340,16 @@ class TrainRunner(Runner):
 
   def run_experiment(self):
     """Runs a full experiment, spread over multiple iterations."""
-    tf.logging.info('Beginning training...')
+    logging.info('Beginning training...')
     start_iter, total_steps = self._initialize_checkpointer_and_maybe_resume(
         self._checkpoint_file_prefix)
     if self._num_iterations <= start_iter:
-      tf.logging.warning('num_iterations (%d) < start_iteration(%d)',
+      logging.warning('num_iterations (%d) < start_iteration(%d)',
                          self._num_iterations, start_iter)
       return
 
     for iteration in range(start_iter, self._num_iterations):
-      tf.logging.info('Starting iteration %d', iteration)
+      logging.info('Starting iteration %d', iteration)
       total_steps = self._run_train_phase(total_steps)
       if iteration % self._checkpoint_frequency == 0:
         self._checkpoint_experiment(iteration, total_steps)
@@ -383,7 +382,7 @@ class EvalRunner(Runner):
                min_interval_secs=30,
                train_base_dir=None,
                **kwargs):
-    tf.logging.info('max_eval_episodes = %s', max_eval_episodes)
+    logging.info('max_eval_episodes = %s', max_eval_episodes)
     super(EvalRunner, self).__init__(**kwargs)
     self._max_eval_episodes = max_eval_episodes
     self._test_mode = test_mode
@@ -396,7 +395,7 @@ class EvalRunner(Runner):
 
   def run_experiment(self):
     """Runs a full experiment, spread over multiple iterations."""
-    tf.logging.info('Beginning evaluation...')
+    logging.info('Beginning evaluation...')
     if True:
       return
     # Use the checkpointer class.
@@ -439,6 +438,6 @@ class EvalRunner(Runner):
     self._write_metrics(total_steps, suffix='eval')
 
     output_file = os.path.join(self._output_dir, 'returns_%s' % total_steps)
-    tf.logging.info('eval_file: %s', output_file)
+    logging.info('eval_file: %s', output_file)
     with tf.io.gfile.GFile(output_file, 'w+') as f:
       f.write(str(episode_rewards))

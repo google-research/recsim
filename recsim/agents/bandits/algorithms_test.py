@@ -17,10 +17,10 @@
 
 import numpy as np
 from recsim.agents.bandits import algorithms
-import tensorflow.compat.v1 as tf
+import recsim.testing.test_base as test_base
 
 
-class UCB1Test(tf.test.TestCase):
+class UCB1Test(test_base.TestCase):
 
   def setUp(self):
     super(UCB1Test, self).setUp()
@@ -44,7 +44,7 @@ class UCB1Test(tf.test.TestCase):
     self.assertEqual(1, alg.get_arm(1))
 
 
-class KLUCBTest(tf.test.TestCase):
+class KLUCBTest(test_base.TestCase):
 
   def setUp(self):
     super(KLUCBTest, self).setUp()
@@ -68,7 +68,7 @@ class KLUCBTest(tf.test.TestCase):
     self.assertEqual(1, alg.get_arm(1))
 
 
-class ThompsonSamplingTest(tf.test.TestCase):
+class ThompsonSamplingTest(test_base.TestCase):
 
   def setUp(self):
     super(ThompsonSamplingTest, self).setUp()
@@ -92,4 +92,4 @@ class ThompsonSamplingTest(tf.test.TestCase):
 
 
 if __name__ == '__main__':
-  tf.test.main()
+  test_base.main()
