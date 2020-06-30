@@ -1,7 +1,6 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
 <meta itemprop="name" content="recsim.agents.cluster_bandit_agent.GreedyClusterAgent" />
 <meta itemprop="path" content="Stable" />
-<meta itemprop="property" content="multi_user"/>
 <meta itemprop="property" content="__init__"/>
 <meta itemprop="property" content="begin_episode"/>
 <meta itemprop="property" content="bundle_and_checkpoint"/>
@@ -12,53 +11,66 @@
 
 # recsim.agents.cluster_bandit_agent.GreedyClusterAgent
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/cluster_bandit_agent.py">View source</a>
 
 
 
-## Class `GreedyClusterAgent`
-
-<!-- Start diff -->
 Simple agent sorting all documents of a topic according to quality.
 
 Inherits From: [`AbstractEpisodicRecommenderAgent`](../../../recsim/agent/AbstractEpisodicRecommenderAgent.md)
 
-<!-- Placeholder for "Used in" -->
-
-
-<h2 id="__init__"><code>__init__</code></h2>
-
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/cluster_bandit_agent.py">View source</a>
-
-``` python
-__init__(
-    observation_space,
-    action_space,
-    cluster_id,
-    **kwargs
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.agents.cluster_bandit_agent.GreedyClusterAgent(
+    observation_space, action_space, cluster_id, **kwargs
 )
-```
+</code></pre>
 
-Initializes AbstractEpisodicRecommenderAgent.
+<!-- Placeholder for "Used in" -->
+<!-- Tabular view -->
 
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Args</h2></th></tr>
 
-#### Args:
+<tr>
+<td>
+`action_space`
+</td>
+<td>
+A gym.spaces object that specifies the format of actions.
+</td>
+</tr><tr>
+<td>
+`summary_writer`
+</td>
+<td>
+A Tensorflow summary writer to pass to the agent
+for in-agent training statistics in Tensorboard.
+</td>
+</tr>
+</table>
 
+<!-- Tabular view -->
 
-* <b>`action_space`</b>: A gym.spaces object that specifies the format of actions.
-* <b>`summary_writer`</b>: A Tensorflow summary writer to pass to the agent
-  for in-agent training statistics in Tensorboard.
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>
 
-## Properties
-
-<h3 id="multi_user"><code>multi_user</code></h3>
-
+<tr>
+<td>
+`multi_user`
+</td>
+<td>
 Returns boolean indicating whether this agent serves multiple users.
+</td>
+</tr>
+</table>
 
 ## Methods
 
@@ -66,137 +78,246 @@ Returns boolean indicating whether this agent serves multiple users.
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agent.py">View source</a>
 
-``` python
-begin_episode(observation=None)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>begin_episode(
+    observation=None
+)
+</code></pre>
 
 Returns the agent's first action for this episode.
 
+<!-- Tabular view -->
 
-#### Args:
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Args</th></tr>
 
+<tr>
+<td>
+`observation`
+</td>
+<td>
+numpy array, the environment's initial observation.
+</td>
+</tr>
+</table>
 
-* <b>`observation`</b>: numpy array, the environment's initial observation.
+<!-- Tabular view -->
 
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Returns</th></tr>
 
-#### Returns:
-
-
-* <b>`slate`</b>: An integer array of size _slate_size, where each element is an
-  index into the list of doc_obs
+<tr>
+<td>
+`slate`
+</td>
+<td>
+An integer array of size _slate_size, where each element is an
+index into the list of doc_obs
+</td>
+</tr>
+</table>
 
 <h3 id="bundle_and_checkpoint"><code>bundle_and_checkpoint</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agent.py">View source</a>
 
-``` python
-bundle_and_checkpoint(
-    checkpoint_dir,
-    iteration_number
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>bundle_and_checkpoint(
+    checkpoint_dir, iteration_number
 )
-```
+</code></pre>
 
 Returns a self-contained bundle of the agent's state.
 
+<!-- Tabular view -->
 
-#### Args:
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Args</th></tr>
 
+<tr>
+<td>
+`checkpoint_dir`
+</td>
+<td>
+A string that represents the path to the checkpoint and is
+used when we save TensorFlow objects by tf.Save.
+</td>
+</tr><tr>
+<td>
+`iteration_number`
+</td>
+<td>
+An integer that represents the checkpoint version and is
+used when restoring replay buffer.
+</td>
+</tr>
+</table>
 
-* <b>`checkpoint_dir`</b>: A string that represents the path to the checkpoint and is
-  used when we save TensorFlow objects by tf.Save.
-* <b>`iteration_number`</b>: An integer that represents the checkpoint version and is
-  used when restoring replay buffer.
+<!-- Tabular view -->
 
-
-#### Returns:
-
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Returns</th></tr>
+<tr class="alt">
+<td colspan="2">
 A dictionary containing additional Python objects to be checkpointed by
-  the experiment. Each key is a string for the object name and the value
-  is actual object. If the checkpoint directory does not exist, returns
-  empty dictionary.
+the experiment. Each key is a string for the object name and the value
+is actual object. If the checkpoint directory does not exist, returns
+empty dictionary.
+</td>
+</tr>
 
+</table>
 
 <h3 id="end_episode"><code>end_episode</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agent.py">View source</a>
 
-``` python
-end_episode(
-    reward,
-    observation=None
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>end_episode(
+    reward, observation=None
 )
-```
+</code></pre>
 
 Signals the end of the episode to the agent.
 
+<!-- Tabular view -->
 
-#### Args:
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Args</th></tr>
 
-
-* <b>`reward`</b>: An float that is the last reward from the environment.
-* <b>`observation`</b>: numpy array that represents the last observation of the
-  episode.
+<tr>
+<td>
+`reward`
+</td>
+<td>
+An float that is the last reward from the environment.
+</td>
+</tr><tr>
+<td>
+`observation`
+</td>
+<td>
+numpy array that represents the last observation of the
+episode.
+</td>
+</tr>
+</table>
 
 <h3 id="step"><code>step</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/cluster_bandit_agent.py">View source</a>
 
-``` python
-step(
-    reward,
-    observation
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>step(
+    reward, observation
 )
-```
+</code></pre>
 
 Records the most recent transition and returns the agent's next action.
 
 We store the observation of the last time step since we want to store it
 with the reward.
 
-#### Args:
+<!-- Tabular view -->
 
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Args</th></tr>
 
-* <b>`reward`</b>: The reward received from the agent's most recent action as a
-  float.
-* <b>`observation`</b>: A dictionary that includes the most recent observations.
+<tr>
+<td>
+`reward`
+</td>
+<td>
+The reward received from the agent's most recent action as a
+float.
+</td>
+</tr><tr>
+<td>
+`observation`
+</td>
+<td>
+A dictionary that includes the most recent observations.
+</td>
+</tr>
+</table>
 
+<!-- Tabular view -->
 
-#### Returns:
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Returns</th></tr>
 
-
-* <b>`slate`</b>: An integer array of size _slate_size, where each element is an
-  index into the list of doc_obs
+<tr>
+<td>
+`slate`
+</td>
+<td>
+An integer array of size _slate_size, where each element is an
+index into the list of doc_obs
+</td>
+</tr>
+</table>
 
 <h3 id="unbundle"><code>unbundle</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agent.py">View source</a>
 
-``` python
-unbundle(
-    checkpoint_dir,
-    iteration_number,
-    bundle_dict
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>unbundle(
+    checkpoint_dir, iteration_number, bundle_dict
 )
-```
+</code></pre>
 
 Restores the agent from a checkpoint.
 
+<!-- Tabular view -->
 
-#### Args:
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Args</th></tr>
 
+<tr>
+<td>
+`checkpoint_dir`
+</td>
+<td>
+A string that represents the path to the checkpoint and is
+used when we save TensorFlow objects by tf.Save.
+</td>
+</tr><tr>
+<td>
+`iteration_number`
+</td>
+<td>
+An integer that represents the checkpoint version and is
+used when restoring replay buffer.
+</td>
+</tr><tr>
+<td>
+`bundle_dict`
+</td>
+<td>
+A dict containing additional Python objects owned by the
+agent. Each key is an object name and the value is the actual object.
+</td>
+</tr>
+</table>
 
-* <b>`checkpoint_dir`</b>: A string that represents the path to the checkpoint and is
-  used when we save TensorFlow objects by tf.Save.
-* <b>`iteration_number`</b>: An integer that represents the checkpoint version and is
-  used when restoring replay buffer.
-* <b>`bundle_dict`</b>: A dict containing additional Python objects owned by the
-  agent. Each key is an object name and the value is the actual object.
+<!-- Tabular view -->
 
-
-#### Returns:
-
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Returns</th></tr>
+<tr class="alt">
+<td colspan="2">
 bool, True if unbundling was successful.
+</td>
+</tr>
 
-
-
-
+</table>

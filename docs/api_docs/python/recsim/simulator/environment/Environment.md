@@ -1,10 +1,6 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
 <meta itemprop="name" content="recsim.simulator.environment.Environment" />
 <meta itemprop="path" content="Stable" />
-<meta itemprop="property" content="candidate_set"/>
-<meta itemprop="property" content="num_candidates"/>
-<meta itemprop="property" content="slate_size"/>
-<meta itemprop="property" content="user_model"/>
 <meta itemprop="property" content="__init__"/>
 <meta itemprop="property" content="reset"/>
 <meta itemprop="property" content="reset_sampler"/>
@@ -13,77 +9,132 @@
 
 # recsim.simulator.environment.Environment
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/environment.py">View
 source</a>
 
-## Class `Environment`
-
-<!-- Start diff -->
 Class to represent the environment with one user.
 
 Inherits From:
 [`AbstractEnvironment`](../../../recsim/simulator/environment/AbstractEnvironment.md)
 
-### Aliases:
+<section class="expandable">
+  <h4 class="showalways">View aliases</h4>
+  <p>
+<b>Main aliases</b>
+<p>`recsim.simulator.environment.SingleUserEnvironment`</p>
+</p>
+</section>
 
-*   Class `recsim.simulator.environment.SingleUserEnvironment`
-
-<!-- Placeholder for "Used in" -->
-
-#### Attributes:
-
-*   <b>`user_model`</b>: An instantiation of AbstractUserModel that represents a
-    user.
-*   <b>`document_sampler`</b>: An instantiation of AbstractDocumentSampler.
-*   <b>`num_candidates`</b>: An integer representing the size of the
-    candidate_set.
-*   <b>`slate_size`</b>: An integer representing the slate size.
-*   <b>`candidate_set`</b>: An instantiation of CandidateSet.
-*   <b>`num_clusters`</b>: An integer representing the number of document
-    clusters.
-
-<h2 id="__init__"><code>__init__</code></h2>
-
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/environment.py">View
-source</a>
-
-```python
-__init__(
-    user_model,
-    document_sampler,
-    num_candidates,
-    slate_size,
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.simulator.environment.Environment(
+    user_model, document_sampler, num_candidates, slate_size,
     resample_documents=True
 )
-```
+</code></pre>
 
-Initializes a new simulation environment.
+<!-- Placeholder for "Used in" -->
+<!-- Tabular view -->
 
-#### Args:
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Args</h2></th></tr>
 
-*   <b>`user_model`</b>: An instantiation of AbstractUserModel or list of such
-    instantiations
-*   <b>`document_sampler`</b>: An instantiation of AbstractDocumentSampler
-*   <b>`num_candidates`</b>: An integer representing the size of the
-    candidate_set
-*   <b>`slate_size`</b>: An integer representing the slate size
-*   <b>`resample_documents`</b>: A boolean indicating whether to resample the
-    candidate set every step
+<tr>
+<td>
+`user_model`
+</td>
+<td>
+An instantiation of AbstractUserModel or list of such
+instantiations
+</td>
+</tr><tr>
+<td>
+`document_sampler`
+</td>
+<td>
+An instantiation of AbstractDocumentSampler
+</td>
+</tr><tr>
+<td>
+`num_candidates`
+</td>
+<td>
+An integer representing the size of the candidate_set
+</td>
+</tr><tr>
+<td>
+`slate_size`
+</td>
+<td>
+An integer representing the slate size
+</td>
+</tr><tr>
+<td>
+`resample_documents`
+</td>
+<td>
+A boolean indicating whether to resample the candidate
+set every step
+</td>
+</tr>
+</table>
 
-## Properties
+<!-- Tabular view -->
 
-<h3 id="candidate_set"><code>candidate_set</code></h3>
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>
 
-<h3 id="num_candidates"><code>num_candidates</code></h3>
-
-<h3 id="slate_size"><code>slate_size</code></h3>
-
-<h3 id="user_model"><code>user_model</code></h3>
+<tr>
+<td>
+`user_model`
+</td>
+<td>
+An instantiation of AbstractUserModel that represents a user.
+</td>
+</tr><tr>
+<td>
+`document_sampler`
+</td>
+<td>
+An instantiation of AbstractDocumentSampler.
+</td>
+</tr><tr>
+<td>
+`num_candidates`
+</td>
+<td>
+An integer representing the size of the candidate_set.
+</td>
+</tr><tr>
+<td>
+`slate_size`
+</td>
+<td>
+An integer representing the slate size.
+</td>
+</tr><tr>
+<td>
+`candidate_set`
+</td>
+<td>
+An instantiation of CandidateSet.
+</td>
+</tr><tr>
+<td>
+`num_clusters`
+</td>
+<td>
+An integer representing the number of document clusters.
+</td>
+</tr>
+</table>
 
 ## Methods
 
@@ -92,27 +143,44 @@ Initializes a new simulation environment.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/environment.py">View
 source</a>
 
-```python
-reset()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>reset()
+</code></pre>
 
 Resets the environment and return the first observation.
 
-#### Returns:
+<!-- Tabular view -->
 
-*   <b>`user_obs`</b>: An array of floats representing observations of the
-    user's current state
-*   <b>`doc_obs`</b>: An OrderedDict of document observations keyed by document
-    ids
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Returns</th></tr>
+
+<tr>
+<td>
+`user_obs`
+</td>
+<td>
+An array of floats representing observations of the user's
+current state
+</td>
+</tr><tr>
+<td>
+`doc_obs`
+</td>
+<td>
+An OrderedDict of document observations keyed by document ids
+</td>
+</tr>
+</table>
 
 <h3 id="reset_sampler"><code>reset_sampler</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/environment.py">View
 source</a>
 
-```python
-reset_sampler()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>reset_sampler()
+</code></pre>
 
 Resets the relevant samplers of documents and user/users.
 
@@ -121,21 +189,64 @@ Resets the relevant samplers of documents and user/users.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/environment.py">View
 source</a>
 
-```python
-step(slate)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>step(
+    slate
+)
+</code></pre>
 
 Executes the action, returns next state observation and reward.
 
-#### Args:
+<!-- Tabular view -->
 
-*   <b>`slate`</b>: An integer array of size slate_size, where each element is
-    an index into the set of current_documents presented
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Args</th></tr>
 
-#### Returns:
+<tr>
+<td>
+`slate`
+</td>
+<td>
+An integer array of size slate_size, where each element is an index
+into the set of current_documents presented
+</td>
+</tr>
+</table>
 
-*   <b>`user_obs`</b>: A gym observation representing the user's next state
-*   <b>`doc_obs`</b>: A list of observations of the documents
-*   <b>`responses`</b>: A list of AbstractResponse objects for each item in the
-    slate
-*   <b>`done`</b>: A boolean indicating whether the episode has terminated
+<!-- Tabular view -->
+
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Returns</th></tr>
+
+<tr>
+<td>
+`user_obs`
+</td>
+<td>
+A gym observation representing the user's next state
+</td>
+</tr><tr>
+<td>
+`doc_obs`
+</td>
+<td>
+A list of observations of the documents
+</td>
+</tr><tr>
+<td>
+`responses`
+</td>
+<td>
+A list of AbstractResponse objects for each item in the slate
+</td>
+</tr><tr>
+<td>
+`done`
+</td>
+<td>
+A boolean indicating whether the episode has terminated
+</td>
+</tr>
+</table>

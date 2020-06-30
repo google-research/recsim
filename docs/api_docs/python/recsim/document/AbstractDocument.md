@@ -5,35 +5,29 @@
 <meta itemprop="property" content="create_observation"/>
 <meta itemprop="property" content="doc_id"/>
 <meta itemprop="property" content="observation_space"/>
+<meta itemprop="property" content="NUM_FEATURES"/>
 </div>
 
 # recsim.document.AbstractDocument
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
-## Class `AbstractDocument`
-
-<!-- Start diff -->
 Abstract class to represent a document and its properties.
 
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.document.AbstractDocument(
+    doc_id
+)
+</code></pre>
+
 <!-- Placeholder for "Used in" -->
-
-<h2 id="__init__"><code>__init__</code></h2>
-
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
-source</a>
-
-```python
-__init__(doc_id)
-```
-
-Initialize self. See help(type(self)) for accurate signature.
 
 ## Methods
 
@@ -42,9 +36,10 @@ Initialize self. See help(type(self)) for accurate signature.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
-```python
-create_observation()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>@abc.abstractmethod</code>
+<code>create_observation()
+</code></pre>
 
 Returns observable properties of this document as a float array.
 
@@ -53,9 +48,9 @@ Returns observable properties of this document as a float array.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
-```python
-doc_id()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>doc_id()
+</code></pre>
 
 Returns the document ID.
 
@@ -64,9 +59,14 @@ Returns the document ID.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
-```python
-@classmethod
-observation_space(cls)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>@classmethod</code>
+<code>@abc.abstractmethod</code>
+<code>observation_space()
+</code></pre>
 
 Gym space that defines how documents are represented.
+
+## Class Variables
+
+*   `NUM_FEATURES = None` <a id="NUM_FEATURES"></a>

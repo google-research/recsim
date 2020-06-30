@@ -1,12 +1,14 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
 <meta itemprop="name" content="recsim.environments.long_term_satisfaction" />
 <meta itemprop="path" content="Stable" />
-<meta itemprop="property" content="FLAGS"/>
 </div>
 
 # Module: recsim.environments.long_term_satisfaction
 
+<!-- Insert buttons and diff -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/long_term_satisfaction.py">View
@@ -46,12 +48,11 @@ Class to represent users.
 
 ## Functions
 
+[`FLAGS(...)`](../../recsim/environments/interest_evolution/FLAGS.md): Registry
+of 'Flag' objects.
+
 [`clicked_engagement_reward(...)`](../../recsim/environments/long_term_satisfaction/clicked_engagement_reward.md):
 Calculates the total clicked watchtime from a list of responses.
 
 [`create_environment(...)`](../../recsim/environments/long_term_satisfaction/create_environment.md):
 Creates a long-term satisfaction environment.
-
-## Other Members
-
-*   `FLAGS` <a id="FLAGS"></a>

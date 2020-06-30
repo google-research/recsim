@@ -5,22 +5,19 @@
 
 # recsim.agents.dopamine.dqn_agent.recsim_dqn_network
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/dopamine/dqn_agent.py">View
 source</a>
 
-<!-- Start diff -->
-
-```python
-recsim.agents.dopamine.dqn_agent.recsim_dqn_network(
-    user,
-    doc,
-    scope
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.agents.dopamine.dqn_agent.recsim_dqn_network(
+    user, doc, scope
 )
-```
+</code></pre>
 
 <!-- Placeholder for "Used in" -->

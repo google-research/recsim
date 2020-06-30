@@ -9,43 +9,56 @@
 
 # recsim.environments.interest_exploration.IEResponse
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
 source</a>
 
-## Class `IEResponse`
-
-<!-- Start diff -->
 Class to represent a user's response to a document.
 
 Inherits From: [`AbstractResponse`](../../../recsim/user/AbstractResponse.md)
 
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.environments.interest_exploration.IEResponse(
+    clicked=False, quality=0.0, cluster_id=0
+)
+</code></pre>
+
 <!-- Placeholder for "Used in" -->
 
-#### Attributes:
+<!-- Tabular view -->
 
-*   <b>`clicked`</b>: boolean indicating whether the item was clicked or not.
-*   <b>`quality`</b>: a float indicating the quality of the document.
-*   <b>`cluster_id`</b>: an integer representing the topic ID of the document.
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>
 
-<h2 id="__init__"><code>__init__</code></h2>
-
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
-source</a>
-
-```python
-__init__(
-    clicked=False,
-    quality=0.0,
-    cluster_id=0
-)
-```
-
-Initialize self. See help(type(self)) for accurate signature.
+<tr>
+<td>
+`clicked`
+</td>
+<td>
+boolean indicating whether the item was clicked or not.
+</td>
+</tr><tr>
+<td>
+`quality`
+</td>
+<td>
+a float indicating the quality of the document.
+</td>
+</tr><tr>
+<td>
+`cluster_id`
+</td>
+<td>
+an integer representing the topic ID of the document.
+</td>
+</tr>
+</table>
 
 ## Methods
 
@@ -54,9 +67,9 @@ Initialize self. See help(type(self)) for accurate signature.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
 source</a>
 
-```python
-create_observation()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>create_observation()
+</code></pre>
 
 Creates a tensor observation of this response.
 
@@ -65,13 +78,13 @@ Creates a tensor observation of this response.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
 source</a>
 
-```python
-@classmethod
-response_space(cls)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>@classmethod</code>
+<code>response_space()
+</code></pre>
 
 ArraySpec that defines how a single response is represented.
 
-## Class Members
+## Class Variables
 
 *   `NUM_CLUSTERS = 0` <a id="NUM_CLUSTERS"></a>

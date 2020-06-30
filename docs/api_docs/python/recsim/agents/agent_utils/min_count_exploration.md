@@ -5,23 +5,22 @@
 
 # recsim.agents.agent_utils.min_count_exploration
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/agent_utils.py">View
 source</a>
 
-<!-- Start diff -->
 Minimum count exploration.
 
-```python
-recsim.agents.agent_utils.min_count_exploration(
-    state_action_iterator,
-    counts_function
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.agents.agent_utils.min_count_exploration(
+    state_action_iterator, counts_function
 )
-```
+</code></pre>
 
 <!-- Placeholder for "Used in" -->
 

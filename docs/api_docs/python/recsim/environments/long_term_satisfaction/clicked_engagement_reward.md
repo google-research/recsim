@@ -5,28 +5,53 @@
 
 # recsim.environments.long_term_satisfaction.clicked_engagement_reward
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/long_term_satisfaction.py">View
 source</a>
 
-<!-- Start diff -->
 Calculates the total clicked watchtime from a list of responses.
 
-```python
-recsim.environments.long_term_satisfaction.clicked_engagement_reward(responses)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.environments.long_term_satisfaction.clicked_engagement_reward(
+    responses
+)
+</code></pre>
 
 <!-- Placeholder for "Used in" -->
 
-#### Args:
+<!-- Tabular view -->
 
-*   <b>`responses`</b>: A list of LTSResponse objects
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Args</h2></th></tr>
 
-#### Returns:
+<tr>
+<td>
+`responses`
+</td>
+<td>
+A list of LTSResponse objects
+</td>
+</tr>
+</table>
 
-*   <b>`reward`</b>: A float representing the total watch time from the
-    responses
+<!-- Tabular view -->
+
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Returns</h2></th></tr>
+
+<tr>
+<td>
+`reward`
+</td>
+<td>
+A float representing the total watch time from the responses
+</td>
+</tr>
+</table>

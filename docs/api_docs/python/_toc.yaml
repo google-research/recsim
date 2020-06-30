@@ -201,6 +201,8 @@ toc:
       path: /recsim/api_docs/python/recsim/environments/interest_evolution/clicked_watchtime_reward
     - title: create_environment
       path: /recsim/api_docs/python/recsim/environments/interest_evolution/create_environment
+    - title: FLAGS
+      path: /recsim/api_docs/python/recsim/environments/interest_evolution/FLAGS
     - title: IEvResponse
       path: /recsim/api_docs/python/recsim/environments/interest_evolution/IEvResponse
     - title: IEvUserDistributionSampler

@@ -6,48 +6,55 @@
 <meta itemprop="property" content="doc_id"/>
 <meta itemprop="property" content="observation_space"/>
 <meta itemprop="property" content="NUM_CLUSTERS"/>
+<meta itemprop="property" content="NUM_FEATURES"/>
 </div>
 
 # recsim.environments.interest_exploration.IEDocument
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
 source</a>
 
-## Class `IEDocument`
-
-<!-- Start diff -->
 Class to represent an IE Document.
 
 Inherits From:
 [`AbstractDocument`](../../../recsim/document/AbstractDocument.md)
 
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.environments.interest_exploration.IEDocument(
+    doc_id, cluster_id, quality
+)
+</code></pre>
+
 <!-- Placeholder for "Used in" -->
 
-#### Attributes:
+<!-- Tabular view -->
 
-*   <b>`cluster_id`</b>: an integer representing the document cluster.
-*   <b>`quality`</b>: non-negative real number representing the quality of the
-    document.
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>
 
-<h2 id="__init__"><code>__init__</code></h2>
-
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
-source</a>
-
-```python
-__init__(
-    doc_id,
-    cluster_id,
-    quality
-)
-```
-
-Initialize self. See help(type(self)) for accurate signature.
+<tr>
+<td>
+`cluster_id`
+</td>
+<td>
+an integer representing the document cluster.
+</td>
+</tr><tr>
+<td>
+`quality`
+</td>
+<td>
+non-negative real number representing the quality of the document.
+</td>
+</tr>
+</table>
 
 ## Methods
 
@@ -56,9 +63,9 @@ Initialize self. See help(type(self)) for accurate signature.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
 source</a>
 
-```python
-create_observation()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>create_observation()
+</code></pre>
 
 Returns observable properties of this document as a float array.
 
@@ -67,9 +74,9 @@ Returns observable properties of this document as a float array.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
-```python
-doc_id()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>doc_id()
+</code></pre>
 
 Returns the document ID.
 
@@ -78,13 +85,14 @@ Returns the document ID.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
 source</a>
 
-```python
-@classmethod
-observation_space(cls)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>@classmethod</code>
+<code>observation_space()
+</code></pre>
 
 Gym space that defines how documents are represented.
 
-## Class Members
+## Class Variables
 
 *   `NUM_CLUSTERS = 0` <a id="NUM_CLUSTERS"></a>
+*   `NUM_FEATURES = None` <a id="NUM_FEATURES"></a>

@@ -1,5 +1,4 @@
 # coding=utf-8
-# coding=utf-8
 # Copyright 2019 The RecSim Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -172,7 +171,7 @@ def select_slate_greedy(slate_size, s_no_click, s, q):
     numerator = numerator + tf.gather(s * q, k)
     denominator = denominator + tf.gather(s, k)
 
-  output_slate = tf.compat.v1.where(tf.equal(mask, 0))
+  output_slate = tf.where(tf.equal(mask, 0))
   return output_slate
 
 
@@ -352,13 +351,13 @@ def compute_target_topk_q(reward, gamma, next_actions, next_q_values,
 
   # Get the expected Q-value of the slate containing top-K items.
   # [batch_size, slate_size]
-  next_q_values_selected = tf.compat.v1.batch_gather(
+  next_q_values_selected = tf.batch_gather(
       next_q_values, tf.cast(topk_optimal_slate, dtype=tf.int32))
 
   # Get normalized affinity scores on the slate.
   # [batch_size, slate_size]
-  scores_selected = tf.compat.v1.batch_gather(
-      scores, tf.cast(topk_optimal_slate, dtype=tf.int32))
+  scores_selected = tf.batch_gather(scores,
+                                    tf.cast(topk_optimal_slate, dtype=tf.int32))
 
   next_q_target_topk = tf.reduce_sum(
       input_tensor=next_q_values_selected * scores_selected, axis=1) / (
@@ -475,9 +474,9 @@ class SlateDecompQAgent(dqn_agent.DQNAgentRecSim,
     abstract_agent.AbstractEpisodicRecommenderAgent.__init__(self, action_space)
 
     # The doc score is a [num_candidates] vector.
-    self._doc_affinity_scores_ph = tf.compat.v1.placeholder(
+    self._doc_affinity_scores_ph = tf.placeholder(
         tf.float32, (self._num_candidates,), name='doc_affinity_scores_ph')
-    self._prob_no_click_ph = tf.compat.v1.placeholder(
+    self._prob_no_click_ph = tf.placeholder(
         tf.float32, (), name='prob_no_click_ph')
 
     self._select_slate_fn = select_slate_fn
@@ -496,7 +495,7 @@ class SlateDecompQAgent(dqn_agent.DQNAgentRecSim,
   def _network_adapter(self, states, scope):
     self._validate_states(states)
 
-    with tf.compat.v1.name_scope('network'):
+    with tf.name_scope('network'):
       # Since we decompose the slate optimization into an item-level
       # optimization problem, the observation space is the user state
       # observation plus all documents' observations. In the Dopamine DQN agent
@@ -513,7 +512,7 @@ class SlateDecompQAgent(dqn_agent.DQNAgentRecSim,
     return dqn_agent.DQNNetworkType(q_values)
 
   def _build_networks(self):
-    with tf.compat.v1.name_scope('networks'):
+    with tf.name_scope('networks'):
       self._replay_net_outputs = self._network_adapter(self._replay.states,
                                                        'Online')
       self._replay_next_target_net_outputs = self._network_adapter(
@@ -533,7 +532,7 @@ class SlateDecompQAgent(dqn_agent.DQNAgentRecSim,
     # slate_q_values: [B, S]
     # replay_click_q: [B]
     click_indicator = self._replay.rewards[:, :, self._click_response_index]
-    slate_q_values = tf.compat.v1.batch_gather(
+    slate_q_values = tf.batch_gather(
         self._replay_net_outputs.q_values,
         tf.cast(self._replay.actions, dtype=tf.int32))
     # Only get the Q from the clicked document.
@@ -545,8 +544,7 @@ class SlateDecompQAgent(dqn_agent.DQNAgentRecSim,
     target = tf.stop_gradient(self._build_target_q_op())
 
     clicked = tf.reduce_sum(input_tensor=click_indicator, axis=1)
-    clicked_indices = tf.squeeze(
-        tf.compat.v1.where(tf.equal(clicked, 1)), axis=1)
+    clicked_indices = tf.squeeze(tf.where(tf.equal(clicked, 1)), axis=1)
     # clicked_indices is a vector and tf.gather selects the batch dimension.
     q_clicked = tf.gather(replay_click_q, clicked_indices)
     target_clicked = tf.gather(target, clicked_indices)
@@ -554,8 +552,8 @@ class SlateDecompQAgent(dqn_agent.DQNAgentRecSim,
     def get_train_op():
       loss = tf.reduce_mean(input_tensor=tf.square(q_clicked - target_clicked))
       if self.summary_writer is not None:
-        with tf.compat.v1.variable_scope('Losses'):
-          tf.compat.v1.summary.scalar('Loss', loss)
+        with tf.variable_scope('Losses'):
+          tf.summary.scalar('Loss', loss)
 
       return loss
 
@@ -613,25 +611,24 @@ class SlateDecompQAgent(dqn_agent.DQNAgentRecSim,
     p_no_click = self._prob_no_click_ph
     p = self._doc_affinity_scores_ph
     q = self._net_outputs.q_values[0]
-    with tf.compat.v1.name_scope('select_slate'):
+    with tf.name_scope('select_slate'):
       self._output_slate = self._select_slate_fn(self._slate_size, p_no_click,
                                                  p, q)
 
-    self._output_slate = tf.compat.v1.Print(
+    self._output_slate = tf.Print(
         self._output_slate, [tf.constant('cp 1'), self._output_slate, p, q],
         summarize=10000)
     self._output_slate = tf.reshape(self._output_slate, (self._slate_size,))
 
-    self._action_counts = tf.compat.v1.get_variable(
+    self._action_counts = tf.get_variable(
         'action_counts',
         shape=[self._num_candidates],
-        initializer=tf.compat.v1.zeros_initializer())
+        initializer=tf.zeros_initializer())
     output_slate = tf.reshape(self._output_slate, [-1])
     output_one_hot = tf.one_hot(output_slate, self._num_candidates)
     update_ops = []
     for i in range(self._slate_size):
-      update_ops.append(
-          tf.compat.v1.assign_add(self._action_counts, output_one_hot[i]))
+      update_ops.append(tf.assign_add(self._action_counts, output_one_hot[i]))
     self._select_action_update_op = tf.group(*update_ops)
 
   def _select_action(self):
@@ -660,7 +657,7 @@ class SlateDecompQAgent(dqn_agent.DQNAgentRecSim,
       observation = self._raw_observation
       user_obs = observation['user']
       doc_obs = np.array(list(observation['doc'].values()))
-      tf.compat.v1.logging.debug('cp 1: %s, %s', doc_obs, observation)
+      tf.logging.debug('cp 1: %s, %s', doc_obs, observation)
       # TODO(cwhsu): Use score_documents_tf() and remove score_documents().
       scores, score_no_click = score_documents(user_obs, doc_obs)
       output_slate, _ = self._sess.run(
@@ -697,8 +694,8 @@ class SlateDecompQAgent(dqn_agent.DQNAgentRecSim,
 
   def _add_summary(self, tag, value):
     if self.summary_writer:
-      summary = tf.compat.v1.Summary(
-          value=[tf.compat.v1.Summary.Value(tag=tag, simple_value=value)])
+      summary = tf.Summary(
+          value=[tf.Summary.Value(tag=tag, simple_value=value)])
       self.summary_writer.add_summary(summary, self.training_steps)
 
   def begin_episode(self, observation):

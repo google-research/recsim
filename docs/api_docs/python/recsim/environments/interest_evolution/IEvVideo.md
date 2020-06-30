@@ -11,47 +11,64 @@
 
 # recsim.environments.interest_evolution.IEvVideo
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
-## Class `IEvVideo`
-
-<!-- Start diff -->
 Class to represent a interest evolution Video.
 
 Inherits From:
 [`AbstractDocument`](../../../recsim/document/AbstractDocument.md)
 
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.environments.interest_evolution.IEvVideo(
+    doc_id, features, cluster_id=None, video_length=None, quality=None
+)
+</code></pre>
+
 <!-- Placeholder for "Used in" -->
 
-#### Attributes:
+<!-- Tabular view -->
 
-*   <b>`features`</b>: A numpy array that stores video features.
-*   <b>`cluster_id`</b>: An integer that represents.
-*   <b>`video_length`</b>: A float for video length.
-*   <b>`quality`</b>: a float the represents document quality.
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>
 
-<h2 id="__init__"><code>__init__</code></h2>
-
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
-source</a>
-
-```python
-__init__(
-    doc_id,
-    features,
-    cluster_id=None,
-    video_length=None,
-    quality=None
-)
-```
-
-Generates a random set of features for this interest evolution Video.
+<tr>
+<td>
+`features`
+</td>
+<td>
+A numpy array that stores video features.
+</td>
+</tr><tr>
+<td>
+`cluster_id`
+</td>
+<td>
+An integer that represents.
+</td>
+</tr><tr>
+<td>
+`video_length`
+</td>
+<td>
+A float for video length.
+</td>
+</tr><tr>
+<td>
+`quality`
+</td>
+<td>
+a float the represents document quality.
+</td>
+</tr>
+</table>
 
 ## Methods
 
@@ -60,9 +77,9 @@ Generates a random set of features for this interest evolution Video.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
-```python
-create_observation()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>create_observation()
+</code></pre>
 
 Returns observable properties of this document as a float array.
 
@@ -71,9 +88,9 @@ Returns observable properties of this document as a float array.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
-```python
-doc_id()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>doc_id()
+</code></pre>
 
 Returns the document ID.
 
@@ -82,14 +99,14 @@ Returns the document ID.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
-```python
-@classmethod
-observation_space(cls)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>@classmethod</code>
+<code>observation_space()
+</code></pre>
 
 Gym space that defines how documents are represented.
 
-## Class Members
+## Class Variables
 
 *   `MAX_VIDEO_LENGTH = 100.0` <a id="MAX_VIDEO_LENGTH"></a>
 *   `NUM_FEATURES = 20` <a id="NUM_FEATURES"></a>

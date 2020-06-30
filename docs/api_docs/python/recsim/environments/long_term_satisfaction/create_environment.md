@@ -5,20 +5,21 @@
 
 # recsim.environments.long_term_satisfaction.create_environment
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/long_term_satisfaction.py">View
 source</a>
 
-<!-- Start diff -->
-
 Creates a long-term satisfaction environment.
 
-```python
-recsim.environments.long_term_satisfaction.create_environment(env_config)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.environments.long_term_satisfaction.create_environment(
+    env_config
+)
+</code></pre>
 
 <!-- Placeholder for "Used in" -->

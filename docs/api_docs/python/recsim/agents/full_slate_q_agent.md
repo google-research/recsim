@@ -5,7 +5,10 @@
 
 # Module: recsim.agents.full_slate_q_agent
 
+<!-- Insert buttons and diff -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/full_slate_q_agent.py">View

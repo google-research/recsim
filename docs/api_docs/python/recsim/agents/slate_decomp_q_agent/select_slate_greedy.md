@@ -5,38 +5,74 @@
 
 # recsim.agents.slate_decomp_q_agent.select_slate_greedy
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/slate_decomp_q_agent.py">View
 source</a>
 
-<!-- Start diff -->
 Selects the slate using the adaptive greedy algorithm.
 
-```python
-recsim.agents.slate_decomp_q_agent.select_slate_greedy(
-    slate_size,
-    s_no_click,
-    s,
-    q
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.agents.slate_decomp_q_agent.select_slate_greedy(
+    slate_size, s_no_click, s, q
 )
-```
+</code></pre>
 
 <!-- Placeholder for "Used in" -->
 
 This algorithm corresponds to the method "GS" in Ie et al.
 https://arxiv.org/abs/1905.12767.
 
-#### Args:
+<!-- Tabular view -->
 
-*   <b>`slate_size`</b>: int, the size of the recommendation slate.
-*   <b>`s_no_click`</b>: float tensor, the score for not clicking any document.
-*   <b>`s`</b>: [num_of_documents] tensor, the scores for clicking documents.
-*   <b>`q`</b>: [num_of_documents] tensor, the predicted q values for documents.
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Args</h2></th></tr>
 
-#### Returns:
+<tr>
+<td>
+`slate_size`
+</td>
+<td>
+int, the size of the recommendation slate.
+</td>
+</tr><tr>
+<td>
+`s_no_click`
+</td>
+<td>
+float tensor, the score for not clicking any document.
+</td>
+</tr><tr>
+<td>
+`s`
+</td>
+<td>
+[num_of_documents] tensor, the scores for clicking documents.
+</td>
+</tr><tr>
+<td>
+`q`
+</td>
+<td>
+[num_of_documents] tensor, the predicted q values for documents.
+</td>
+</tr>
+</table>
 
+<!-- Tabular view -->
+
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Returns</h2></th></tr>
+<tr class="alt">
+<td colspan="2">
 [slate_size] tensor, the selected slate.
+</td>
+</tr>
+
+</table>

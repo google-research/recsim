@@ -1,46 +1,38 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
 <meta itemprop="name" content="recsim.agents.dopamine.dqn_agent.DQNNetworkType" />
 <meta itemprop="path" content="Stable" />
-<meta itemprop="property" content="q_values"/>
 <meta itemprop="property" content="__new__"/>
 </div>
 
 # recsim.agents.dopamine.dqn_agent.DQNNetworkType
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/dopamine/dqn_agent.py">View source</a>
 
 
 
-## Class `DQNNetworkType`
-
-<!-- Start diff -->
 dqn_network(q_values,)
 
-<!-- Placeholder for "Used in" -->
-
-<h2 id="__new__"><code>__new__</code></h2>
-
-```python
-@staticmethod
-__new__(
-    _cls,
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.agents.dopamine.dqn_agent.DQNNetworkType(
     q_values
 )
-```
+</code></pre>
 
-Create new instance of dqn_network(q_values,)
+<!-- Placeholder for "Used in" -->
+<!-- Tabular view -->
 
-## Properties
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>
 
-<h3 id="q_values"><code>q_values</code></h3>
+<tr> <td> `q_values` </td> <td>
 
-
-
-
-
-
+</td>
+</tr>
+</table>

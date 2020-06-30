@@ -1,12 +1,14 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
 <meta itemprop="name" content="recsim.environments.interest_exploration" />
 <meta itemprop="path" content="Stable" />
-<meta itemprop="property" content="FLAGS"/>
 </div>
 
 # Module: recsim.environments.interest_exploration
 
+<!-- Insert buttons and diff -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
@@ -58,12 +60,11 @@ Class to represent users.
 
 ## Functions
 
+[`FLAGS(...)`](../../recsim/environments/interest_evolution/FLAGS.md): Registry
+of 'Flag' objects.
+
 [`create_environment(...)`](../../recsim/environments/interest_exploration/create_environment.md):
 Creates an interest exploration environment.
 
 [`total_clicks_reward(...)`](../../recsim/environments/interest_exploration/total_clicks_reward.md):
 Calculates the total number of clicks from a list of responses.
-
-## Other Members
-
-*   `FLAGS` <a id="FLAGS"></a>

@@ -9,37 +9,27 @@
 
 # recsim.environments.interest_evolution.IEvUserDistributionSampler
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
-## Class `IEvUserDistributionSampler`
-
-<!-- Start diff -->
 Class to sample users by a hardcoded distribution.
 
 Inherits From:
 [`AbstractUserSampler`](../../../recsim/user/AbstractUserSampler.md)
 
-<!-- Placeholder for "Used in" -->
-
-<h2 id="__init__"><code>__init__</code></h2>
-
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
-source</a>
-
-```python
-__init__(
-    user_ctor=recsim.environments.interest_evolution.IEvUserState,
-    **kwargs
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.environments.interest_evolution.IEvUserDistributionSampler(
+    user_ctor=recsim.environments.interest_evolution.IEvUserState, **kwargs
 )
-```
+</code></pre>
 
-Creates a new user state sampler.
+<!-- Placeholder for "Used in" -->
 
 ## Methods
 
@@ -48,9 +38,9 @@ Creates a new user state sampler.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-get_user_ctor()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>get_user_ctor()
+</code></pre>
 
 Returns the constructor/class of the user states that will be sampled.
 
@@ -59,17 +49,17 @@ Returns the constructor/class of the user states that will be sampled.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-reset_sampler()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>reset_sampler()
+</code></pre>
 
 <h3 id="sample_user"><code>sample_user</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
-```python
-sample_user()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>sample_user()
+</code></pre>
 
 Samples a new user, with a new set of features.

@@ -10,49 +10,30 @@
 
 # recsim.environments.interest_evolution.IEvUserState
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
-## Class `IEvUserState`
-
-<!-- Start diff -->
 Class to represent interest evolution users.
 
 Inherits From: [`AbstractUserState`](../../../recsim/user/AbstractUserState.md)
 
-<!-- Placeholder for "Used in" -->
-
-<h2 id="__init__"><code>__init__</code></h2>
-
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
-source</a>
-
-```python
-__init__(
-    user_interests,
-    time_budget=None,
-    score_scaling=None,
-    attention_prob=None,
-    no_click_mass=None,
-    keep_interact_prob=None,
-    min_doc_utility=None,
-    user_update_alpha=None,
-    watched_videos=None,
-    impressed_videos=None,
-    liked_videos=None,
-    step_penalty=None,
-    min_normalizer=None,
-    user_quality_factor=None,
-    document_quality_factor=None
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.environments.interest_evolution.IEvUserState(
+    user_interests, time_budget=None, score_scaling=None, attention_prob=None,
+    no_click_mass=None, keep_interact_prob=None, min_doc_utility=None,
+    user_update_alpha=None, watched_videos=None, impressed_videos=None,
+    liked_videos=None, step_penalty=None, min_normalizer=None,
+    user_quality_factor=None, document_quality_factor=None
 )
-```
+</code></pre>
 
-Initializes a new user.
+<!-- Placeholder for "Used in" -->
 
 ## Methods
 
@@ -61,9 +42,9 @@ Initializes a new user.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
-```python
-create_observation()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>create_observation()
+</code></pre>
 
 Return an observation of this user's observable state.
 
@@ -72,10 +53,10 @@ Return an observation of this user's observable state.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
-```python
-@classmethod
-observation_space(cls)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>@classmethod</code>
+<code>observation_space()
+</code></pre>
 
 Gym.spaces object that defines how user states are represented.
 
@@ -84,10 +65,12 @@ Gym.spaces object that defines how user states are represented.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
-```python
-score_document(doc_obs)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>score_document(
+    doc_obs
+)
+</code></pre>
 
-## Class Members
+## Class Variables
 
 *   `NUM_FEATURES = 20` <a id="NUM_FEATURES"></a>

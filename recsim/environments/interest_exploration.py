@@ -71,7 +71,6 @@ class IEUserModel(user.AbstractUserModel):
   Args:
   slate_size: An integer representing the size of the slate.
   no_click_mass: A float indicating the mass given to a no-click option.
-    Must be positive, otherwise CTR is always 1.
   choice_model_ctor: A contructor function to create user choice model.
   user_state_ctor: A constructor to create user state.
   response_model_ctor: A constructor function to create response. The
@@ -87,8 +86,6 @@ class IEUserModel(user.AbstractUserModel):
                user_state_ctor=None,
                response_model_ctor=None,
                seed=0):
-    if no_click_mass < 0:
-      raise ValueError('no_click_mass must be positive.')
 
     super(IEUserModel, self).__init__(response_model_ctor, IEClusterUserSampler(
         user_ctor=user_state_ctor, seed=seed), slate_size)

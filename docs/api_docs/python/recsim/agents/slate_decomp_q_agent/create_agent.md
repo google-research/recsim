@@ -5,24 +5,21 @@
 
 # recsim.agents.slate_decomp_q_agent.create_agent
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/slate_decomp_q_agent.py">View
 source</a>
 
-<!-- Start diff -->
-
 Creates a slate decomposition agent given agent name.
 
-```python
-recsim.agents.slate_decomp_q_agent.create_agent(
-    agent_name,
-    sess,
-    **kwargs
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.agents.slate_decomp_q_agent.create_agent(
+    agent_name, sess, **kwargs
 )
-```
+</code></pre>
 
 <!-- Placeholder for "Used in" -->

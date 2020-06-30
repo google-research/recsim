@@ -5,20 +5,21 @@
 
 # recsim.choice_model.softmax
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/choice_model.py">View
 source</a>
 
-<!-- Start diff -->
-
 Computes the softmax of a vector.
 
-```python
-recsim.choice_model.softmax(vector)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.choice_model.softmax(
+    vector
+)
+</code></pre>
 
 <!-- Placeholder for "Used in" -->

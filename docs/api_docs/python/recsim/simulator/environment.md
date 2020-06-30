@@ -5,7 +5,10 @@
 
 # Module: recsim.simulator.environment
 
+<!-- Insert buttons and diff -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/environment.py">View

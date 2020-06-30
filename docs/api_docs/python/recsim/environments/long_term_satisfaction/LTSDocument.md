@@ -5,46 +5,49 @@
 <meta itemprop="property" content="create_observation"/>
 <meta itemprop="property" content="doc_id"/>
 <meta itemprop="property" content="observation_space"/>
+<meta itemprop="property" content="NUM_FEATURES"/>
 </div>
 
 # recsim.environments.long_term_satisfaction.LTSDocument
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/long_term_satisfaction.py">View
 source</a>
 
-## Class `LTSDocument`
-
-<!-- Start diff -->
 Class to represent an LTS Document.
 
 Inherits From:
 [`AbstractDocument`](../../../recsim/document/AbstractDocument.md)
 
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.environments.long_term_satisfaction.LTSDocument(
+    doc_id, clickbait_score
+)
+</code></pre>
+
 <!-- Placeholder for "Used in" -->
 
-#### Attributes:
+<!-- Tabular view -->
 
-*   <b>`clickbait_score`</b>: real number in [0,1] representing the
-    clickbaitiness of a document.
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>
 
-<h2 id="__init__"><code>__init__</code></h2>
-
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/long_term_satisfaction.py">View
-source</a>
-
-```python
-__init__(
-    doc_id,
-    clickbait_score
-)
-```
-
-Initialize self. See help(type(self)) for accurate signature.
+<tr>
+<td>
+`clickbait_score`
+</td>
+<td>
+real number in [0,1] representing the clickbaitiness of a
+document.
+</td>
+</tr>
+</table>
 
 ## Methods
 
@@ -53,9 +56,9 @@ Initialize self. See help(type(self)) for accurate signature.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/long_term_satisfaction.py">View
 source</a>
 
-```python
-create_observation()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>create_observation()
+</code></pre>
 
 Returns observable properties of this document as a float array.
 
@@ -64,9 +67,9 @@ Returns observable properties of this document as a float array.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
-```python
-doc_id()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>doc_id()
+</code></pre>
 
 Returns the document ID.
 
@@ -75,9 +78,13 @@ Returns the document ID.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/long_term_satisfaction.py">View
 source</a>
 
-```python
-@staticmethod
-observation_space()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>@staticmethod</code>
+<code>observation_space()
+</code></pre>
 
 Gym space that defines how documents are represented.
+
+## Class Variables
+
+*   `NUM_FEATURES = None` <a id="NUM_FEATURES"></a>

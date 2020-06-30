@@ -7,17 +7,15 @@
 
 # recsim.user.AbstractResponse
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-## Class `AbstractResponse`
-
-<!-- Start diff -->
 Abstract class to model a user response.
 
 <!-- Placeholder for "Used in" -->
@@ -29,9 +27,10 @@ Abstract class to model a user response.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-create_observation()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>@abc.abstractmethod</code>
+<code>create_observation()
+</code></pre>
 
 Creates a tensor observation of this response.
 
@@ -40,9 +39,10 @@ Creates a tensor observation of this response.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-@staticmethod
-response_space()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>@staticmethod</code>
+<code>@abc.abstractmethod</code>
+<code>response_space()
+</code></pre>
 
 ArraySpec that defines how a single response is represented.

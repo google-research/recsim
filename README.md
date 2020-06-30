@@ -10,16 +10,33 @@ be easily configured that vary assumptions about: user preferences and item
 familiarity; user latent state and its dynamics; and choice models and other
 user response behavior. We outline how RecSim offers value to RL and RS
 researchers and practitioners, and how it can serve as a vehicle for
-academic-industrial collaboration.
+academic-industrial collaboration. For a detailed description of the RecSim
+architecture please read [Ie et al](https://arxiv.org/abs/1909.04847). Please
+cite the paper if you use the code from this repository in your work.
+
+### Bibtex
+
+```
+@article{ie2019recsim,
+    title={RecSim: A Configurable Simulation Platform for Recommender Systems},
+    author={Eugene Ie and Chih-wei Hsu and Martin Mladenov and Vihan Jain and Sanmit Narvekar and Jing Wang and Rui Wu and Craig Boutilier},
+    year={2019},
+    eprint={1909.04847},
+    archivePrefix={arXiv},
+    primaryClass={cs.LG}
+}
+```
 
 <a id='Disclaimer'></a>
+
 ## Disclaimer
 
 This is not an officially supported Google product.
 
 ## What's new
-*  **12/13/2019:** Added (abstract) classes for both multi-user environments and
-  agents. Added bandit algorithms for generalized linear models.
+
+*   **12/13/2019:** Added (abstract) classes for both multi-user environments
+    and agents. Added bandit algorithms for generalized linear models.
 
 ## Installation and Sample Usage
 
@@ -64,10 +81,12 @@ You could also find the simulated logs in /tmp/recsim/episode_logs.tfrecord
 
 ## Tutorials
 
-To get started, please check out our Colab tutorials. In [**RecSim:
-Overview**](recsim/colab/RecSim_Overview.ipynb), we give a brief overview about
-RecSim. We then talk about each configurable component:
-[**environment**](recsim/colab/RecSim_Developing_an_Environment.ipynb) and
+To get started, please check out our Colab tutorials. In
+[**RecSim: Overview**](recsim/colab/RecSim_Overview.ipynb),
+we give a brief overview about RecSim. We then talk about each configurable
+component:
+[**environment**](recsim/colab/RecSim_Developing_an_Environment.ipynb)
+and
 [**recommender agent**](recsim/colab/RecSim_Developing_an_Agent.ipynb).
 
 ## Documentation

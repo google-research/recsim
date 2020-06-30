@@ -5,7 +5,10 @@
 
 # Module: recsim.agents.greedy_pctr_agent
 
+<!-- Insert buttons and diff -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/greedy_pctr_agent.py">View

@@ -5,7 +5,10 @@
 
 # Module: recsim.simulator.recsim_gym
 
+<!-- Insert buttons and diff -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View

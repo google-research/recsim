@@ -1,11 +1,6 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
 <meta itemprop="name" content="recsim.simulator.recsim_gym.RecSimGymEnv" />
 <meta itemprop="path" content="Stable" />
-<meta itemprop="property" content="action_space"/>
-<meta itemprop="property" content="environment"/>
-<meta itemprop="property" content="game_over"/>
-<meta itemprop="property" content="observation_space"/>
-<meta itemprop="property" content="unwrapped"/>
 <meta itemprop="property" content="__enter__"/>
 <meta itemprop="property" content="__exit__"/>
 <meta itemprop="property" content="__init__"/>
@@ -21,112 +16,125 @@
 <meta itemprop="property" content="write_metrics"/>
 <meta itemprop="property" content="metadata"/>
 <meta itemprop="property" content="reward_range"/>
+<meta itemprop="property" content="spec"/>
 </div>
 
 # recsim.simulator.recsim_gym.RecSimGymEnv
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
-## Class `RecSimGymEnv`
-
-<!-- Start diff -->
 Class to wrap recommender system environment to gym.Env.
 
-<!-- Placeholder for "Used in" -->
-
-#### Attributes:
-
-*   <b>`game_over`</b>: A boolean indicating whether the current game has
-    finished
-*   <b>`action_space`</b>: A gym.spaces object that specifies the space for
-    possible actions.
-*   <b>`observation_space`</b>: A gym.spaces object that specifies the space for
-    possible observations.
-
-<h2 id="__init__"><code>__init__</code></h2>
-
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
-source</a>
-
-```python
-__init__(
-    raw_environment,
-    reward_aggregator,
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.simulator.recsim_gym.RecSimGymEnv(
+    raw_environment, reward_aggregator,
     metrics_aggregator=_dummy_metrics_aggregator,
     metrics_writer=_dummy_metrics_writer
 )
-```
+</code></pre>
 
-Initializes a RecSim environment conforming to gym.Env.
+<!-- Placeholder for "Used in" -->
+<!-- Tabular view -->
 
-#### Args:
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Args</h2></th></tr>
 
-*   <b>`raw_environment`</b>: A recsim recommender system environment.
-*   <b>`reward_aggregator`</b>: A function mapping a list of responses to a
-    number.
-*   <b>`metrics_aggregator`</b>: A function aggregating metrics over all steps
-    given responses and response_names.
-*   <b>`metrics_writer`</b>: A function writing final metrics to TensorBoard.
+<tr>
+<td>
+`raw_environment`
+</td>
+<td>
+A recsim recommender system environment.
+</td>
+</tr><tr>
+<td>
+`reward_aggregator`
+</td>
+<td>
+A function mapping a list of responses to a number.
+</td>
+</tr><tr>
+<td>
+`metrics_aggregator`
+</td>
+<td>
+A function aggregating metrics over all steps given
+responses and response_names.
+</td>
+</tr><tr>
+<td>
+`metrics_writer`
+</td>
+<td>
+A function writing final metrics to TensorBoard.
+</td>
+</tr>
+</table>
 
-## Properties
+<!-- Tabular view -->
 
-<h3 id="action_space"><code>action_space</code></h3>
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>
 
-Returns the action space of the environment.
-
-Each action is a vector that specified document slate. Each element in the
-vector corresponds to the index of the document in the candidate set.
-
-<h3 id="environment"><code>environment</code></h3>
-
+<tr>
+<td>
+`game_over`
+</td>
+<td>
+A boolean indicating whether the current game has finished
+</td>
+</tr><tr>
+<td>
+`action_space`
+</td>
+<td>
+A gym.spaces object that specifies the space for possible
+actions.
+</td>
+</tr><tr>
+<td>
+`observation_space`
+</td>
+<td>
+A gym.spaces object that specifies the space for possible
+observations.
+</td>
+</tr><tr>
+<td>
+`environment`
+</td>
+<td>
 Returns the recsim recommender system environment.
-
-<h3 id="game_over"><code>game_over</code></h3>
-
-<h3 id="observation_space"><code>observation_space</code></h3>
-
-Returns the observation space of the environment.
-
-Each observation is a dictionary with three keys `user`, `doc` and `response`
-that includes observation about user state, document and user response,
-respectively.
-
-<h3 id="unwrapped"><code>unwrapped</code></h3>
-
+</td>
+</tr><tr>
+<td>
+`unwrapped`
+</td>
+<td>
 Completely unwrap this env.
-
-#### Returns:
-
-*   <b>`gym.Env`</b>: The base non-wrapped gym.Env instance
+</td>
+</tr>
+</table>
 
 ## Methods
-
-<h3 id="__enter__"><code>__enter__</code></h3>
-
-```python
-__enter__()
-```
-
-<h3 id="__exit__"><code>__exit__</code></h3>
-
-```python
-__exit__(*args)
-```
 
 <h3 id="close"><code>close</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
-```python
-close()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>close()
+</code></pre>
 
 Override close in your subclass to perform any necessary cleanup.
 
@@ -138,18 +146,20 @@ when the program exits.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
-```python
-extract_env_info()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>extract_env_info()
+</code></pre>
 
 <h3 id="render"><code>render</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
-```python
-render(mode='human')
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>render(
+    mode='human'
+)
+</code></pre>
 
 Renders the environment.
 
@@ -170,9 +180,18 @@ Make sure that your class's metadata 'render.modes' key includes the list of
 supported modes. It's recommended to call super() in implementations to use the
 functionality of this method.
 
-#### Args:
+<!-- Tabular view -->
 
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Args</th></tr>
+<tr class="alt">
+<td colspan="2">
 mode (str): the mode to render with
+</td>
+</tr>
+
+</table>
 
 #### Example:
 
@@ -191,24 +210,33 @@ class MyEnv(Env): metadata = {'render.modes': ['human', 'rgb_array']}
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
-```python
-reset()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>reset()
+</code></pre>
 
 Resets the state of the environment and returns an initial observation.
 
-#### Returns:
+<!-- Tabular view -->
 
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Returns</th></tr>
+<tr class="alt">
+<td colspan="2">
 observation (object): the initial observation.
+</td>
+</tr>
+
+</table>
 
 <h3 id="reset_metrics"><code>reset_metrics</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
-```python
-reset_metrics()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>reset_metrics()
+</code></pre>
 
 Resets every metric to zero.
 
@@ -220,18 +248,20 @@ reset() gets called for every episode.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
-```python
-reset_sampler()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>reset_sampler()
+</code></pre>
 
 <h3 id="seed"><code>seed</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
-```python
-seed(seed=None)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>seed(
+    seed=None
+)
+</code></pre>
 
 Sets the seed for this env's random number generator(s).
 
@@ -241,21 +271,33 @@ Some environments use multiple pseudorandom number generators. We want to
 capture all such seeds used in order to ensure that there aren't accidental
 correlations between multiple generators.
 
-#### Returns:
+<!-- Tabular view -->
 
-list<bigint>: Returns the list of seeds used in this env's random number
-generators. The first value in the list should be the "main" seed, or the value
-which a reproducer should pass to 'seed'. Often, the main seed equals the
-provided 'seed', but this won't be true if seed=None, for example.
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Returns</th></tr>
+<tr class="alt">
+<td colspan="2">
+list<bigint>: Returns the list of seeds used in this env's random
+number generators. The first value in the list should be the
+"main" seed, or the value which a reproducer should pass to
+'seed'. Often, the main seed equals the provided 'seed', but
+this won't be true if seed=None, for example.
+</td>
+</tr>
+
+</table>
 
 <h3 id="step"><code>step</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
-```python
-step(action)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>step(
+    action
+)
+</code></pre>
 
 Runs one timestep of the environment's dynamics.
 
@@ -263,31 +305,51 @@ When end of episode is reached, you are responsible for calling `reset()` to
 reset this environment's state. Accepts an action and returns a tuple
 (observation, reward, done, info).
 
-#### Args:
+<!-- Tabular view -->
 
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Args</th></tr>
+<tr class="alt">
+<td colspan="2">
 action (object): An action provided by the environment
+</td>
+</tr>
 
-#### Returns:
+</table>
 
-A four-tuple of (observation, reward, done, info) where: observation (object):
-agent's observation that include 1. User's state features 2. Document's
-observation 3. Observation about user's slate responses. reward (float) : The
-amount of reward returned after previous action done (boolean): Whether the
-episode has ended, in which case further step() calls will return undefined
-results info (dict): Contains responses for the full slate for
+<!-- Tabular view -->
+
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Returns</th></tr>
+<tr class="alt">
+<td colspan="2">
+A four-tuple of (observation, reward, done, info) where:
+observation (object): agent's observation that include
+1. User's state features
+2. Document's observation
+3. Observation about user's slate responses.
+reward (float) : The amount of reward returned after previous action
+done (boolean): Whether the episode has ended, in which case further
+step() calls will return undefined results
+info (dict): Contains responses for the full slate for
 debugging/learning.
+</td>
+</tr>
+
+</table>
 
 <h3 id="update_metrics"><code>update_metrics</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
-```python
-update_metrics(
-    responses,
-    info=None
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>update_metrics(
+    responses, info=None
 )
-```
+</code></pre>
 
 Updates metrics with one step responses.
 
@@ -296,13 +358,30 @@ Updates metrics with one step responses.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/recsim_gym.py">View
 source</a>
 
-```python
-write_metrics(add_summary_fn)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>write_metrics(
+    add_summary_fn
+)
+</code></pre>
 
 Writes metrics to TensorBoard by calling add_summary_fn.
 
-## Class Members
+<h3 id="__enter__"><code>__enter__</code></h3>
+
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>__enter__()
+</code></pre>
+
+<h3 id="__exit__"><code>__exit__</code></h3>
+
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>__exit__(
+    *args
+)
+</code></pre>
+
+## Class Variables
 
 *   `metadata` <a id="metadata"></a>
 *   `reward_range` <a id="reward_range"></a>
+*   `spec = None` <a id="spec"></a>

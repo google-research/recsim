@@ -15,44 +15,57 @@
 
 # recsim.user.AbstractUserModel
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-## Class `AbstractUserModel`
-
-<!-- Start diff -->
 Abstract class to represent an encoding of a user's dynamics.
+
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.user.AbstractUserModel(
+    response_model_ctor, user_sampler, slate_size
+)
+</code></pre>
 
 <!-- Placeholder for "Used in" -->
 
-<h2 id="__init__"><code>__init__</code></h2>
+<!-- Tabular view -->
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
-source</a>
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Args</h2></th></tr>
 
-```python
-__init__(
-    response_model_ctor,
-    user_sampler,
-    slate_size
-)
-```
-
-Initializes a new user model.
-
-#### Args:
-
-*   <b>`response_model_ctor`</b>: A class/constructor representing the type of
-    responses this model will generate.
-*   <b>`user_sampler`</b>: An instance of AbstractUserSampler that can generate
-    initial user states from an inital state distribution.
-*   <b>`slate_size`</b>: integer number of documents that can be served to the
-    user at any interaction.
+<tr>
+<td>
+`response_model_ctor`
+</td>
+<td>
+A class/constructor representing the type of
+responses this model will generate.
+</td>
+</tr><tr>
+<td>
+`user_sampler`
+</td>
+<td>
+An instance of AbstractUserSampler that can generate
+initial user states from an inital state distribution.
+</td>
+</tr><tr>
+<td>
+`slate_size`
+</td>
+<td>
+integer number of documents that can be served to the user at
+any interaction.
+</td>
+</tr>
+</table>
 
 ## Methods
 
@@ -61,9 +74,9 @@ Initializes a new user model.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-create_observation()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>create_observation()
+</code></pre>
 
 Emits obesrvation about user's state.
 
@@ -72,9 +85,9 @@ Emits obesrvation about user's state.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-get_response_model_ctor()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>get_response_model_ctor()
+</code></pre>
 
 Returns a constructor for the type of response this model will create.
 
@@ -83,9 +96,10 @@ Returns a constructor for the type of response this model will create.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-is_terminal()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>@abc.abstractmethod</code>
+<code>is_terminal()
+</code></pre>
 
 Returns a boolean indicating whether this session is over.
 
@@ -94,9 +108,9 @@ Returns a boolean indicating whether this session is over.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-observation_space()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>observation_space()
+</code></pre>
 
 A Gym.spaces object that describes possible user observations.
 
@@ -105,9 +119,9 @@ A Gym.spaces object that describes possible user observations.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-reset()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>reset()
+</code></pre>
 
 Resets the user.
 
@@ -116,9 +130,9 @@ Resets the user.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-reset_sampler()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>reset_sampler()
+</code></pre>
 
 Resets the sampler.
 
@@ -127,49 +141,91 @@ Resets the sampler.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-response_space()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>response_space()
+</code></pre>
 
 <h3 id="simulate_response"><code>simulate_response</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-simulate_response(documents)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>@abc.abstractmethod</code>
+<code>simulate_response(
+    documents
+)
+</code></pre>
 
 Simulates the user's response to a slate of documents.
 
 This could involve simulating models of attention, as well as random sampling
 for selection from scored documents.
 
-#### Args:
+<!-- Tabular view -->
 
-*   <b>`documents`</b>: a list of AbstractDocuments
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Args</th></tr>
 
-#### Returns:
+<tr>
+<td>
+`documents`
+</td>
+<td>
+a list of AbstractDocuments
+</td>
+</tr>
+</table>
 
+<!-- Tabular view -->
+
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Returns</th></tr>
+<tr class="alt">
+<td colspan="2">
 (response) a list of AbstractResponse objects for each slate item
+</td>
+</tr>
+
+</table>
 
 <h3 id="update_state"><code>update_state</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-update_state(
-    slate_documents,
-    responses
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>@abc.abstractmethod</code>
+<code>update_state(
+    slate_documents, responses
 )
-```
+</code></pre>
 
 Updates the user's state based on the slate and document selected.
 
-#### Args:
+<!-- Tabular view -->
 
-*   <b>`slate_documents`</b>: A list of AbstractDocuments for items in the
-    slate.
-*   <b>`responses`</b>: A list of AbstractResponses for each item in the slate.
-    Updates: The user's hidden state.
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Args</th></tr>
+
+<tr>
+<td>
+`slate_documents`
+</td>
+<td>
+A list of AbstractDocuments for items in the slate.
+</td>
+</tr><tr>
+<td>
+`responses`
+</td>
+<td>
+A list of AbstractResponses for each item in the slate.
+</td>
+</tr>
+</table>
+
+Updates: The user's hidden state.

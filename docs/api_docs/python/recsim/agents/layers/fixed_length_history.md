@@ -5,7 +5,10 @@
 
 # Module: recsim.agents.layers.fixed_length_history
 
+<!-- Insert buttons and diff -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/layers/fixed_length_history.py">View

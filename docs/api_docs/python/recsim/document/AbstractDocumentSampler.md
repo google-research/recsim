@@ -1,7 +1,6 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
 <meta itemprop="name" content="recsim.document.AbstractDocumentSampler" />
 <meta itemprop="path" content="Stable" />
-<meta itemprop="property" content="num_clusters"/>
 <meta itemprop="property" content="__init__"/>
 <meta itemprop="property" content="get_doc_ctor"/>
 <meta itemprop="property" content="reset_sampler"/>
@@ -11,40 +10,39 @@
 
 # recsim.document.AbstractDocumentSampler
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
-## Class `AbstractDocumentSampler`
-
-<!-- Start diff -->
 Abstract class to sample documents.
 
-<!-- Placeholder for "Used in" -->
-
-<h2 id="__init__"><code>__init__</code></h2>
-
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
-source</a>
-
-```python
-__init__(
-    doc_ctor,
-    seed=0
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.document.AbstractDocumentSampler(
+    doc_ctor, seed=0
 )
-```
+</code></pre>
 
-Initialize self. See help(type(self)) for accurate signature.
+<!-- Placeholder for "Used in" -->
+<!-- Tabular view -->
 
-## Properties
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>
 
-<h3 id="num_clusters"><code>num_clusters</code></h3>
-
+<tr>
+<td>
+`num_clusters`
+</td>
+<td>
 Returns the number of document clusters. Returns 0 if not applicable.
+</td>
+</tr>
+</table>
 
 ## Methods
 
@@ -53,9 +51,9 @@ Returns the number of document clusters. Returns 0 if not applicable.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
-```python
-get_doc_ctor()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>get_doc_ctor()
+</code></pre>
 
 Returns the constructor/class of the documents that will be sampled.
 
@@ -64,18 +62,19 @@ Returns the constructor/class of the documents that will be sampled.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
-```python
-reset_sampler()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>reset_sampler()
+</code></pre>
 
 <h3 id="sample_document"><code>sample_document</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
-```python
-sample_document()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>@abc.abstractmethod</code>
+<code>sample_document()
+</code></pre>
 
 Samples and return an instantiation of AbstractDocument.
 
@@ -84,11 +83,10 @@ Samples and return an instantiation of AbstractDocument.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
-```python
-update_state(
-    documents,
-    responses
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>update_state(
+    documents, responses
 )
-```
+</code></pre>
 
 Update document state (if needed) given user's (or users') responses.

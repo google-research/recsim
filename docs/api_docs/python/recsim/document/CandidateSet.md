@@ -13,34 +13,25 @@
 
 # recsim.document.CandidateSet
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
-## Class `CandidateSet`
-
-<!-- Start diff -->
 Class to represent a collection of AbstractDocuments.
+
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.document.CandidateSet()
+</code></pre>
 
 <!-- Placeholder for "Used in" -->
 
 The candidate set is represented as a hashmap (dictionary), with documents
 indexed by their document ID.
-
-<h2 id="__init__"><code>__init__</code></h2>
-
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
-source</a>
-
-```python
-__init__()
-```
-
-Initializes a document candidate set with 0 documents.
 
 ## Methods
 
@@ -49,9 +40,11 @@ Initializes a document candidate set with 0 documents.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
-```python
-add_document(document)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>add_document(
+    document
+)
+</code></pre>
 
 Adds a document to the candidate set.
 
@@ -60,9 +53,9 @@ Adds a document to the candidate set.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
-```python
-create_observation()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>create_observation()
+</code></pre>
 
 Returns a dictionary of observable features of documents.
 
@@ -71,9 +64,9 @@ Returns a dictionary of observable features of documents.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
-```python
-get_all_documents()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>get_all_documents()
+</code></pre>
 
 Returns all documents.
 
@@ -82,39 +75,64 @@ Returns all documents.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
-```python
-get_documents(document_ids)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>get_documents(
+    document_ids
+)
+</code></pre>
 
 Gets the documents associated with the specified document IDs.
 
-#### Args:
+<!-- Tabular view -->
 
-*   <b>`document_ids`</b>: an array representing indices into the candidate set.
-    Indices can be integers or string-encoded integers.
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Args</th></tr>
 
-#### Returns:
+<tr>
+<td>
+`document_ids`
+</td>
+<td>
+an array representing indices into the candidate set.
+Indices can be integers or string-encoded integers.
+</td>
+</tr>
+</table>
 
-(documents) an ordered list of AbstractDocuments associated with the document
-ids.
+<!-- Tabular view -->
+
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Returns</th></tr>
+<tr class="alt">
+<td colspan="2">
+(documents) an ordered list of AbstractDocuments associated with the
+document ids.
+</td>
+</tr>
+
+</table>
 
 <h3 id="observation_space"><code>observation_space</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
-```python
-observation_space()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>observation_space()
+</code></pre>
 
 <h3 id="remove_document"><code>remove_document</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
-```python
-remove_document(document)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>remove_document(
+    document
+)
+</code></pre>
 
 Removes a document from the set (to simulate a changing corpus).
 
@@ -123,8 +141,8 @@ Removes a document from the set (to simulate a changing corpus).
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/document.py">View
 source</a>
 
-```python
-size()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>size()
+</code></pre>
 
 Returns an integer, the number of documents in this candidate set.

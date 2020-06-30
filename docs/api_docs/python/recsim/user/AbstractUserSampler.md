@@ -9,42 +9,47 @@
 
 # recsim.user.AbstractUserSampler
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-## Class `AbstractUserSampler`
-
-<!-- Start diff -->
 Abstract class to sample users.
 
-<!-- Placeholder for "Used in" -->
-
-<h2 id="__init__"><code>__init__</code></h2>
-
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
-source</a>
-
-```python
-__init__(
-    user_ctor,
-    seed=0
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.user.AbstractUserSampler(
+    user_ctor, seed=0
 )
-```
+</code></pre>
 
-Creates a new user state sampler.
+<!-- Placeholder for "Used in" -->
+<!-- Tabular view -->
 
-User states of the type user_ctor are sampled.
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Args</h2></th></tr>
 
-#### Args:
-
-*   <b>`user_ctor`</b>: A class/constructor for the type of user states that
-    will be sampled.
-*   <b>`seed`</b>: An integer for a random seed.
+<tr>
+<td>
+`user_ctor`
+</td>
+<td>
+A class/constructor for the type of user states that will be
+sampled.
+</td>
+</tr><tr>
+<td>
+`seed`
+</td>
+<td>
+An integer for a random seed.
+</td>
+</tr>
+</table>
 
 ## Methods
 
@@ -53,9 +58,9 @@ User states of the type user_ctor are sampled.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-get_user_ctor()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>get_user_ctor()
+</code></pre>
 
 Returns the constructor/class of the user states that will be sampled.
 
@@ -64,17 +69,18 @@ Returns the constructor/class of the user states that will be sampled.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-reset_sampler()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>reset_sampler()
+</code></pre>
 
 <h3 id="sample_user"><code>sample_user</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-sample_user()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>@abc.abstractmethod</code>
+<code>sample_user()
+</code></pre>
 
 Creates a new instantiation of this user's hidden state parameters.

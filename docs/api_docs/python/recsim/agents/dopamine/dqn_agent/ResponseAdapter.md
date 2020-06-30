@@ -1,55 +1,65 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
 <meta itemprop="name" content="recsim.agents.dopamine.dqn_agent.ResponseAdapter" />
 <meta itemprop="path" content="Stable" />
-<meta itemprop="property" content="response_dtype"/>
-<meta itemprop="property" content="response_names"/>
-<meta itemprop="property" content="response_shape"/>
 <meta itemprop="property" content="__init__"/>
 <meta itemprop="property" content="encode"/>
 </div>
 
 # recsim.agents.dopamine.dqn_agent.ResponseAdapter
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/dopamine/dqn_agent.py">View
 source</a>
 
-## Class `ResponseAdapter`
-
-<!-- Start diff -->
 Custom flattening of responses to accommodate dopamine replay buffer.
+
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.agents.dopamine.dqn_agent.ResponseAdapter(
+    input_response_space
+)
+</code></pre>
 
 <!-- Placeholder for "Used in" -->
 
-<h2 id="__init__"><code>__init__</code></h2>
+<!-- Tabular view -->
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/dopamine/dqn_agent.py">View
-source</a>
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Args</h2></th></tr>
 
-```python
-__init__(input_response_space)
-```
+<tr>
+<td>
+`input_response_space`
+</td>
+<td>
+this is assumed to be an instance of
+gym.spaces.Tuple; each element of the tuple is has to be an instance
+of gym.spaces.Dict consisting of feature_name: 0-d gym.spaces.Box
+(single float) key-value pairs.
+</td>
+</tr>
+</table>
 
-Init function for ResponseAdapter.
+<!-- Tabular view -->
 
-#### Args:
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>
 
-*   <b>`input_response_space`</b>: this is assumed to be an instance of
-    gym.spaces.Tuple; each element of the tuple is has to be an instance of
-    gym.spaces.Dict consisting of feature_name: 0-d gym.spaces.Box (single
-    float) key-value pairs.
+<tr> <td> `response_dtype` </td> <td>
 
-## Properties
+</td> </tr><tr> <td> `response_names` </td> <td>
 
-<h3 id="response_dtype"><code>response_dtype</code></h3>
+</td> </tr><tr> <td> `response_shape` </td> <td>
 
-<h3 id="response_names"><code>response_names</code></h3>
-
-<h3 id="response_shape"><code>response_shape</code></h3>
+</td>
+</tr>
+</table>
 
 ## Methods
 
@@ -58,6 +68,8 @@ Init function for ResponseAdapter.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/agents/dopamine/dqn_agent.py">View
 source</a>
 
-```python
-encode(responses)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>encode(
+    responses
+)
+</code></pre>

@@ -9,34 +9,28 @@
 
 # recsim.environments.interest_evolution.UtilityModelUserSampler
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
-## Class `UtilityModelUserSampler`
-
-<!-- Start diff -->
 Class that samples users for utility model experiment.
 
 Inherits From:
 [`AbstractUserSampler`](../../../recsim/user/AbstractUserSampler.md)
 
-<!-- Placeholder for "Used in" -->
-
-<h2 id="__init__"><code>__init__</code></h2>
-
-```python
-__init__(
-    *args,
-    **kwargs
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.environments.interest_evolution.UtilityModelUserSampler(
+    user_ctor=recsim.environments.interest_evolution.IEvUserState,
+    document_quality_factor=1.0, no_click_mass=1.0, min_normalizer=-1.0, **kwargs
 )
-```
+</code></pre>
 
-Creates a new user state sampler.
+<!-- Placeholder for "Used in" -->
 
 ## Methods
 
@@ -45,9 +39,9 @@ Creates a new user state sampler.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-get_user_ctor()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>get_user_ctor()
+</code></pre>
 
 Returns the constructor/class of the user states that will be sampled.
 
@@ -56,17 +50,17 @@ Returns the constructor/class of the user states that will be sampled.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-reset_sampler()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>reset_sampler()
+</code></pre>
 
 <h3 id="sample_user"><code>sample_user</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
-```python
-sample_user()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>sample_user()
+</code></pre>
 
 Creates a new instantiation of this user's hidden state parameters.

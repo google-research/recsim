@@ -5,42 +5,48 @@
 <meta itemprop="property" content="create_observation"/>
 <meta itemprop="property" content="observation_space"/>
 <meta itemprop="property" content="score_document"/>
+<meta itemprop="property" content="NUM_FEATURES"/>
 </div>
 
 # recsim.environments.interest_exploration.IEUserState
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
 source</a>
 
-## Class `IEUserState`
-
-<!-- Start diff -->
 Class to represent users.
 
 Inherits From: [`AbstractUserState`](../../../recsim/user/AbstractUserState.md)
 
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.environments.interest_exploration.IEUserState(
+    topic_affinity
+)
+</code></pre>
+
 <!-- Placeholder for "Used in" -->
 
-#### Attributes:
+<!-- Tabular view -->
 
-*   <b>`topic_affinity`</b>: a nonnegative vector holds document type affinities
-    which are not temporal dynamics and hidden.
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>
 
-<h2 id="__init__"><code>__init__</code></h2>
-
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
-source</a>
-
-```python
-__init__(topic_affinity)
-```
-
-Initializes a new user.
+<tr>
+<td>
+`topic_affinity`
+</td>
+<td>
+a nonnegative vector holds document type affinities which
+are not temporal dynamics and hidden.
+</td>
+</tr>
+</table>
 
 ## Methods
 
@@ -49,9 +55,9 @@ Initializes a new user.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
 source</a>
 
-```python
-create_observation()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>create_observation()
+</code></pre>
 
 User's topic_affinity is not observable.
 
@@ -60,10 +66,10 @@ User's topic_affinity is not observable.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
 source</a>
 
-```python
-@staticmethod
-observation_space()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>@staticmethod</code>
+<code>observation_space()
+</code></pre>
 
 Gym.spaces object that defines how user states are represented.
 
@@ -72,8 +78,14 @@ Gym.spaces object that defines how user states are represented.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
 source</a>
 
-```python
-score_document(doc_obs)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>score_document(
+    doc_obs
+)
+</code></pre>
 
 Returns user document affinity plus document quality.
+
+## Class Variables
+
+*   `NUM_FEATURES = None` <a id="NUM_FEATURES"></a>

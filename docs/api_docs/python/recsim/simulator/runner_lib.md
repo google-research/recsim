@@ -1,12 +1,14 @@
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
 <meta itemprop="name" content="recsim.simulator.runner_lib" />
 <meta itemprop="path" content="Stable" />
-<meta itemprop="property" content="FLAGS"/>
 </div>
 
 # Module: recsim.simulator.runner_lib
 
+<!-- Insert buttons and diff -->
+
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/runner_lib.py">View
@@ -27,9 +29,8 @@ that handles running the training.
 
 ## Functions
 
+[`FLAGS(...)`](../../recsim/environments/interest_evolution/FLAGS.md): Registry
+of 'Flag' objects.
+
 [`load_gin_configs(...)`](../../recsim/simulator/runner_lib/load_gin_configs.md):
 Loads gin configuration files.
-
-## Other Members
-
-*   `FLAGS` <a id="FLAGS"></a>

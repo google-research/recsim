@@ -10,21 +10,27 @@
 
 # recsim.environments.interest_exploration.IEClusterUserSampler
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
 source</a>
 
-## Class `IEClusterUserSampler`
-
-<!-- Start diff -->
 Samples users from predetermined types with type-specific parameters.
 
 Inherits From:
 [`AbstractUserSampler`](../../../recsim/user/AbstractUserSampler.md)
+
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.environments.interest_exploration.IEClusterUserSampler(
+    user_type_distribution=(0.3, 0.7), user_document_mean_affinity_matrix=((0.1,
+    0.7), (0.7, 0.1)), user_document_stddev_affinity_matrix=((0.1, 0.1), (0.1,
+    0.1)), user_ctor=recsim.environments.interest_exploration.IEUserState, **kwargs
+)
+</code></pre>
 
 <!-- Placeholder for "Used in" -->
 
@@ -35,37 +41,71 @@ type-specific parameters. In this case, these are the mean and scale of a
 lognormal distribution, i.e. the affinity of user u of type U towards an
 document of type D is drawn according to lognormal(mean(U,D), scale(U,D)).
 
-#### Args:
+<!-- Tabular view -->
 
-*   <b>`user_type_distribution`</b>: a non-negative array of dimension equal to
-    the number of user types, whose entries sum to one.
-*   <b>`user_document_mean_affinity_matrix`</b>: a non-negative two-dimensional
-    array with dimensions number of user types by number of document topics.
-    Represents the mean of the affinity score of a user type to a topic.
-*   <b>`user_document_stddev_affinity_matrix`</b>: a non-negative
-    two-dimensional array with dimensions number of user types by number of
-    document topics. Represents the scale of the affinity score of a user type
-    to a topic.
-*   <b>`user_ctor`</b>: constructor for a user state.
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Args</h2></th></tr>
 
-<h2 id="__init__"><code>__init__</code></h2>
+<tr>
+<td>
+`user_type_distribution`
+</td>
+<td>
+a non-negative array of dimension equal to the
+number of user types, whose entries sum to one.
+</td>
+</tr><tr>
+<td>
+`user_document_mean_affinity_matrix`
+</td>
+<td>
+a non-negative two-dimensional array
+with dimensions number of user types by number of document topics.
+Represents the mean of the affinity score of a user type to a topic.
+</td>
+</tr><tr>
+<td>
+`user_document_stddev_affinity_matrix`
+</td>
+<td>
+a non-negative two-dimensional array
+with dimensions number of user types by number of document topics.
+Represents the scale of the affinity score of a user type to a topic.
+</td>
+</tr><tr>
+<td>
+`user_ctor`
+</td>
+<td>
+constructor for a user state.
+</td>
+</tr>
+</table>
 
-```python
-__init__(
-    *args,
-    **kwargs
-)
-```
+<!-- Tabular view -->
 
-Creates a new user state sampler.
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Args</h2></th></tr>
 
-User states of the type user_ctor are sampled.
-
-#### Args:
-
-*   <b>`user_ctor`</b>: A class/constructor for the type of user states that
-    will be sampled.
-*   <b>`seed`</b>: An integer for a random seed.
+<tr>
+<td>
+`user_ctor`
+</td>
+<td>
+A class/constructor for the type of user states that will be
+sampled.
+</td>
+</tr><tr>
+<td>
+`seed`
+</td>
+<td>
+An integer for a random seed.
+</td>
+</tr>
+</table>
 
 ## Methods
 
@@ -74,18 +114,18 @@ User states of the type user_ctor are sampled.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
 source</a>
 
-```python
-avg_affinity_given_topic()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>avg_affinity_given_topic()
+</code></pre>
 
 <h3 id="get_user_ctor"><code>get_user_ctor</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-get_user_ctor()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>get_user_ctor()
+</code></pre>
 
 Returns the constructor/class of the user states that will be sampled.
 
@@ -94,17 +134,17 @@ Returns the constructor/class of the user states that will be sampled.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-reset_sampler()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>reset_sampler()
+</code></pre>
 
 <h3 id="sample_user"><code>sample_user</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_exploration.py">View
 source</a>
 
-```python
-sample_user()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>sample_user()
+</code></pre>
 
 Creates a new instantiation of this user's hidden state parameters.

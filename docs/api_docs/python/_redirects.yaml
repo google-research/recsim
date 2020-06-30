@@ -1,3 +1,9 @@
 redirects:
+- from: /recsim/api_docs/python/recsim/environments/interest_exploration/FLAGS
+  to: /recsim/api_docs/python/recsim/environments/interest_evolution/FLAGS
+- from: /recsim/api_docs/python/recsim/environments/long_term_satisfaction/FLAGS
+  to: /recsim/api_docs/python/recsim/environments/interest_evolution/FLAGS
 - from: /recsim/api_docs/python/recsim/simulator/environment/SingleUserEnvironment
   to: /recsim/api_docs/python/recsim/simulator/environment/Environment
+- from: /recsim/api_docs/python/recsim/simulator/runner_lib/FLAGS
+  to: /recsim/api_docs/python/recsim/environments/interest_evolution/FLAGS

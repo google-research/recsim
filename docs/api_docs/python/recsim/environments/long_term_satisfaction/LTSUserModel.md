@@ -16,20 +16,24 @@
 
 # recsim.environments.long_term_satisfaction.LTSUserModel
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/long_term_satisfaction.py">View
 source</a>
 
-## Class `LTSUserModel`
-
-<!-- Start diff -->
 Class to model a user with long-term satisfaction dynamics.
 
 Inherits From: [`AbstractUserModel`](../../../recsim/user/AbstractUserModel.md)
+
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.environments.long_term_satisfaction.LTSUserModel(
+    slate_size, user_state_ctor=None, response_model_ctor=None, seed=0
+)
+</code></pre>
 
 <!-- Placeholder for "Used in" -->
 
@@ -60,30 +64,38 @@ A constructor to create user state. response_model_ctor: A constructor function
 to create response. The function should take a string of doc ID as input and
 returns a LTSResponse object. seed: an integer as the seed in random sampling.
 
-<h2 id="__init__"><code>__init__</code></h2>
+<!-- Tabular view -->
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/long_term_satisfaction.py">View
-source</a>
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Args</h2></th></tr>
 
-```python
-__init__(
-    slate_size,
-    user_state_ctor=None,
-    response_model_ctor=None,
-    seed=0
-)
-```
-
-Initializes a new user model.
-
-#### Args:
-
-*   <b>`response_model_ctor`</b>: A class/constructor representing the type of
-    responses this model will generate.
-*   <b>`user_sampler`</b>: An instance of AbstractUserSampler that can generate
-    initial user states from an inital state distribution.
-*   <b>`slate_size`</b>: integer number of documents that can be served to the
-    user at any interaction.
+<tr>
+<td>
+`response_model_ctor`
+</td>
+<td>
+A class/constructor representing the type of
+responses this model will generate.
+</td>
+</tr><tr>
+<td>
+`user_sampler`
+</td>
+<td>
+An instance of AbstractUserSampler that can generate
+initial user states from an inital state distribution.
+</td>
+</tr><tr>
+<td>
+`slate_size`
+</td>
+<td>
+integer number of documents that can be served to the user at
+any interaction.
+</td>
+</tr>
+</table>
 
 ## Methods
 
@@ -92,9 +104,9 @@ Initializes a new user model.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-create_observation()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>create_observation()
+</code></pre>
 
 Emits obesrvation about user's state.
 
@@ -103,29 +115,48 @@ Emits obesrvation about user's state.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/long_term_satisfaction.py">View
 source</a>
 
-```python
-generate_response(
-    doc,
-    response
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>generate_response(
+    doc, response
 )
-```
+</code></pre>
 
 Generates a response to a clicked document.
 
-#### Args:
+<!-- Tabular view -->
 
-*   <b>`doc`</b>: an LTSDocument object.
-*   <b>`response`</b>: an LTSResponse for the document. Updates: response, with
-    whether the document was clicked, liked, and how much of it was watched.
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Args</th></tr>
+
+<tr>
+<td>
+`doc`
+</td>
+<td>
+an LTSDocument object.
+</td>
+</tr><tr>
+<td>
+`response`
+</td>
+<td>
+an LTSResponse for the document.
+</td>
+</tr>
+</table>
+
+Updates: response, with whether the document was clicked, liked, and how much of
+it was watched.
 
 <h3 id="get_response_model_ctor"><code>get_response_model_ctor</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-get_response_model_ctor()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>get_response_model_ctor()
+</code></pre>
 
 Returns a constructor for the type of response this model will create.
 
@@ -134,9 +165,9 @@ Returns a constructor for the type of response this model will create.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/long_term_satisfaction.py">View
 source</a>
 
-```python
-is_terminal()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>is_terminal()
+</code></pre>
 
 Returns a boolean indicating if the session is over.
 
@@ -145,9 +176,9 @@ Returns a boolean indicating if the session is over.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-observation_space()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>observation_space()
+</code></pre>
 
 A Gym.spaces object that describes possible user observations.
 
@@ -156,9 +187,9 @@ A Gym.spaces object that describes possible user observations.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-reset()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>reset()
+</code></pre>
 
 Resets the user.
 
@@ -167,9 +198,9 @@ Resets the user.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-reset_sampler()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>reset_sampler()
+</code></pre>
 
 Resets the sampler.
 
@@ -178,45 +209,88 @@ Resets the sampler.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/user.py">View
 source</a>
 
-```python
-response_space()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>response_space()
+</code></pre>
 
 <h3 id="simulate_response"><code>simulate_response</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/long_term_satisfaction.py">View
 source</a>
 
-```python
-simulate_response(documents)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>simulate_response(
+    documents
+)
+</code></pre>
 
 Simulates the user's response to a slate of documents with choice model.
 
-#### Args:
+<!-- Tabular view -->
 
-*   <b>`documents`</b>: a list of LTSDocument objects.
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Args</th></tr>
 
-#### Returns:
+<tr>
+<td>
+`documents`
+</td>
+<td>
+a list of LTSDocument objects.
+</td>
+</tr>
+</table>
 
-*   <b>`responses`</b>: a list of LTSResponse objects, one for each document.
+<!-- Tabular view -->
+
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Returns</th></tr>
+
+<tr>
+<td>
+`responses`
+</td>
+<td>
+a list of LTSResponse objects, one for each document.
+</td>
+</tr>
+</table>
 
 <h3 id="update_state"><code>update_state</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/long_term_satisfaction.py">View
 source</a>
 
-```python
-update_state(
-    slate_documents,
-    responses
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>update_state(
+    slate_documents, responses
 )
-```
+</code></pre>
 
 Updates the user's latent state based on responses to the slate.
 
-#### Args:
+<!-- Tabular view -->
 
-*   <b>`slate_documents`</b>: a list of LTSDocuments representing the slate
-*   <b>`responses`</b>: a list of LTSResponses representing the user's response
-    to each document in the slate.
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2">Args</th></tr>
+
+<tr>
+<td>
+`slate_documents`
+</td>
+<td>
+a list of LTSDocuments representing the slate
+</td>
+</tr><tr>
+<td>
+`responses`
+</td>
+<td>
+a list of LTSResponses representing the user's response to each
+document in the slate.
+</td>
+</tr>
+</table>

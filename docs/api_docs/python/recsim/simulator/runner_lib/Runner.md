@@ -6,18 +6,23 @@
 
 # recsim.simulator.runner_lib.Runner
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/simulator/runner_lib.py">View
 source</a>
 
-## Class `Runner`
-
-<!-- Start diff -->
 Object that handles running experiments.
+
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.simulator.runner_lib.Runner(
+    base_dir, create_agent_fn, env, episode_log_file='',
+    checkpoint_file_prefix='ckpt', max_steps_per_episode=27000
+)
+</code></pre>
 
 <!-- Placeholder for "Used in" -->
 
@@ -25,27 +30,56 @@ Here we use the term 'experiment' to mean simulating interactions between the
 agent and the environment and reporting some statistics pertaining to these
 interactions.
 
-<h2 id="__init__"><code>__init__</code></h2>
+<!-- Tabular view -->
 
-```python
-__init__(
-    *args,
-    **kwargs
-)
-```
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Args</h2></th></tr>
 
-Initializes the Runner object in charge of running a full experiment.
-
-#### Args:
-
-*   <b>`base_dir`</b>: str, the base directory to host all required
-    sub-directories.
-*   <b>`create_agent_fn`</b>: A function that takes as args a Tensorflow session
-    and an environment, and returns an agent.
-*   <b>`env`</b>: A Gym environment for running the experiments.
-*   <b>`episode_log_file`</b>: Path to output simulated episodes in
-    tf.SequenceExample. Disable logging if episode_log_file is an empty string.
-*   <b>`checkpoint_file_prefix`</b>: str, the prefix to use for checkpoint
-    files.
-*   <b>`max_steps_per_episode`</b>: int, maximum number of steps after which an
-    episode terminates.
+<tr>
+<td>
+`base_dir`
+</td>
+<td>
+str, the base directory to host all required sub-directories.
+</td>
+</tr><tr>
+<td>
+`create_agent_fn`
+</td>
+<td>
+A function that takes as args a Tensorflow session and an
+environment, and returns an agent.
+</td>
+</tr><tr>
+<td>
+`env`
+</td>
+<td>
+A Gym environment for running the experiments.
+</td>
+</tr><tr>
+<td>
+`episode_log_file`
+</td>
+<td>
+Path to output simulated episodes in tf.SequenceExample.
+Disable logging if episode_log_file is an empty string.
+</td>
+</tr><tr>
+<td>
+`checkpoint_file_prefix`
+</td>
+<td>
+str, the prefix to use for checkpoint files.
+</td>
+</tr><tr>
+<td>
+`max_steps_per_episode`
+</td>
+<td>
+int, maximum number of steps after which an episode
+terminates.
+</td>
+</tr>
+</table>

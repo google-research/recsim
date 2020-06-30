@@ -10,55 +10,114 @@
 
 # recsim.environments.interest_evolution.IEvResponse
 
-<!-- Insert buttons -->
+<!-- Insert buttons and diff -->
 
 <table class="tfo-notebook-buttons tfo-api" align="left">
+
 </table>
 
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
-## Class `IEvResponse`
-
-<!-- Start diff -->
 Class to represent a user's response to a video.
 
 Inherits From: [`AbstractResponse`](../../../recsim/user/AbstractResponse.md)
 
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>recsim.environments.interest_evolution.IEvResponse(
+    clicked=False, watch_time=0.0, liked=False, quality=0.0, cluster_id=0.0
+)
+</code></pre>
+
 <!-- Placeholder for "Used in" -->
 
-#### Attributes:
+<!-- Tabular view -->
 
-*   <b>`clicked`</b>: A boolean indicating whether the video was clicked.
-*   <b>`watch_time`</b>: A float for fraction of the video watched.
-*   <b>`liked`</b>: A boolean indicating whether the video was liked.
-*   <b>`quality`</b>: A float indicating the quality of the video.
-*   <b>`cluster_id`</b>: A integer representing the cluster ID of the video.
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Args</h2></th></tr>
 
-<h2 id="__init__"><code>__init__</code></h2>
+<tr>
+<td>
+`clicked`
+</td>
+<td>
+A boolean indicating whether the video was clicked
+</td>
+</tr><tr>
+<td>
+`watch_time`
+</td>
+<td>
+A float for fraction of the video watched
+</td>
+</tr><tr>
+<td>
+`liked`
+</td>
+<td>
+A boolean indicating whether the video was liked
+</td>
+</tr><tr>
+<td>
+`quality`
+</td>
+<td>
+A float for document quality
+</td>
+</tr><tr>
+<td>
+`cluster_id`
+</td>
+<td>
+a integer for the cluster ID of the document.
+</td>
+</tr>
+</table>
 
-<a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
-source</a>
+<!-- Tabular view -->
 
-```python
-__init__(
-    clicked=False,
-    watch_time=0.0,
-    liked=False,
-    quality=0.0,
-    cluster_id=0.0
-)
-```
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>
 
-Creates a new user response for a video.
-
-#### Args:
-
-*   <b>`clicked`</b>: A boolean indicating whether the video was clicked
-*   <b>`watch_time`</b>: A float for fraction of the video watched
-*   <b>`liked`</b>: A boolean indicating whether the video was liked
-*   <b>`quality`</b>: A float for document quality
-*   <b>`cluster_id`</b>: a integer for the cluster ID of the document.
+<tr>
+<td>
+`clicked`
+</td>
+<td>
+A boolean indicating whether the video was clicked.
+</td>
+</tr><tr>
+<td>
+`watch_time`
+</td>
+<td>
+A float for fraction of the video watched.
+</td>
+</tr><tr>
+<td>
+`liked`
+</td>
+<td>
+A boolean indicating whether the video was liked.
+</td>
+</tr><tr>
+<td>
+`quality`
+</td>
+<td>
+A float indicating the quality of the video.
+</td>
+</tr><tr>
+<td>
+`cluster_id`
+</td>
+<td>
+A integer representing the cluster ID of the video.
+</td>
+</tr>
+</table>
 
 ## Methods
 
@@ -67,9 +126,9 @@ Creates a new user response for a video.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
-```python
-create_observation()
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>create_observation()
+</code></pre>
 
 Creates a tensor observation of this response.
 
@@ -78,14 +137,14 @@ Creates a tensor observation of this response.
 <a target="_blank" href="https://github.com/google-research/recsim/tree/master/recsim/environments/interest_evolution.py">View
 source</a>
 
-```python
-@classmethod
-response_space(cls)
-```
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>@classmethod</code>
+<code>response_space()
+</code></pre>
 
 ArraySpec that defines how a single response is represented.
 
-## Class Members
+## Class Variables
 
 *   `MAX_QUALITY_SCORE = 100` <a id="MAX_QUALITY_SCORE"></a>
 *   `MIN_QUALITY_SCORE = -100` <a id="MIN_QUALITY_SCORE"></a>
